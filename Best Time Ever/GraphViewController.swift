@@ -13,20 +13,21 @@ class GraphViewController: UIViewController, ChartViewDelegate {
     @IBOutlet weak var lineChartView: LineChartView!
     @IBOutlet weak var tableView: UITableView!
     
-
+    let userDefaults = NSUserDefaults.standardUserDefaults()
     
+    let times: [String] = ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"]
     
-    
-    var resultsData: ResultsData?
-    
+    var mood: [Double] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        resultsData = ResultsData()
 
+        if(userDefaults.valueForKey("moodArray") != nil) {
+            mood = userDefaults.valueForKey("moodArray") as! [Double]
+        }
+        
         // 1
         self.lineChartView.delegate = self
         // 2
@@ -38,6 +39,9 @@ class GraphViewController: UIViewController, ChartViewDelegate {
         self.lineChartView.noDataText = "No data provided"
         // 5
         setChartData()
+        print(mood)
+        
+        
         
     }
     
@@ -47,9 +51,10 @@ class GraphViewController: UIViewController, ChartViewDelegate {
     func setChartData() {
         // 1 - creating an array of data entries
         var yVals1 : [ChartDataEntry] = [ChartDataEntry]()
-        for i in 0 ..< resultsData!.times.count {
-            let element = resultsData!.feels[i]
-            print("index: \(i), element: \(element), number of elements: \(resultsData!.feels.count)")
+        for i in 0 ..< times.count {
+            
+            let element = mood[i]
+            print("index: \(i), element: \(element), number of elements: \(mood.count)")
             yVals1.append(ChartDataEntry(value: element, xIndex: i))
         }
         
@@ -70,7 +75,7 @@ class GraphViewController: UIViewController, ChartViewDelegate {
         dataSets.append(set1)
         
         //4 - pass our months in for our x-axis label value along with our dataSets
-        let data: LineChartData = LineChartData(xVals: resultsData!.times, dataSets: dataSets)
+        let data: LineChartData = LineChartData(xVals: times, dataSets: dataSets)
         data.setValueTextColor(UIColor.whiteColor())
         
         //5 - finally set our data

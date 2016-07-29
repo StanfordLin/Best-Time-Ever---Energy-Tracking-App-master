@@ -7,50 +7,47 @@
 //
 
 import Foundation
-import RealmSwift
+import UIKit
 
 
 //dynamic var times: [String] = ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"]
 //dynamic var feels: [Double] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
 
+
 class UserDefaultsHelper {
     
-    func test() {
+    static func saveTime() {
+    
+        // create objects
+        let storedTimes = ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"]
+        let userDefault = NSUserDefaults.standardUserDefaults()
         
-        // save date
-        let times = ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"]
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        userDefaults.setValue(times, forKey: "times")
-        userDefaults.synchronize()
-        
+        // save data
+        userDefault.setObject(storedTimes, forKey: "times")
+        userDefault.synchronize()
         
         // retrieve data
-        let retrievedTimes = userDefaults.valueForKey("times") as! [String]
+        let retrievedTimes = userDefault.valueForKey("times") as! [String]
         print(retrievedTimes)
         
-        
-        
     }
+    
+    
+    static func getTimes() -> [String] {
+        let userDefault = NSUserDefaults.standardUserDefaults()
+        // retrieve data
+        let retrievedTimes = userDefault.valueForKey("times") as! [String]
+        // print(retrievedTimes)
+        return retrievedTimes
+    }
+
     
 }
 
 
 
-class RealmHelper {
-    
-    //adds Note to realm's default
-    static func addResults(resultsData: ResultsData) { // Remember to pass in a Note and name the func addNote
-        
-        let realm = try! Realm() //let should be declared inside the func
-        
-        try! realm.write() {
-            realm.add(resultsData)
-            print("Added \(resultsData) to Realm")
-            
-        }
-    }
-    
+
     
 //    
 //    //deletes Note in realm's default
@@ -79,4 +76,3 @@ class RealmHelper {
 //        return realm.objects(Note).sorted("modificationTime", ascending: false)
 //        
 //    }
-}
