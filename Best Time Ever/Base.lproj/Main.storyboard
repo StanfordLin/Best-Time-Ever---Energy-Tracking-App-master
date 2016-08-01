@@ -18,19 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wz-L3-G8D">
-                                <rect key="frame" x="238" y="397" width="125" height="59"/>
-                                <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="59" id="Q4I-fA-3Sm"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
-                                <state key="normal" title="Submit"/>
-                                <connections>
-                                    <action selector="Submit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="796-xI-JfK"/>
-                                    <segue destination="gcC-U0-v4b" kind="show" id="EN9-pd-yVH"/>
-                                </connections>
-                            </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4LY-Pw-vdg">
                                 <rect key="frame" x="20" y="140" width="560" height="216"/>
                                 <connections>
@@ -39,31 +26,56 @@
                                 </connections>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ERp-DG-5lD">
-                                <rect key="frame" x="224" y="477" width="152" height="83"/>
+                                <rect key="frame" x="225" y="489" width="150" height="60"/>
+                                <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="83" id="89Y-hv-faV"/>
-                                    <constraint firstAttribute="width" constant="152" id="z3d-Z7-6gJ"/>
+                                    <constraint firstAttribute="width" constant="150" id="qTT-Dw-vVf"/>
+                                    <constraint firstAttribute="height" constant="60" id="sXS-7N-MCD"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <state key="normal" title="View Graph"/>
                                 <connections>
                                     <segue destination="gcC-U0-v4b" kind="show" id="EaM-0B-UCE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wz-L3-G8D">
+                                <rect key="frame" x="225" y="397" width="150" height="60"/>
+                                <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="26c-gD-xeH"/>
+                                    <constraint firstAttribute="width" constant="150" id="5Xk-87-4St"/>
+                                    <constraint firstAttribute="height" constant="59" id="Q4I-fA-3Sm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="22"/>
+                                <state key="normal" title="Save Data"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Q4I-fA-3Sm"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="saveData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2DG-KW-IPI"/>
+                                    <segue destination="gcC-U0-v4b" kind="show" id="j7H-b1-wyE"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ERp-DG-5lD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="204" id="DSi-XU-b7P"/>
-                            <constraint firstItem="7Wz-L3-G8D" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="218" id="EKl-3G-wvn"/>
+                            <constraint firstItem="7Wz-L3-G8D" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FI0-MP-5Lt"/>
                             <constraint firstItem="4LY-Pw-vdg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="120" id="JUT-3H-T4c"/>
                             <constraint firstItem="ERp-DG-5lD" firstAttribute="top" secondItem="7Wz-L3-G8D" secondAttribute="bottom" constant="21" id="Qsi-IP-cE8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4LY-Pw-vdg" secondAttribute="trailing" id="ZZB-0e-QZN"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ERp-DG-5lD" secondAttribute="trailing" constant="204" id="hKd-OD-vG1"/>
+                            <constraint firstItem="ERp-DG-5lD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bJe-gg-1Id"/>
+                            <constraint firstItem="ERp-DG-5lD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="218.5" id="dyV-Fe-3XB"/>
                             <constraint firstItem="4LY-Pw-vdg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="jTo-No-bfk"/>
+                            <constraint firstItem="7Wz-L3-G8D" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="126.5" id="pPQ-7I-vNf"/>
                             <constraint firstItem="7Wz-L3-G8D" firstAttribute="top" secondItem="4LY-Pw-vdg" secondAttribute="bottom" constant="41" id="u1t-Nt-PrY"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7Wz-L3-G8D" secondAttribute="bottom" constant="144" id="xtD-hd-hvu"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="u1t-Nt-PrY"/>
+                                <exclude reference="Qsi-IP-cE8"/>
                                 <exclude reference="xtD-hd-hvu"/>
                             </mask>
                         </variation>
@@ -88,7 +100,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XmO-gQ-pNZ" customClass="LineChartView" customModule="Charts">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XmO-gQ-pNZ" customClass="LineChartView" customModule="Charts">
                                 <rect key="frame" x="40" y="91" width="520" height="350"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -117,7 +129,7 @@
                             <constraint firstItem="XmO-gQ-pNZ" firstAttribute="top" secondItem="2IX-xx-Ttl" secondAttribute="bottom" constant="32" id="4cE-LJ-ga1"/>
                             <constraint firstAttribute="bottom" secondItem="Mwb-gA-rN3" secondAttribute="bottom" constant="20" symbolic="YES" id="6rj-J1-I8j"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XmO-gQ-pNZ" secondAttribute="trailing" constant="20" id="CAY-2p-iEf"/>
-                            <constraint firstItem="XmO-gQ-pNZ" firstAttribute="top" secondItem="AHb-14-7aJ" secondAttribute="bottom" constant="20" id="DAd-aL-tYV"/>
+                            <constraint firstItem="XmO-gQ-pNZ" firstAttribute="top" secondItem="AHb-14-7aJ" secondAttribute="bottom" constant="27" id="DAd-aL-tYV"/>
                             <constraint firstItem="Mwb-gA-rN3" firstAttribute="leading" secondItem="0JZ-sr-n7P" secondAttribute="leadingMargin" constant="37" id="NoK-49-u91"/>
                             <constraint firstItem="Mwb-gA-rN3" firstAttribute="centerX" secondItem="XmO-gQ-pNZ" secondAttribute="centerX" id="OLe-xf-Skn"/>
                             <constraint firstItem="XmO-gQ-pNZ" firstAttribute="leading" secondItem="0JZ-sr-n7P" secondAttribute="leadingMargin" constant="20" id="Tir-Rw-CQ3"/>
@@ -145,6 +157,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="EaM-0B-UCE"/>
+        <segue reference="j7H-b1-wyE"/>
     </inferredMetricsTieBreakers>
 </document>

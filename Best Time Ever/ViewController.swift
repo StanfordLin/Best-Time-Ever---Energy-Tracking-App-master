@@ -12,12 +12,29 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @IBOutlet weak var picker: UIPickerView!
     
+    
+    @IBAction func saveData(sender: AnyObject) {
+        
+        DataManager.sharedInstance.addNewTime(String(picker.selectedRowInComponent(0)))
+        
+        func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+            
+            let selectedTime = data[0][picker.selectedRowInComponent(0)]
+            
+            let selectedFeels = data[1][picker.selectedRowInComponent(1)]
+            
+            
+            print("Variables are saved, it is \(selectedTime) and \(selectedFeels)")
+        }
+        
+    }
+    
     let data = [
         
         [ "00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00" ],
         
         ["1 ☹️", "2 😞", "3 😐", "4 🙂", "5 😄"]
-    
+        
     ]
     
     
@@ -50,51 +67,59 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
-        let selectedTime = data[0][picker.selectedRowInComponent(0)]
-        
-        let selectedFeels = data[1][picker.selectedRowInComponent(1)]
-        
-        
-        print("Variables are saved, it is \(selectedTime) and \(selectedFeels)")
-    }
-    
-    
-    @IBAction func Submit(sender: AnyObject) {
-        
-    }
     
     //pass data to the graphViewController
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
+        /* RETRIEVE THE DATA from NSUserDefaults*/
+        let userDefaults = NSUserDefaults.standardUserDefaults()
         
+        var savedMood = userDefaults.objectForKey("mood") as! [Double]
         
+        /* Change/update the Data according to the UIPickerView*/
+        //
+        let timeValueIndex = picker.selectedRowInComponent(0)
         
-        //refer data from the GraphViewController
-        let graphViewController: GraphViewController = segue.destinationViewController as! GraphViewController
-        
-        //       When a time is selected, assign it as selectedInThePickerTimesComponent
-        let selectedInThePickerTimesComponent = picker.selectedRowInComponent(0)// todo
-        
-        //        When feeling is selected, assign it to feelValue
+        //      When feeling is selected, assign it to feelValue
         let feelValueIndex = picker.selectedRowInComponent(1)
         
         //        have the integers of feelingPickerData be retrieved according to what is selected
         let feelValue = Double(feelingPickerData[feelValueIndex])
         
-        //        Have a range selected?!
-        let range: Range<Int> = selectedInThePickerTimesComponent...selectedInThePickerTimesComponent
+        savedMood[timeValueIndex] = feelValue // "something"
         
         
-        //        replace the range with the feel Value?!
-        graphViewController.mood.replaceRange(range, with: [feelValue])
+        /**/
+        userDefaults.setObject(savedMood, forKey: "mood")
+        userDefaults.synchronize()
+
         
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        userDefaults.setObject(graphViewController.mood, forKey: "moodArray")
-        print("changed to \(graphViewController.mood)")
         
-//        RealmHelper.addResults(resultsData)
+        //
+        //        //refer data from the GraphViewController
+        //        let graphViewController: GraphViewController = segue.destinationViewController as! GraphViewController
+        //
+        //        //       When a time is selected, assign it as selectedInThePickerTimesComponent
+        //        let selectedInThePickerTimesComponent = picker.selectedRowInComponent(0)// todo
+        //
+        //        //        When feeling is selected, assign it to feelValue
+        //        let feelValueIndex = picker.selectedRowInComponent(1)
+        //
+        //        //        have the integers of feelingPickerData be retrieved according to what is selected
+        //        let feelValue = Double(feelingPickerData[feelValueIndex])
+        //
+        //        //        Have a range selected?!
+        //        let range: Range<Int> = selectedInThePickerTimesComponent...selectedInThePickerTimesComponent
+        //
+        //
+        //        //        replace the range with the feel Value?!
+        //        graphViewController.mood.replaceRange(range, with: [feelValue])
+        //
+        //        let userDefaults = NSUserDefaults.standardUserDefaults()
+        //        userDefaults.setObject(graphViewController.mood, forKey: "moodArray")
+        //        print("changed to \(graphViewController.mood)")
+        
+        
         
     }
     
