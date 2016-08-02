@@ -100,10 +100,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XmO-gQ-pNZ" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="40" y="91" width="520" height="350"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mwb-gA-rN3">
                                 <rect key="frame" x="57" y="481" width="487" height="99"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -120,9 +116,18 @@
                                                 <segue destination="BYZ-38-t0r" kind="show" id="UYM-a9-tMl"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Reset" id="Rt9-KP-BgB">
+                                            <connections>
+                                                <action selector="reset:" destination="gcC-U0-v4b" id="q4e-2z-GSf"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XmO-gQ-pNZ" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="40" y="91" width="520" height="350"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -157,6 +162,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="j7H-b1-wyE"/>
+        <segue reference="EaM-0B-UCE"/>
     </inferredMetricsTieBreakers>
 </document>

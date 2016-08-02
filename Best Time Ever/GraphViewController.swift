@@ -13,7 +13,17 @@ class GraphViewController: UIViewController, ChartViewDelegate {
     @IBOutlet weak var lineChartView: LineChartView!
     @IBOutlet weak var tableView: UITableView!
     
+    //    Reset chart to 0
+    @IBAction func reset(sender: AnyObject) {
+        mood = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        userDefaults.setObject(mood, forKey: "mood")
+        userDefaults.synchronize()
+    }
+    
+    
     let userDefaults = NSUserDefaults.standardUserDefaults()
+    
+    
     
     var times: [String] = ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"]
     
@@ -23,13 +33,12 @@ class GraphViewController: UIViewController, ChartViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let times = DataManager.sharedInstance.getData()
+        print("User defaults is:\(userDefaults.valueForKey("mood") as! [Double])")
         
-        print("The data manager prints this: \(times)")
-
-        if(userDefaults.valueForKey("moodArray") != nil) {
-            mood = userDefaults.valueForKey("moodArray") as! [Double]
-        }
+        mood = userDefaults.valueForKey("mood") as! [Double]
+        userDefaults.synchronize()
+        print("Current mood is \(mood)")
+        
         
         // 1
         self.lineChartView.delegate = self
@@ -62,7 +71,7 @@ class GraphViewController: UIViewController, ChartViewDelegate {
         }
         
         // 2 - create a data set with our array
-        let set1: LineChartDataSet = LineChartDataSet(yVals: yVals1, label: "First Set")
+        let set1: LineChartDataSet = LineChartDataSet(yVals: yVals1, label: "Productivity Level")
         set1.axisDependency = .Left // Line will correlate with left axis values
         set1.setColor(UIColor.redColor().colorWithAlphaComponent(0.5)) // our line's opacity is 50%
         set1.setCircleColor(UIColor.redColor()) // our circle will be dark red
@@ -99,14 +108,6 @@ class GraphViewController: UIViewController, ChartViewDelegate {
         
         // 5
         return cell
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let identifier = segue.identifier {
-            if identifier == "back" {
-                print("Back was tapped")
-            }
-        }
     }
     
 }
