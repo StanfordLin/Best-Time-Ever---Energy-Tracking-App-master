@@ -4,17 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>JBChartView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Best Time Ever.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Realm.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>RealmSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,17 +17,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>43D8CA9BE0DC015C19F1FAA0310F1B3A</key>
+		<key>C3E15BBF3E72843A0D0EB56DB50F6018</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BF82561BAB997D9FBAB09F8D19E32D0F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FBDE86F94F3C9114C39F8AF6C72D0B40</key>
+		<key>D1B0A8254ABEC0F81BA78ACEC7C88E68</key>
 		<dict>
 			<key>primary</key>
 			<true/>

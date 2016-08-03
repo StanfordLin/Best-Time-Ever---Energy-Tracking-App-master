@@ -7,6 +7,7 @@ target 'Best Time Ever' do
 
   # Pods for Best Time Ever
   
-pod 'RealmSwift'
+platform :ios, '6.0'
+pod 'JBChartView'
 
 end

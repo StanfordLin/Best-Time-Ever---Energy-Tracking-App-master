@@ -135,32 +135,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             }
         }
         
-        //
-        //        //refer data from the GraphViewController
-        //        let graphViewController: GraphViewController = segue.destinationViewController as! GraphViewController
-        //
-        //        //       When a time is selected, assign it as selectedInThePickerTimesComponent
-        //        let selectedInThePickerTimesComponent = picker.selectedRowInComponent(0)// todo
-        //
-        //        //        When feeling is selected, assign it to feelValue
-        //        let feelValueIndex = picker.selectedRowInComponent(1)
-        //
-        //        //        have the integers of feelingPickerData be retrieved according to what is selected
-        //        let feelValue = Double(feelingPickerData[feelValueIndex])
-        //
-        //        //        Have a range selected?!
-        //        let range: Range<Int> = selectedInThePickerTimesComponent...selectedInThePickerTimesComponent
-        //
-        //
-        //        //        replace the range with the feel Value?!
-        //        graphViewController.mood.replaceRange(range, with: [feelValue])
-        //
-        //        let userDefaults = NSUserDefaults.standardUserDefaults()
-        //        userDefaults.setObject(graphViewController.mood, forKey: "moodArray")
-        //        print("changed to \(graphViewController.mood)")
-        
-        
-        
     }
     
     

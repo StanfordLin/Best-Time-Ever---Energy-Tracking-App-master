@@ -153,7 +153,7 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="lineChartView" destination="XmO-gQ-pNZ" id="axD-CV-kKv"/>
+                        <outlet property="lineChartView" destination="XmO-gQ-pNZ" id="4te-nz-Nt6"/>
                         <outlet property="tableView" destination="Mwb-gA-rN3" id="KMa-dQ-twZ"/>
                     </connections>
                 </viewController>
