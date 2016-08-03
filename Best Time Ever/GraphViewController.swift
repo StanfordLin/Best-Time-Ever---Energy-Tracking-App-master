@@ -15,9 +15,7 @@ class GraphViewController: UIViewController, ChartViewDelegate {
     
     //    Reset chart to 0
     @IBAction func reset(sender: AnyObject) {
-        mood = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-        userDefaults.setObject(mood, forKey: "mood")
-        userDefaults.synchronize()
+
     }
     
     

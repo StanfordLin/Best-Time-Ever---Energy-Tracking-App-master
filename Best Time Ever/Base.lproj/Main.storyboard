@@ -55,7 +55,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="saveData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2DG-KW-IPI"/>
-                                    <segue destination="gcC-U0-v4b" kind="show" id="j7H-b1-wyE"/>
+                                    <segue destination="gcC-U0-v4b" kind="show" identifier="saveDataSegue" id="j7H-b1-wyE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -119,6 +119,7 @@
                                         <barButtonItem key="rightBarButtonItem" title="Reset" id="Rt9-KP-BgB">
                                             <connections>
                                                 <action selector="reset:" destination="gcC-U0-v4b" id="q4e-2z-GSf"/>
+                                                <segue destination="S3v-H7-kDx" kind="unwind" unwindAction="unwindResetButton:" id="wfk-hs-PgH"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -157,11 +158,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L14-c9-FxH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="S3v-H7-kDx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1223" y="303"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="EaM-0B-UCE"/>
+        <segue reference="j7H-b1-wyE"/>
     </inferredMetricsTieBreakers>
 </document>

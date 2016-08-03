@@ -12,11 +12,17 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @IBOutlet weak var picker: UIPickerView!
     
+    @IBAction func unwindResetButton(segue: UIStoryboardSegue) {
+        let graphViewController = segue.sourceViewController as? GraphViewController
+        
+        graphViewController!.mood = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        graphViewController!.userDefaults.setObject(graphViewController!.mood, forKey: "mood")
+        graphViewController!.userDefaults.synchronize()
+    }
     
     let userDefaults = NSUserDefaults.standardUserDefaults()
     
     
-//    Get data from UIPickerView
     @IBAction func saveData(sender: AnyObject) {
         
         func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -68,65 +74,65 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     
-    
     //pass data to the graphViewController
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "saveDataSegue"{
         
-        if userDefaults.objectForKey("mood") as? [Double] == nil {
-            
-            let graphViewController: GraphViewController = segue.destinationViewController as! GraphViewController
-    
-            //       When a time is selected, assign it as selectedInThePickerTimesComponent
-            let selectedInThePickerTimesComponent = picker.selectedRowInComponent(0)// todo
-    
-            //        When feeling is selected, assign it to feelValue
-            let feelValueIndex = picker.selectedRowInComponent(1)
-    
-            //        have the integers of feelingPickerData be retrieved according to what is selected
-            let feelValue = Double(feelingPickerData[feelValueIndex])
-    
-            //        Have a range selected?!
-            let range: Range<Int> = selectedInThePickerTimesComponent...selectedInThePickerTimesComponent
-    
-    
-            //        replace the range with the feel Value?!
-            graphViewController.mood.replaceRange(range, with: [feelValue])
-    
-            let userDefaults = NSUserDefaults.standardUserDefaults()
-            userDefaults.setObject(graphViewController.mood, forKey: "mood")
-            userDefaults.synchronize()
-            
-            print(userDefaults.setObject(graphViewController.mood, forKey: "mood"))
-            
-            
-        } else if userDefaults.objectForKey("mood") as? [Double] != nil {
-            
-            /* RETRIEVE THE DATA from NSUserDefaults*/
-            
-            userDefaults.synchronize()
-            var savedMood = userDefaults.objectForKey("mood") as? [Double]
-            
-            
-            
-            /* Change/update the Data according to the UIPickerView*/
-            //      When time is selected, assign it timeValue
-            let timeValue = picker.selectedRowInComponent(0)
-            
-            //      When feeling is selected, assign it to feelValue
-            let feelValue = picker.selectedRowInComponent(1)
-            
-            //        have the integers of feelingPickerData be retrieved according to what is selected
-            let savedFeelValue = Double(feelingPickerData[feelValue])
-            
-            
-            
-            savedMood?[timeValue] = savedFeelValue // "something"
-            
-            
-            /**/
-            userDefaults.setObject(savedMood, forKey: "mood")
-            userDefaults.synchronize()
+            if userDefaults.objectForKey("mood") as? [Double] == nil {
+                
+                let graphViewController: GraphViewController = segue.destinationViewController as! GraphViewController
 
+                //       When a time is selected, assign it as selectedInThePickerTimesComponent
+                let selectedInThePickerTimesComponent = picker.selectedRowInComponent(0)// todo
+
+                //        When feeling is selected, assign it to feelValue
+                let feelValueIndex = picker.selectedRowInComponent(1)
+
+                //        have the integers of feelingPickerData be retrieved according to what is selected
+                let feelValue = Double(feelingPickerData[feelValueIndex])
+
+                //        Have a range selected?!
+                let range: Range<Int> = selectedInThePickerTimesComponent...selectedInThePickerTimesComponent
+
+
+                //        replace the range with the feel Value?!
+                graphViewController.mood.replaceRange(range, with: [feelValue])
+
+                let userDefaults = NSUserDefaults.standardUserDefaults()
+                userDefaults.setObject(graphViewController.mood, forKey: "mood")
+                userDefaults.synchronize()
+
+                
+                
+            } else if userDefaults.objectForKey("mood") as? [Double] != nil {
+                
+                /* RETRIEVE THE DATA from NSUserDefaults*/
+                
+                userDefaults.synchronize()
+                var savedMood = userDefaults.objectForKey("mood") as? [Double]
+                
+                
+                
+                /* Change/update the Data according to the UIPickerView*/
+                //      When time is selected, assign it timeValue
+                let timeValue = picker.selectedRowInComponent(0)
+                
+                //      When feeling is selected, assign it to feelValue
+                let feelValue = picker.selectedRowInComponent(1)
+                
+                //        have the integers of feelingPickerData be retrieved according to what is selected
+                let savedFeelValue = Double(feelingPickerData[feelValue])
+                
+                
+                
+                savedMood?[timeValue] = savedFeelValue // "something"
+                
+                
+                /**/
+                userDefaults.setObject(savedMood, forKey: "mood")
+                userDefaults.synchronize()
+
+            }
         }
         
         //
