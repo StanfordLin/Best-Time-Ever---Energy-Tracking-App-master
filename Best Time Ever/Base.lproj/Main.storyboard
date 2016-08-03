@@ -29,8 +29,7 @@
                                 <rect key="frame" x="225" y="489" width="150" height="60"/>
                                 <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="qTT-Dw-vVf"/>
-                                    <constraint firstAttribute="height" constant="60" id="sXS-7N-MCD"/>
+                                    <constraint firstAttribute="height" constant="60" id="Nbw-1U-H2g"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <state key="normal" title="View Graph"/>
@@ -42,9 +41,8 @@
                                 <rect key="frame" x="225" y="397" width="150" height="60"/>
                                 <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="26c-gD-xeH"/>
-                                    <constraint firstAttribute="width" constant="150" id="5Xk-87-4St"/>
                                     <constraint firstAttribute="height" constant="59" id="Q4I-fA-3Sm"/>
+                                    <constraint firstAttribute="height" constant="60" id="dEa-ia-zrP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="22"/>
                                 <state key="normal" title="Save Data"/>
@@ -58,19 +56,34 @@
                                     <segue destination="gcC-U0-v4b" kind="show" identifier="saveDataSegue" id="j7H-b1-wyE"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZY5-F5-S7q">
+                                <rect key="frame" x="411" y="459" width="133" height="108"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="133" id="29T-XV-3cz"/>
+                                    <constraint firstAttribute="height" constant="108" id="eCb-w1-yUg"/>
+                                </constraints>
+                                <state key="normal" title="View Line Chart"/>
+                                <connections>
+                                    <segue destination="MZT-b9-YMw" kind="show" id="MUx-bH-axo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="7Wz-L3-G8D" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FI0-MP-5Lt"/>
-                            <constraint firstItem="4LY-Pw-vdg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="120" id="JUT-3H-T4c"/>
+                            <constraint firstItem="4LY-Pw-vdg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="2di-cF-fS6"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ERp-DG-5lD" secondAttribute="bottom" constant="51" id="9VL-UC-T5e"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZY5-F5-S7q" secondAttribute="trailing" constant="36" id="9Vn-fX-sjp"/>
+                            <constraint firstItem="4LY-Pw-vdg" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="BTC-1j-tgo"/>
+                            <constraint firstItem="7Wz-L3-G8D" firstAttribute="trailing" secondItem="ERp-DG-5lD" secondAttribute="trailing" id="GIG-hp-RHK"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ZY5-F5-S7q" secondAttribute="bottom" constant="33" id="GZg-7L-A2k"/>
                             <constraint firstItem="ERp-DG-5lD" firstAttribute="top" secondItem="7Wz-L3-G8D" secondAttribute="bottom" constant="21" id="Qsi-IP-cE8"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="4LY-Pw-vdg" secondAttribute="trailing" id="ZZB-0e-QZN"/>
-                            <constraint firstItem="ERp-DG-5lD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bJe-gg-1Id"/>
-                            <constraint firstItem="ERp-DG-5lD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="218.5" id="dyV-Fe-3XB"/>
-                            <constraint firstItem="4LY-Pw-vdg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="jTo-No-bfk"/>
-                            <constraint firstItem="7Wz-L3-G8D" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="126.5" id="pPQ-7I-vNf"/>
+                            <constraint firstItem="ZY5-F5-S7q" firstAttribute="leading" secondItem="ERp-DG-5lD" secondAttribute="trailing" constant="36" id="bJN-yJ-XcL"/>
+                            <constraint firstItem="ERp-DG-5lD" firstAttribute="top" secondItem="7Wz-L3-G8D" secondAttribute="bottom" constant="32" id="kzK-BG-Tlk"/>
+                            <constraint firstItem="7Wz-L3-G8D" firstAttribute="leading" secondItem="ERp-DG-5lD" secondAttribute="leading" id="lik-Jl-y37"/>
+                            <constraint firstItem="7Wz-L3-G8D" firstAttribute="top" secondItem="4LY-Pw-vdg" secondAttribute="bottom" constant="41" id="oe3-TJ-mYF"/>
                             <constraint firstItem="7Wz-L3-G8D" firstAttribute="top" secondItem="4LY-Pw-vdg" secondAttribute="bottom" constant="41" id="u1t-Nt-PrY"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7Wz-L3-G8D" secondAttribute="bottom" constant="144" id="xtD-hd-hvu"/>
+                            <constraint firstItem="4LY-Pw-vdg" firstAttribute="centerX" secondItem="7Wz-L3-G8D" secondAttribute="centerX" id="yW0-4z-k9r"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -162,8 +175,63 @@
             </objects>
             <point key="canvasLocation" x="1223" y="303"/>
         </scene>
+        <!--Chart View Controller-->
+        <scene sceneID="Ry3-jm-0vp">
+            <objects>
+                <viewController id="MZT-b9-YMw" customClass="ChartViewController" customModule="Best_Time_Ever" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qXZ-WA-9Sw"/>
+                        <viewControllerLayoutGuide type="bottom" id="bUa-DB-DkT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wpF-kz-xh2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMt-Ov-71J">
+                                <rect key="frame" x="20" y="559" width="560" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="lky-eZ-aUq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yt4-Rn-MHQ" customClass="JBLineChartView">
+                                <rect key="frame" x="20" y="28" width="340" height="241"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="241" id="MbU-GP-VvQ"/>
+                                    <constraint firstAttribute="width" constant="340" id="rBT-lg-b5a"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yt4-Rn-MHQ" firstAttribute="leading" secondItem="wpF-kz-xh2" secondAttribute="leadingMargin" id="0mA-Oj-cKp"/>
+                            <constraint firstItem="yt4-Rn-MHQ" firstAttribute="trailing" secondItem="wpF-kz-xh2" secondAttribute="trailingMargin" id="98N-dZ-e7W"/>
+                            <constraint firstItem="bUa-DB-DkT" firstAttribute="top" secondItem="gMt-Ov-71J" secondAttribute="bottom" constant="20" id="Jey-Q4-l5F"/>
+                            <constraint firstItem="yt4-Rn-MHQ" firstAttribute="leading" secondItem="wpF-kz-xh2" secondAttribute="leadingMargin" id="NC2-Aa-Kbu"/>
+                            <constraint firstItem="yt4-Rn-MHQ" firstAttribute="top" secondItem="qXZ-WA-9Sw" secondAttribute="bottom" constant="8" id="o1i-Ac-Ydx"/>
+                            <constraint firstItem="gMt-Ov-71J" firstAttribute="trailing" secondItem="wpF-kz-xh2" secondAttribute="trailingMargin" id="o4X-1b-sMJ"/>
+                            <constraint firstItem="gMt-Ov-71J" firstAttribute="leading" secondItem="wpF-kz-xh2" secondAttribute="leadingMargin" id="sXe-vI-2QD"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="0mA-Oj-cKp"/>
+                                <exclude reference="98N-dZ-e7W"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="informationLabel" destination="gMt-Ov-71J" id="abU-SP-4xr"/>
+                        <outlet property="lineChart" destination="yt4-Rn-MHQ" id="UPl-TC-nwb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F0k-TM-i9W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1928" y="303"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="j7H-b1-wyE"/>
+        <segue reference="EaM-0B-UCE"/>
     </inferredMetricsTieBreakers>
 </document>

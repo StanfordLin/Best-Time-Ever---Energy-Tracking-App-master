@@ -16,6 +16,7 @@
 		E6BE1D9E1D3801990088742B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6BE1D9C1D3801990088742B /* Main.storyboard */; };
 		E6BE1DA01D3801990088742B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6BE1D9F1D3801990088742B /* Assets.xcassets */; };
 		E6BE1DA31D3801990088742B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6BE1DA11D3801990088742B /* LaunchScreen.storyboard */; };
+		E6C027391D525A5500C16F04 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C027381D525A5500C16F04 /* ChartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +46,7 @@
 		E6BE1D9F1D3801990088742B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6BE1DA21D3801990088742B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E6BE1DA41D3801990088742B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6C027381D525A5500C16F04 /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +101,9 @@
 			children = (
 				E6BE1D981D3801990088742B /* AppDelegate.swift */,
 				E6BE1D9A1D3801990088742B /* ViewController.swift */,
-				E6BE1D9C1D3801990088742B /* Main.storyboard */,
 				E656B3FF1D38561D007B6F31 /* GraphViewController.swift */,
+				E6C027381D525A5500C16F04 /* ChartViewController.swift */,
+				E6BE1D9C1D3801990088742B /* Main.storyboard */,
 				E6BE1D9F1D3801990088742B /* Assets.xcassets */,
 				E6BE1DA11D3801990088742B /* LaunchScreen.storyboard */,
 				E6BE1DA41D3801990088742B /* Info.plist */,
@@ -238,6 +241,7 @@
 				E60764411D482F27008BEBFC /* UserDefaultsHelper.swift in Sources */,
 				E6BE1D9B1D3801990088742B /* ViewController.swift in Sources */,
 				E6BE1D991D3801990088742B /* AppDelegate.swift in Sources */,
+				E6C027391D525A5500C16F04 /* ChartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
