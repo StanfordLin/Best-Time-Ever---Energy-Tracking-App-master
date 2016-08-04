@@ -55,6 +55,8 @@ class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineCh
         
         backButton.layer.cornerRadius = 7
         resetButton.layer.cornerRadius = 7
+        lineChart.layer.cornerRadius = 7
+        informationLabel.layer.cornerRadius = 7
         
         print("User defaults is:\(userDefaults.valueForKey("mood") as! [Int])")
         
