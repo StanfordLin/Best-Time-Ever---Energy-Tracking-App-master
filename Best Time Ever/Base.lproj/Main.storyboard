@@ -26,6 +26,37 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="y2d-hm-WwI"/>
                                 </connections>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ERp-DG-5lD">
+                                <rect key="frame" x="225" y="489" width="150" height="60"/>
+                                <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Nbw-1U-H2g">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="70"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="TYp-hh-Pgo"/>
+                                    <constraint firstAttribute="width" constant="200" id="gwP-Oq-17T"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                <state key="normal" title="View Graph">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="TYp-hh-Pgo"/>
+                                        <exclude reference="gwP-Oq-17T"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="101" y="638" width="200" height="60"/>
+                                    <mask key="constraints">
+                                        <exclude reference="TYp-hh-Pgo"/>
+                                        <include reference="gwP-Oq-17T"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <segue destination="MZT-b9-YMw" kind="show" id="8Os-sw-meA"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wz-L3-G8D">
                                 <rect key="frame" x="225" y="397" width="150" height="60"/>
                                 <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
@@ -56,38 +87,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="saveData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2DG-KW-IPI"/>
-                                    <segue destination="MZT-b9-YMw" kind="show" id="xxZ-sc-P4o"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ERp-DG-5lD">
-                                <rect key="frame" x="225" y="489" width="150" height="60"/>
-                                <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="Nbw-1U-H2g">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="70"/>
-                                    </constraint>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="TYp-hh-Pgo"/>
-                                    <constraint firstAttribute="width" constant="200" id="gwP-Oq-17T"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
-                                <state key="normal" title="View Graph">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="TYp-hh-Pgo"/>
-                                        <exclude reference="gwP-Oq-17T"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="101" y="638" width="200" height="60"/>
-                                    <mask key="constraints">
-                                        <exclude reference="TYp-hh-Pgo"/>
-                                        <include reference="gwP-Oq-17T"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <segue destination="MZT-b9-YMw" kind="show" id="8Os-sw-meA"/>
+                                    <segue destination="MZT-b9-YMw" kind="show" identifier="saveDataSegue" id="xxZ-sc-P4o"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -391,6 +391,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="8Os-sw-meA"/>
+        <segue reference="xxZ-sc-P4o"/>
     </inferredMetricsTieBreakers>
 </document>

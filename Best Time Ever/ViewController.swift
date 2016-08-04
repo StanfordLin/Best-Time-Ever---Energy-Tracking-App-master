@@ -5,7 +5,7 @@
 //  Created by Stanford on 2016-07-14.
 //  Copyright © 2016 Stanford. All rights reserved.
 //
-import Charts
+import JBChartView
 import UIKit
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
@@ -32,6 +32,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             let selectedFeels = data[1][picker.selectedRowInComponent(1)]
             
             print("Variables are saved, it is \(selectedTime) and \(selectedFeels)")
+            print("---------------------------------------------------------------------------------------------------")
         }
         
     }
@@ -74,13 +75,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     
-    //pass data to the graphViewController
+    //pass data to the chartViewController
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "saveDataSegue"{
         
-            if userDefaults.objectForKey("mood") as? [Double] == nil {
+            if userDefaults.objectForKey("mood") as? [Int] == nil {
                 
-                let graphViewController: GraphViewController = segue.destinationViewController as! GraphViewController
+                let chartViewController: ChartViewController = segue.destinationViewController as! ChartViewController
 
                 //       When a time is selected, assign it as selectedInThePickerTimesComponent
                 let selectedInThePickerTimesComponent = picker.selectedRowInComponent(0)// todo
@@ -89,27 +90,27 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 let feelValueIndex = picker.selectedRowInComponent(1)
 
                 //        have the integers of feelingPickerData be retrieved according to what is selected
-                let feelValue = Double(feelingPickerData[feelValueIndex])
+                let feelValue = Int(feelingPickerData[feelValueIndex])
 
                 //        Have a range selected?!
                 let range: Range<Int> = selectedInThePickerTimesComponent...selectedInThePickerTimesComponent
 
 
                 //        replace the range with the feel Value?!
-                graphViewController.mood.replaceRange(range, with: [feelValue])
+                chartViewController.chartData.replaceRange(range, with: [feelValue])
 
                 let userDefaults = NSUserDefaults.standardUserDefaults()
-                userDefaults.setObject(graphViewController.mood, forKey: "mood")
+                userDefaults.setObject(chartViewController.chartData, forKey: "mood")
                 userDefaults.synchronize()
 
                 
                 
-            } else if userDefaults.objectForKey("mood") as? [Double] != nil {
+            } else if userDefaults.objectForKey("mood") as? [Int] != nil {
                 
                 /* RETRIEVE THE DATA from NSUserDefaults*/
                 
                 userDefaults.synchronize()
-                var savedMood = userDefaults.objectForKey("mood") as? [Double]
+                var savedMood = userDefaults.objectForKey("mood") as? [Int]
                 
                 
                 
@@ -121,7 +122,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 let feelValue = picker.selectedRowInComponent(1)
                 
                 //        have the integers of feelingPickerData be retrieved according to what is selected
-                let savedFeelValue = Double(feelingPickerData[feelValue])
+                let savedFeelValue = Int(feelingPickerData[feelValue])
                 
                 
                 
