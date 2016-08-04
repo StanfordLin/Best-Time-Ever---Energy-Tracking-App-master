@@ -12,9 +12,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @IBOutlet weak var picker: UIPickerView!
     
+    //Resets the values for the graph
     @IBAction func unwindResetButton(segue: UIStoryboardSegue) {
         let chartViewController = segue.sourceViewController as? ChartViewController
-        
         chartViewController!.chartData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         chartViewController!.userDefaults.setObject(chartViewController!.chartData, forKey: "mood")
         chartViewController!.userDefaults.synchronize()

@@ -15,6 +15,29 @@ class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineCh
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var lineChart: JBLineChartView!
     @IBOutlet weak var informationLabel: UILabel!
+    @IBAction func resetAlertConfirmation(sender: AnyObject) {
+        
+        let alert = UIAlertController(title: "Reset", message: "Are you sure you want to reset all values?", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
+        
+        
+        alert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { action in
+            switch action.style{
+            case .Default:
+                self.performSegueWithIdentifier("unwindResetButtonToViewController", sender: self)
+                print("default")
+                
+            case .Cancel:
+                print("cancel")
+                
+            case .Destructive:
+                print("destructive")
+            }
+        }))
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
     
     var chartLegend = ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"]
     var chartData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -92,7 +115,7 @@ class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineCh
         super.viewDidAppear(animated)
         
 //        Animation that loads after 0.5 seconds of viewcontroller loading
-        var timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(ChartViewController.showChart), userInfo: nil, repeats: false)
+        var timer = NSTimer.scheduledTimerWithTimeInterval(0.25, target: self, selector: #selector(ChartViewController.showChart), userInfo: nil, repeats: false)
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -144,7 +167,7 @@ class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineCh
     
     func lineChartView(lineChartView: JBLineChartView!, colorForLineAtLineIndex lineIndex: UInt) -> UIColor! {
         if (lineIndex == 0) {
-            return UIColor.lightGrayColor()
+            return UIColor.greenColor()
         }
 //        else if (lineIndex == 1) {
 //            return UIColor.whiteColor()
@@ -182,10 +205,6 @@ class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineCh
 //            let key = chartLegend[Int(horizontalIndex)]
 //            informationLabel.text = "Weather last year on \(key): \(data)"
 //        }
-    }
-    
-    func didDeselectLineInLineChartView(lineChartView: JBLineChartView!) {
-        informationLabel.text = ""
     }
     
     func lineChartView(lineChartView: JBLineChartView!, fillColorForLineAtLineIndex lineIndex: UInt) -> UIColor! {

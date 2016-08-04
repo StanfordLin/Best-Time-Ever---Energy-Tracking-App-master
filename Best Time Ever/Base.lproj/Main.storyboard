@@ -157,70 +157,6 @@
             </objects>
             <point key="canvasLocation" x="379.5" y="303"/>
         </scene>
-        <!--Graph View Controller-->
-        <scene sceneID="QRh-qA-2rb">
-            <objects>
-                <viewController id="gcC-U0-v4b" customClass="GraphViewController" customModule="Best_Time_Ever" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="2IX-xx-Ttl"/>
-                        <viewControllerLayoutGuide type="bottom" id="8c4-ud-aLU"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="0JZ-sr-n7P">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mwb-gA-rN3">
-                                <rect key="frame" x="57" y="481" width="487" height="99"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="99" id="Jv3-Y8-02R"/>
-                                </constraints>
-                            </tableView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AHb-14-7aJ">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <items>
-                                    <navigationItem title="Results" id="NFz-2E-5hj">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="DyL-x7-lzs"/>
-                                        <barButtonItem key="rightBarButtonItem" title="Reset" id="Rt9-KP-BgB"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XmO-gQ-pNZ" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="40" y="91" width="520" height="350"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="XmO-gQ-pNZ" firstAttribute="top" secondItem="2IX-xx-Ttl" secondAttribute="bottom" constant="32" id="4cE-LJ-ga1"/>
-                            <constraint firstAttribute="bottom" secondItem="Mwb-gA-rN3" secondAttribute="bottom" constant="20" symbolic="YES" id="6rj-J1-I8j"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="XmO-gQ-pNZ" secondAttribute="trailing" constant="20" id="CAY-2p-iEf"/>
-                            <constraint firstItem="XmO-gQ-pNZ" firstAttribute="top" secondItem="AHb-14-7aJ" secondAttribute="bottom" constant="27" id="DAd-aL-tYV"/>
-                            <constraint firstItem="Mwb-gA-rN3" firstAttribute="leading" secondItem="0JZ-sr-n7P" secondAttribute="leadingMargin" constant="37" id="NoK-49-u91"/>
-                            <constraint firstItem="Mwb-gA-rN3" firstAttribute="centerX" secondItem="XmO-gQ-pNZ" secondAttribute="centerX" id="OLe-xf-Skn"/>
-                            <constraint firstItem="XmO-gQ-pNZ" firstAttribute="leading" secondItem="0JZ-sr-n7P" secondAttribute="leadingMargin" constant="20" id="Tir-Rw-CQ3"/>
-                            <constraint firstItem="AHb-14-7aJ" firstAttribute="top" secondItem="2IX-xx-Ttl" secondAttribute="bottom" id="XCr-ZA-mL6"/>
-                            <constraint firstItem="Mwb-gA-rN3" firstAttribute="top" secondItem="XmO-gQ-pNZ" secondAttribute="bottom" constant="40" id="dfu-Cq-gp1"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="AHb-14-7aJ" secondAttribute="trailing" constant="-20" id="eX0-qU-xrM"/>
-                            <constraint firstItem="AHb-14-7aJ" firstAttribute="top" secondItem="2IX-xx-Ttl" secondAttribute="bottom" constant="10" id="fkR-59-5wL"/>
-                            <constraint firstItem="AHb-14-7aJ" firstAttribute="leading" secondItem="0JZ-sr-n7P" secondAttribute="leadingMargin" constant="-20" id="gii-kt-PEh"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="fkR-59-5wL"/>
-                                <exclude reference="4cE-LJ-ga1"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <connections>
-                        <outlet property="lineChartView" destination="XmO-gQ-pNZ" id="4te-nz-Nt6"/>
-                        <outlet property="tableView" destination="Mwb-gA-rN3" id="KMa-dQ-twZ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="L14-c9-FxH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1171" y="920"/>
-        </scene>
         <!--Chart View Controller-->
         <scene sceneID="Ry3-jm-0vp">
             <objects>
@@ -292,16 +228,16 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="SUO-ro-fuE" kind="unwind" unwindAction="unwindResetButton:" id="aNC-fN-07X"/>
+                                    <action selector="resetAlertConfirmation:" destination="MZT-b9-YMw" eventType="touchUpInside" id="LDh-Ou-hjg"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TESTTTTTT" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMt-Ov-71J">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap the graph!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMt-Ov-71J">
                                 <rect key="frame" x="20" y="350" width="560" height="81"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="MQn-rA-8vp"/>
                                     <constraint firstAttribute="height" constant="130" id="z2H-zz-JwI"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="77"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="47"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
@@ -382,12 +318,13 @@
                         <outlet property="informationLabel" destination="gMt-Ov-71J" id="abU-SP-4xr"/>
                         <outlet property="lineChart" destination="yt4-Rn-MHQ" id="UPl-TC-nwb"/>
                         <outlet property="resetButton" destination="HPx-J5-1av" id="QmI-R6-xhc"/>
+                        <segue destination="SUO-ro-fuE" kind="unwind" identifier="unwindResetButtonToViewController" unwindAction="unwindResetButton:" id="4J2-gP-L7D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F0k-TM-i9W" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="SUO-ro-fuE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1986" y="672.75"/>
+            <point key="canvasLocation" x="876" y="303"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
