@@ -233,15 +233,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TESTTTTTT" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMt-Ov-71J">
-                                <rect key="frame" x="20" y="350" width="560" height="81"/>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="61"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="350" width="360" height="140"/>
-                                </variation>
-                            </label>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yt4-Rn-MHQ" customClass="JBLineChartView">
                                 <rect key="frame" x="20" y="96" width="340" height="241"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -300,7 +291,32 @@
                                         <include reference="zC7-Qs-TtB"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <segue destination="SUO-ro-fuE" kind="unwind" unwindAction="unwindResetButton:" id="aNC-fN-07X"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TESTTTTTT" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMt-Ov-71J">
+                                <rect key="frame" x="20" y="350" width="560" height="81"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="MQn-rA-8vp"/>
+                                    <constraint firstAttribute="height" constant="130" id="z2H-zz-JwI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="77"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="MQn-rA-8vp"/>
+                                        <exclude reference="z2H-zz-JwI"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="MQn-rA-8vp"/>
+                                        <include reference="z2H-zz-JwI"/>
+                                    </mask>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -308,8 +324,12 @@
                             <constraint firstItem="yt4-Rn-MHQ" firstAttribute="trailing" secondItem="wpF-kz-xh2" secondAttribute="trailingMargin" id="98N-dZ-e7W"/>
                             <constraint firstItem="yt4-Rn-MHQ" firstAttribute="top" secondItem="g7a-hG-Red" secondAttribute="bottom" constant="40" id="CrK-Ag-YoG"/>
                             <constraint firstItem="g7a-hG-Red" firstAttribute="leading" secondItem="wpF-kz-xh2" secondAttribute="leadingMargin" id="Il5-N0-BAZ"/>
+                            <constraint firstItem="gMt-Ov-71J" firstAttribute="trailing" secondItem="wpF-kz-xh2" secondAttribute="trailingMargin" id="KLp-OZ-8Y0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="g7a-hG-Red" secondAttribute="trailing" constant="290" id="PfL-nU-Bbi"/>
+                            <constraint firstItem="gMt-Ov-71J" firstAttribute="top" secondItem="yt4-Rn-MHQ" secondAttribute="bottom" constant="15" id="Zpf-Ah-MCZ"/>
                             <constraint firstItem="HPx-J5-1av" firstAttribute="trailing" secondItem="wpF-kz-xh2" secondAttribute="trailingMargin" id="f6S-xk-a6U"/>
+                            <constraint firstItem="yt4-Rn-MHQ" firstAttribute="top" secondItem="HPx-J5-1av" secondAttribute="bottom" constant="40" id="hFw-d0-5wZ"/>
+                            <constraint firstItem="gMt-Ov-71J" firstAttribute="leading" secondItem="wpF-kz-xh2" secondAttribute="leadingMargin" id="owy-yY-j6r"/>
                             <constraint firstItem="g7a-hG-Red" firstAttribute="leading" secondItem="wpF-kz-xh2" secondAttribute="leadingMargin" id="p4I-y0-Gln"/>
                             <constraint firstItem="g7a-hG-Red" firstAttribute="top" secondItem="qXZ-WA-9Sw" secondAttribute="bottom" constant="8" id="pEP-Em-r3O"/>
                             <constraint firstItem="yt4-Rn-MHQ" firstAttribute="leading" secondItem="wpF-kz-xh2" secondAttribute="leadingMargin" id="w2g-Dy-63K"/>
@@ -329,8 +349,12 @@
                                 <exclude reference="0mA-Oj-cKp"/>
                                 <exclude reference="98N-dZ-e7W"/>
                                 <exclude reference="CrK-Ag-YoG"/>
+                                <exclude reference="hFw-d0-5wZ"/>
                                 <exclude reference="f6S-xk-a6U"/>
                                 <exclude reference="wfM-TU-iSt"/>
+                                <exclude reference="KLp-OZ-8Y0"/>
+                                <exclude reference="Zpf-Ah-MCZ"/>
+                                <exclude reference="owy-yY-j6r"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -344,8 +368,12 @@
                                 <include reference="pEP-Em-r3O"/>
                                 <exclude reference="yqT-dd-nRr"/>
                                 <exclude reference="CrK-Ag-YoG"/>
+                                <include reference="hFw-d0-5wZ"/>
                                 <include reference="f6S-xk-a6U"/>
                                 <include reference="wfM-TU-iSt"/>
+                                <include reference="KLp-OZ-8Y0"/>
+                                <include reference="Zpf-Ah-MCZ"/>
+                                <include reference="owy-yY-j6r"/>
                             </mask>
                         </variation>
                     </view>
@@ -353,9 +381,11 @@
                         <outlet property="backButton" destination="g7a-hG-Red" id="Mpb-8c-4Xo"/>
                         <outlet property="informationLabel" destination="gMt-Ov-71J" id="abU-SP-4xr"/>
                         <outlet property="lineChart" destination="yt4-Rn-MHQ" id="UPl-TC-nwb"/>
+                        <outlet property="resetButton" destination="HPx-J5-1av" id="QmI-R6-xhc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F0k-TM-i9W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="SUO-ro-fuE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1986" y="672.75"/>
         </scene>

@@ -12,6 +12,7 @@ import JBChartView
 class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineChartViewDelegate {
     
     @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var lineChart: JBLineChartView!
     @IBOutlet weak var informationLabel: UILabel!
     
@@ -30,6 +31,7 @@ class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineCh
         // Do any additional setup after loading the view, typically from a nib.
         
         backButton.layer.cornerRadius = 7
+        resetButton.layer.cornerRadius = 7
         
         print("User defaults is:\(userDefaults.valueForKey("mood") as! [Double])")
         

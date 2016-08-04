@@ -13,11 +13,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var picker: UIPickerView!
     
     @IBAction func unwindResetButton(segue: UIStoryboardSegue) {
-        let graphViewController = segue.sourceViewController as? GraphViewController
+        let chartViewController = segue.sourceViewController as? ChartViewController
         
-        graphViewController!.mood = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-        graphViewController!.userDefaults.setObject(graphViewController!.mood, forKey: "mood")
-        graphViewController!.userDefaults.synchronize()
+        chartViewController!.chartData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        chartViewController!.userDefaults.setObject(chartViewController!.chartData, forKey: "mood")
+        chartViewController!.userDefaults.synchronize()
     }
     
     let userDefaults = NSUserDefaults.standardUserDefaults()
