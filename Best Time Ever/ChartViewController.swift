@@ -11,11 +11,14 @@ import JBChartView
 
 class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineChartViewDelegate {
     
+    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var lineChart: JBLineChartView!
     @IBOutlet weak var informationLabel: UILabel!
     
     var chartLegend = ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"]
     var chartData = [0, 5, 0, 0, 0, 4, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+    let userDefaults = NSUserDefaults.standardUserDefaults()
 
 //    --------------------------------------------------------------
 //var lastYearChartData = [75, 88, 79, 95, 72, 55, 90]
@@ -25,6 +28,14 @@ class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineCh
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        backButton.layer.cornerRadius = 7
+        
+        print("User defaults is:\(userDefaults.valueForKey("mood") as! [Double])")
+        
+        chartData = userDefaults.valueForKey("mood") as! [Int]
+        userDefaults.synchronize()
+        print("Current mood is \(chartData)")
         
         view.backgroundColor = UIColor.darkGrayColor()
         
@@ -162,7 +173,7 @@ class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineCh
         if (lineIndex == 0) {
             let data = chartData[Int(horizontalIndex)]
             let key = chartLegend[Int(horizontalIndex)]
-            informationLabel.text = "Energy level at: \(key) is \(data)"
+            informationLabel.text = "🕒 \(key) \n ⚡: \(data)"
         }
 //        else if (lineIndex == 1) {
 //            let data = lastYearChartData[Int(horizontalIndex)]
