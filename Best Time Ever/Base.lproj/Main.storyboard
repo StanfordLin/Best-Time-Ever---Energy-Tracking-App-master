@@ -229,7 +229,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="Jeq-O2-ZJ5"/>
+                                    <segue destination="SUO-ro-fuE" kind="unwind" unwindAction="unwindBackButton:" id="pKm-KS-eGL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPx-J5-1av">
@@ -372,14 +372,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="2lB-bq-6Cl">
-                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="128"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="76Z-Vq-e20">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                     <items>
                                         <navigationItem title="Title" id="Pdp-6p-wpi">
-                                            <barButtonItem key="leftBarButtonItem" image="back" id="YwO-K0-OKM"/>
+                                            <barButtonItem key="leftBarButtonItem" image="back" id="YwO-K0-OKM">
+                                                <connections>
+                                                    <segue destination="Q3J-AY-wf8" kind="unwind" unwindAction="unwindBackButton:" id="ZBe-tp-d8R"/>
+                                                </connections>
+                                            </barButtonItem>
                                             <barButtonItem key="rightBarButtonItem" image="book" id="0Tm-au-pR8"/>
                                         </navigationItem>
                                     </items>
@@ -414,10 +418,10 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="listResultsTableViewCell" rowHeight="90" id="72l-dd-eMt" customClass="ListResultsTableViewCell" customModule="Best_Time_Ever">
-                                <rect key="frame" x="0.0" y="28" width="600" height="60"/>
+                                <rect key="frame" x="0.0" y="156" width="600" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="72l-dd-eMt" id="ylQ-Vo-jEC">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wzb-sM-8ob">
@@ -455,7 +459,7 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="storedFeelNumberLabel" destination="Wzb-sM-8ob" id="fMb-K7-HFp"/>
+                                    <outlet property="storedFeelNumberLabel" destination="Wzb-sM-8ob" id="9jI-v0-yqV"/>
                                     <outlet property="storedTimeLabel" destination="DT1-su-lxN" id="n5g-qz-Xj8"/>
                                 </connections>
                             </tableViewCell>
@@ -467,6 +471,7 @@
                     </tableView>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hbH-DS-2b5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Q3J-AY-wf8" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1986" y="283.5"/>
         </scene>

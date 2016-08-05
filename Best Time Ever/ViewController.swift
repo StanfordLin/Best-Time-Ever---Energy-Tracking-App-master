@@ -20,6 +20,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         chartViewController!.userDefaults.synchronize()
     }
     
+    @IBAction func unwindBackButton(segue: UIStoryboardSegue) {
+    }
+    
     let userDefaults = NSUserDefaults.standardUserDefaults()
     
     
