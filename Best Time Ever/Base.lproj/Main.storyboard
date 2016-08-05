@@ -379,7 +379,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                     <items>
                                         <navigationItem title="Title" id="Pdp-6p-wpi">
-                                            <barButtonItem key="rightBarButtonItem" title="Item" id="CeX-XZ-Czt"/>
+                                            <barButtonItem key="rightBarButtonItem" image="book" id="0Tm-au-pR8"/>
                                         </navigationItem>
                                     </items>
                                 </navigationBar>
@@ -432,6 +432,9 @@
             <point key="canvasLocation" x="1986" y="283.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="book" width="22" height="22"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="xxZ-sc-P4o"/>
     </inferredMetricsTieBreakers>
