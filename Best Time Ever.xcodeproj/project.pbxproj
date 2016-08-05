@@ -10,6 +10,7 @@
 		72ECE7DAA3CBFFDDAEDEE4BF /* Pods_Best_Time_Ever.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4E261E210696F79D43C7829 /* Pods_Best_Time_Ever.framework */; };
 		E60764411D482F27008BEBFC /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60764401D482F27008BEBFC /* UserDefaultsHelper.swift */; };
 		E6350A241D54323B00C65073 /* ListResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6350A231D54323B00C65073 /* ListResultsViewController.swift */; };
+		E67D154B1D54884000E96FAA /* ListResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67D154A1D54884000E96FAA /* ListResultsTableViewCell.swift */; };
 		E6A0A11B1D4AC51300916E8C /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A0A11A1D4AC51300916E8C /* DataManager.swift */; };
 		E6BE1D991D3801990088742B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BE1D981D3801990088742B /* AppDelegate.swift */; };
 		E6BE1D9B1D3801990088742B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BE1D9A1D3801990088742B /* ViewController.swift */; };
@@ -38,6 +39,7 @@
 		E576E2EB2AA0F7DDE75A35F5 /* Pods-Best Time Ever.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Best Time Ever.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Best Time Ever/Pods-Best Time Ever.debug.xcconfig"; sourceTree = "<group>"; };
 		E60764401D482F27008BEBFC /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		E6350A231D54323B00C65073 /* ListResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListResultsViewController.swift; sourceTree = "<group>"; };
+		E67D154A1D54884000E96FAA /* ListResultsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListResultsTableViewCell.swift; sourceTree = "<group>"; };
 		E6A0A11A1D4AC51300916E8C /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		E6BE1D951D3801980088742B /* Best Time Ever.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Best Time Ever.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6BE1D981D3801990088742B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E67D15481D5487CF00E96FAA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E6BE1D9A1D3801990088742B /* ViewController.swift */,
+				E6C027381D525A5500C16F04 /* ChartViewController.swift */,
+				E6350A231D54323B00C65073 /* ListResultsViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		E67D15491D54880000E96FAA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E67D154A1D54884000E96FAA /* ListResultsTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		E6BE1D8C1D3801980088742B = {
 			isa = PBXGroup;
 			children = (
@@ -99,10 +119,9 @@
 		E6BE1D971D3801990088742B /* Best Time Ever */ = {
 			isa = PBXGroup;
 			children = (
+				E67D15481D5487CF00E96FAA /* Controllers */,
+				E67D15491D54880000E96FAA /* Views */,
 				E6BE1D981D3801990088742B /* AppDelegate.swift */,
-				E6BE1D9A1D3801990088742B /* ViewController.swift */,
-				E6C027381D525A5500C16F04 /* ChartViewController.swift */,
-				E6350A231D54323B00C65073 /* ListResultsViewController.swift */,
 				E6BE1D9C1D3801990088742B /* Main.storyboard */,
 				E6BE1D9F1D3801990088742B /* Assets.xcassets */,
 				E6BE1DA11D3801990088742B /* LaunchScreen.storyboard */,
@@ -240,6 +259,7 @@
 				E60764411D482F27008BEBFC /* UserDefaultsHelper.swift in Sources */,
 				E6BE1D9B1D3801990088742B /* ViewController.swift in Sources */,
 				E6350A241D54323B00C65073 /* ListResultsViewController.swift in Sources */,
+				E67D154B1D54884000E96FAA /* ListResultsTableViewCell.swift in Sources */,
 				E6BE1D991D3801990088742B /* AppDelegate.swift in Sources */,
 				E6C027391D525A5500C16F04 /* ChartViewController.swift in Sources */,
 			);

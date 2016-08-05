@@ -16,13 +16,13 @@ class ListResultsViewController: UITableViewController {
     
     // 2
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        // 3
-        let cell = tableView.dequeueReusableCellWithIdentifier("listResultsTableViewCell", forIndexPath: indexPath)
+        // 1
+        let cell = tableView.dequeueReusableCellWithIdentifier("listResultsTableViewCell", forIndexPath: indexPath) as! ListResultsTableViewCell
         
-        // 4
-        cell.textLabel?.text = "Yay - it's working!"
+        // 2
+        cell.storedFeelNumberLabel.text = "1"
+        cell.storedTimeLabel.text = "11:00"
         
-        // 5
         return cell
     }
 
