@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		72ECE7DAA3CBFFDDAEDEE4BF /* Pods_Best_Time_Ever.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4E261E210696F79D43C7829 /* Pods_Best_Time_Ever.framework */; };
 		E60764411D482F27008BEBFC /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60764401D482F27008BEBFC /* UserDefaultsHelper.swift */; };
-		E656B4001D38561D007B6F31 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E656B3FF1D38561D007B6F31 /* GraphViewController.swift */; };
+		E6350A241D54323B00C65073 /* ListResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6350A231D54323B00C65073 /* ListResultsViewController.swift */; };
 		E6A0A11B1D4AC51300916E8C /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A0A11A1D4AC51300916E8C /* DataManager.swift */; };
 		E6BE1D991D3801990088742B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BE1D981D3801990088742B /* AppDelegate.swift */; };
 		E6BE1D9B1D3801990088742B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BE1D9A1D3801990088742B /* ViewController.swift */; };
@@ -37,7 +37,7 @@
 		E4E261E210696F79D43C7829 /* Pods_Best_Time_Ever.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Best_Time_Ever.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E576E2EB2AA0F7DDE75A35F5 /* Pods-Best Time Ever.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Best Time Ever.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Best Time Ever/Pods-Best Time Ever.debug.xcconfig"; sourceTree = "<group>"; };
 		E60764401D482F27008BEBFC /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
-		E656B3FF1D38561D007B6F31 /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
+		E6350A231D54323B00C65073 /* ListResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListResultsViewController.swift; sourceTree = "<group>"; };
 		E6A0A11A1D4AC51300916E8C /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		E6BE1D951D3801980088742B /* Best Time Ever.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Best Time Ever.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6BE1D981D3801990088742B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,8 +101,8 @@
 			children = (
 				E6BE1D981D3801990088742B /* AppDelegate.swift */,
 				E6BE1D9A1D3801990088742B /* ViewController.swift */,
-				E656B3FF1D38561D007B6F31 /* GraphViewController.swift */,
 				E6C027381D525A5500C16F04 /* ChartViewController.swift */,
+				E6350A231D54323B00C65073 /* ListResultsViewController.swift */,
 				E6BE1D9C1D3801990088742B /* Main.storyboard */,
 				E6BE1D9F1D3801990088742B /* Assets.xcassets */,
 				E6BE1DA11D3801990088742B /* LaunchScreen.storyboard */,
@@ -236,10 +236,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E656B4001D38561D007B6F31 /* GraphViewController.swift in Sources */,
 				E6A0A11B1D4AC51300916E8C /* DataManager.swift in Sources */,
 				E60764411D482F27008BEBFC /* UserDefaultsHelper.swift in Sources */,
 				E6BE1D9B1D3801990088742B /* ViewController.swift in Sources */,
+				E6350A241D54323B00C65073 /* ListResultsViewController.swift in Sources */,
 				E6BE1D991D3801990088742B /* AppDelegate.swift in Sources */,
 				E6C027391D525A5500C16F04 /* ChartViewController.swift in Sources */,
 			);

@@ -1,0 +1,27 @@
+	To-Do List
+
+	Feature
+	1. Results tab
+	2. Table view shows each hour, has the feeling on the left hand side (color coded
+			-only displays inputted values -if the value > 0
+			-sorts by time 0:00 first, 23:00 last
+			-
+
+
+	Day Table View
+	*** If you click any part of the table view, it will open a new view controller
+		[]-Small graph
+		[]	-shows the stored values of that day
+		[] -Day label
+		[] -Date 
+
+	Hour Table View
+		[] -Nav bar
+		[] -Back
+		*** Future implementation[] -Save
+		[] -Display day and time
+		[] -Display the feeling in a circle w/ color
+
+
+[]
+[] 
