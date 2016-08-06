@@ -10,10 +10,13 @@ import UIKit
 
 class ListResultsViewController: UITableViewController {
     
+    var alreadyRan: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        
+        alreadyRan = false
         
     }
     
@@ -27,21 +30,37 @@ class ListResultsViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        
-        let feels = userDefaults.valueForKey("mood") as! [Int]
-        
-        print(feels)
 
-        for i in 0..<feels.count {
-            
-            if feels[i] > 0 {
-                print("feels[noZeroes]: \(feels[i]), feeeeeeels: \(feels)")
-            }
-        }
+//        print("run")
+//        return 0
         
-        return feels.count
+//        if !alreadyRan {
+//            
+            let userDefaults = NSUserDefaults.standardUserDefaults()
+            
+            let feels = userDefaults.valueForKey("mood") as! [Int]
+//
+//            var counter: Int = 0
+//            
+//            print(feels)
+//            
+//            for i in 0..<feels.count {
+//                
+//                if feels[i] > 0 {
+//                    counter += 1
+//                    print("feels[noZeroes]: \(feels[i])")
+//                }
+//                
+//            }
+//            
+//            print("counter: \(counter)")
+//            
+//            alreadyRan = true
+//            return feels.count
+//        }
+//        else {
+            return feels.count
+//        }
     }
     
     // 2
@@ -56,16 +75,19 @@ class ListResultsViewController: UITableViewController {
         // 1
         let cell = tableView.dequeueReusableCellWithIdentifier("listResultsTableViewCell", forIndexPath: indexPath) as! ListResultsTableViewCell
         
-        // 2
+        print("indexPath: \(indexPath.row)")
+        print("feels: \(feels[indexPath.row])")
         
-        cell.storedFeelNumberLabel.text = "\(feels[indexPath.row])"
-        cell.storedTimeLabel?.text = "\(time[indexPath.row])"
+        // 2
+        if (feels[indexPath.row] > 0) {
+            cell.storedFeelNumberLabel.text = "\(feels[indexPath.row])"
+            cell.storedTimeLabel?.text = "\(time[indexPath.row])"
+        }
         
         //        cell.storedTimeLabel.layer.cornerRadius = 8 WHY DOESNT IT WORK
         
         return cell
     }
-    
     
     
 }
