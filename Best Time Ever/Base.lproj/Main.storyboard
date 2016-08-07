@@ -22,6 +22,22 @@
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4LY-Pw-vdg">
                                 <rect key="frame" x="20" y="140" width="560" height="216"/>
                                 <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="Jxs-i1-vHK"/>
+                                    <constraint firstAttribute="width" constant="360" id="OqQ-Xq-hLr"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Jxs-i1-vHK"/>
+                                        <exclude reference="OqQ-Xq-hLr"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Jxs-i1-vHK"/>
+                                        <include reference="OqQ-Xq-hLr"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="aof-8O-5vd"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="y2d-hm-WwI"/>
@@ -105,8 +121,7 @@
                                         <exclude reference="Q4I-fA-3Sm"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="101" y="538" width="200" height="70"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="5fA-yb-CZP"/>
                                         <include reference="Gmx-mK-Upa"/>
