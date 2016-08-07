@@ -130,7 +130,6 @@
                                 </variation>
                                 <connections>
                                     <action selector="saveData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2DG-KW-IPI"/>
-                                    <segue destination="MZT-b9-YMw" kind="show" identifier="saveDataSegue" id="xxZ-sc-P4o"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -515,7 +514,4 @@
         <image name="back" width="13" height="22"/>
         <image name="book" width="22" height="22"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="xxZ-sc-P4o"/>
-    </inferredMetricsTieBreakers>
 </document>

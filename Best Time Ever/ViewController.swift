@@ -27,16 +27,74 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     
     @IBAction func saveData(sender: AnyObject) {
-        
-        func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
             
             let selectedTime = data[0][picker.selectedRowInComponent(0)]
             
             let selectedFeels = data[1][picker.selectedRowInComponent(1)]
             
             print("Variables are saved, it is \(selectedTime) and \(selectedFeels)")
-            print("---------------------------------------------------------------------------------------------------")
-        }
+        
+            
+            
+            
+            if userDefaults.objectForKey("mood") as? [Int] == nil {
+                
+                let chartViewController: ChartViewController = ChartViewController()
+                
+                //       When a time is selected, assign it as selectedInThePickerTimesComponent
+                let selectedInThePickerTimesComponent = picker.selectedRowInComponent(0)// todo
+                
+                //        When feeling is selected, assign it to feelValue
+                let feelValueIndex = picker.selectedRowInComponent(1)
+                
+                //        have the integers of feelingPickerData be retrieved according to what is selected
+                let feelValue = Int(feelingPickerData[feelValueIndex])
+                
+                //        Have a range selected?!
+                let range: Range<Int> = selectedInThePickerTimesComponent...selectedInThePickerTimesComponent
+                
+                
+                //        replace the range with the feel Value?!
+                chartViewController.chartData.replaceRange(range, with: [feelValue])
+                
+                let userDefaults = NSUserDefaults.standardUserDefaults()
+                userDefaults.setObject(chartViewController.chartData, forKey: "mood")
+                userDefaults.synchronize()
+                
+                
+                
+            } else if userDefaults.objectForKey("mood") as? [Int] != nil {
+                
+                /* RETRIEVE THE DATA from NSUserDefaults*/
+                
+                userDefaults.synchronize()
+                var savedMood = userDefaults.objectForKey("mood") as? [Int]
+                
+                
+                
+                /* Change/update the Data according to the UIPickerView*/
+                //      When time is selected, assign it timeValue
+                let timeValue = picker.selectedRowInComponent(0)
+                
+                //      When feeling is selected, assign it to feelValue
+                let feelValue = picker.selectedRowInComponent(1)
+                
+                //        have the integers of feelingPickerData be retrieved according to what is selected
+                let savedFeelValue = Int(feelingPickerData[feelValue])
+                
+                
+                
+                savedMood?[timeValue] = savedFeelValue // "something"
+                
+                
+                /**/
+                userDefaults.setObject(savedMood, forKey: "mood")
+                userDefaults.synchronize()
+                
+            }
+
+            
+        
         
     }
     
@@ -82,62 +140,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "saveDataSegue"{
         
-            if userDefaults.objectForKey("mood") as? [Int] == nil {
-                
-                let chartViewController: ChartViewController = segue.destinationViewController as! ChartViewController
-
-                //       When a time is selected, assign it as selectedInThePickerTimesComponent
-                let selectedInThePickerTimesComponent = picker.selectedRowInComponent(0)// todo
-
-                //        When feeling is selected, assign it to feelValue
-                let feelValueIndex = picker.selectedRowInComponent(1)
-
-                //        have the integers of feelingPickerData be retrieved according to what is selected
-                let feelValue = Int(feelingPickerData[feelValueIndex])
-
-                //        Have a range selected?!
-                let range: Range<Int> = selectedInThePickerTimesComponent...selectedInThePickerTimesComponent
-
-
-                //        replace the range with the feel Value?!
-                chartViewController.chartData.replaceRange(range, with: [feelValue])
-
-                let userDefaults = NSUserDefaults.standardUserDefaults()
-                userDefaults.setObject(chartViewController.chartData, forKey: "mood")
-                userDefaults.synchronize()
-
-                
-                
-            } else if userDefaults.objectForKey("mood") as? [Int] != nil {
-                
-                /* RETRIEVE THE DATA from NSUserDefaults*/
-                
-                userDefaults.synchronize()
-                var savedMood = userDefaults.objectForKey("mood") as? [Int]
-                
-                
-                
-                /* Change/update the Data according to the UIPickerView*/
-                //      When time is selected, assign it timeValue
-                let timeValue = picker.selectedRowInComponent(0)
-                
-                //      When feeling is selected, assign it to feelValue
-                let feelValue = picker.selectedRowInComponent(1)
-                
-                //        have the integers of feelingPickerData be retrieved according to what is selected
-                let savedFeelValue = Int(feelingPickerData[feelValue])
-                
-                
-                
-                savedMood?[timeValue] = savedFeelValue // "something"
-                
-                
-                /**/
-                userDefaults.setObject(savedMood, forKey: "mood")
-                userDefaults.synchronize()
-
-            }
-        }
+                    }
         
     }
     
