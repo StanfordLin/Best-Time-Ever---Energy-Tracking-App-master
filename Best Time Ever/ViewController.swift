@@ -10,22 +10,32 @@ import UIKit
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+    
+    var savedTimeDictionary: [String:Int] = [:]
+    
+    
+    @IBOutlet weak var pickerViewLabel: UIPickerView!
     @IBOutlet weak var picker: UIPickerView!
     
     //Resets the values for the graph
     @IBAction func unwindResetButton(segue: UIStoryboardSegue) {
         let chartViewController = segue.sourceViewController as? ChartViewController
+        
         chartViewController!.chartData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        
+        savedTimeDictionary = [:]
+        
         chartViewController!.userDefaults.setObject(chartViewController!.chartData, forKey: "mood")
+        
         chartViewController!.userDefaults.synchronize()
     }
     
     @IBAction func unwindBackButton(segue: UIStoryboardSegue) {
     }
     
-    let userDefaults = NSUserDefaults.standardUserDefaults()
-    
-    
+    //Retrieves the data
+
     @IBAction func saveData(sender: AnyObject) {
             
             let selectedTime = data[0][picker.selectedRowInComponent(0)]
@@ -70,7 +80,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 userDefaults.synchronize()
                 var savedMood = userDefaults.objectForKey("mood") as? [Int]
                 
-                
+                var savedTimeDictionaryValue = userDefaults.objectForKey("savedTimeDictionary") as! [String:Int]
                 
                 /* Change/update the Data according to the UIPickerView*/
                 //      When time is selected, assign it timeValue
@@ -82,6 +92,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 //        have the integers of feelingPickerData be retrieved according to what is selected
                 let savedFeelValue = Int(feelingPickerData[feelValue])
                 
+                savedTimeDictionaryValue = [String(timeValue):Int((feelValue + 1))]
                 
                 
                 savedMood?[timeValue] = savedFeelValue // "something"
@@ -89,11 +100,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 
                 /**/
                 userDefaults.setObject(savedMood, forKey: "mood")
+                userDefaults.setObject(savedTimeDictionaryValue, forKey: "savedTimeDictionary")
                 userDefaults.synchronize()
+                
+                print("savedTimeDictionaryValue: \(savedTimeDictionaryValue)")
                 
             }
 
-            
+        
         
         
     }
@@ -111,7 +125,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        picker.setValue(UIColor.whiteColor(), forKey: "textColor")
+
     }
     
     override func didReceiveMemoryWarning() {

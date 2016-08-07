@@ -16,10 +16,10 @@
 		[] -Date 
 
 	Hour Table View
-		[] -Nav bar
-		[] -Back
-		*** Future implementation[] -Save
-		[] -Display day and time
+		[x] -Nav bar
+		[x] -Back
+		*** Future implementation[] -Save/export data
+		[] -Display time
 		[] -Display the feeling in a circle w/ color
 
 
