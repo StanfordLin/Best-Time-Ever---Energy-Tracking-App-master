@@ -11,11 +11,37 @@ import UIKit
 class ListResultsViewController: UITableViewController {
     
     var alreadyRan: Bool = false
+    var feelsArrayNoZeroes: [Int] = []
+    
+    var feels: [Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let userDefaults = NSUserDefaults.standardUserDefaults()
         
+        feels = userDefaults.valueForKey("mood") as! [Int]
+        
+        feelsArrayNoZeroes = feels.filter() {$0 != 0}
+        
+//        Filter a dictionary
+        //        let savedFeels = userDefaults.valueForKey("savedTimeDictionary") as! [String: Int]
+        //        self.feelsArrayNoZeroes = savedFeels.filter() {$0 != 0}
+        
+        
+        
+        
+//        self.feelsArrayNoZeroes = feels.filter() {$0 != 0}
+//                for num in feels {
+//        
+//        
+//                    let timeEvent = TimeEvent()
+//                    timeEvent.time = time
+//                    timeEvent.mood = feelsArrayNoZeroes
+//        
+//                    self.chartData.append(timeEvent)
+//        
+//                    x += 1
         
         alreadyRan = false
         
@@ -31,11 +57,9 @@ class ListResultsViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let userDefaults = NSUserDefaults.standardUserDefaults()
         
-        let feels = userDefaults.valueForKey("mood") as! [Int]
+        
         let feelsArrayNoZeroes = feels.filter() {$0 != 0}
-        
         
 
             return feelsArrayNoZeroes.count
@@ -43,13 +67,6 @@ class ListResultsViewController: UITableViewController {
     
     // 2
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        
-        let feels = userDefaults.valueForKey("mood") as! [Int]
-//                                                                                              let time = userDefaults.valueForKey("savedTimeDictionary") as! [String:Int]
-        
-        let feelsArrayNoZeroes = feels.filter() {$0 != 0}
         
         // 1
         let cell = tableView.dequeueReusableCellWithIdentifier("listResultsTableViewCell", forIndexPath: indexPath) as! ListResultsTableViewCell
@@ -69,8 +86,8 @@ class ListResultsViewController: UITableViewController {
 //            }
 //
 //        } else {
-            cell.storedFeelNumberLabel.text = "\(feelsArrayNoZeroes[indexPath.row])"
 //                                                                                                            cell.storedFeelNumberLabel.layer.cornerRadius = 7
+            cell.storedFeelNumberLabel.text = "\(feelsArrayNoZeroes[indexPath.row])"
             cell.storedFeelNumberLabel.backgroundColor = UIColor(red: 114 / 255,
                                                                  green: 114 / 255,
                                                                  blue: 114 / 255,

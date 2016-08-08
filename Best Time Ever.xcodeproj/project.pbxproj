@@ -12,6 +12,7 @@
 		E6350A241D54323B00C65073 /* ListResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6350A231D54323B00C65073 /* ListResultsViewController.swift */; };
 		E67D154B1D54884000E96FAA /* ListResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67D154A1D54884000E96FAA /* ListResultsTableViewCell.swift */; };
 		E6A0A11B1D4AC51300916E8C /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A0A11A1D4AC51300916E8C /* DataManager.swift */; };
+		E6A5490E1D590271009F3A16 /* TimeEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A5490D1D590271009F3A16 /* TimeEvent.swift */; };
 		E6BE1D991D3801990088742B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BE1D981D3801990088742B /* AppDelegate.swift */; };
 		E6BE1D9B1D3801990088742B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BE1D9A1D3801990088742B /* ViewController.swift */; };
 		E6BE1D9E1D3801990088742B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6BE1D9C1D3801990088742B /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 		E6350A231D54323B00C65073 /* ListResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListResultsViewController.swift; sourceTree = "<group>"; };
 		E67D154A1D54884000E96FAA /* ListResultsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListResultsTableViewCell.swift; sourceTree = "<group>"; };
 		E6A0A11A1D4AC51300916E8C /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		E6A5490D1D590271009F3A16 /* TimeEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeEvent.swift; sourceTree = "<group>"; };
 		E6BE1D951D3801980088742B /* Best Time Ever.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Best Time Ever.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6BE1D981D3801990088742B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6BE1D9A1D3801990088742B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				E6BE1D9A1D3801990088742B /* ViewController.swift */,
 				E6C027381D525A5500C16F04 /* ChartViewController.swift */,
 				E6350A231D54323B00C65073 /* ListResultsViewController.swift */,
+				E6A5490D1D590271009F3A16 /* TimeEvent.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				E6A0A11B1D4AC51300916E8C /* DataManager.swift in Sources */,
 				E60764411D482F27008BEBFC /* UserDefaultsHelper.swift in Sources */,
 				E6BE1D9B1D3801990088742B /* ViewController.swift in Sources */,
+				E6A5490E1D590271009F3A16 /* TimeEvent.swift in Sources */,
 				E6350A241D54323B00C65073 /* ListResultsViewController.swift in Sources */,
 				E67D154B1D54884000E96FAA /* ListResultsTableViewCell.swift in Sources */,
 				E6BE1D991D3801990088742B /* AppDelegate.swift in Sources */,

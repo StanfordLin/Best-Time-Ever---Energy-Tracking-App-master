@@ -84,7 +84,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 userDefaults.synchronize()
                 var savedMood = userDefaults.objectForKey("mood") as? [Int]
                 
-                var savedTimeDictionaryValue = userDefaults.objectForKey("savedTimeDictionary") as! [String:Int]
+                var savedTimeArrayDictionaryValue = userDefaults.objectForKey("savedTimeDictionary") as! [String:Int]
                 
                 /* Change/update the Data according to the UIPickerView*/
                 //      When time is selected, assign it timeValue
@@ -96,7 +96,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 //        have the integers of feelingPickerData be retrieved according to what is selected
                 let savedFeelValue = Int(feelingPickerData[feelValue])
                 
-                savedTimeDictionaryValue = [String(timeValue):Int((feelValue + 1))]
+                savedTimeArrayDictionaryValue = [String(timeValue):Int((feelValue + 1))]
                 
                 
                 savedMood?[timeValue] = savedFeelValue // "something"
@@ -104,10 +104,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 
                 /**/
                 userDefaults.setObject(savedMood, forKey: "mood")
-                userDefaults.setObject(savedTimeDictionaryValue, forKey: "savedTimeDictionary")
+                userDefaults.setObject(savedTimeArrayDictionaryValue, forKey: "savedTimeDictionary")
                 userDefaults.synchronize()
                 
-                print("savedTimeDictionaryValue: \(savedTimeDictionaryValue)")
+                print("savedTimeDictionaryValue: \(savedTimeArrayDictionaryValue)")
                 
                 variableSavedIndicator.text = "🕒: \(selectedTime) \n ⚡: \(selectedFeels) \n Saved"
             }
@@ -135,6 +135,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         saveData.layer.cornerRadius = 7
         viewGraph.layer.cornerRadius = 7
         variableSavedIndicator.hidden = true
+        
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
