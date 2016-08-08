@@ -15,10 +15,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var savedTimeDictionary: [String:Int] = [:]
     
     
+    @IBOutlet weak var variableSavedIndicator: UILabel!
     @IBOutlet weak var pickerViewLabel: UIPickerView!
     @IBOutlet weak var picker: UIPickerView!
-    
+    @IBOutlet weak var saveData: UIButton!
+    @IBOutlet weak var viewGraph: UIButton!
+
     //Resets the values for the graph
+    
     @IBAction func unwindResetButton(segue: UIStoryboardSegue) {
         let chartViewController = segue.sourceViewController as? ChartViewController
         
@@ -42,7 +46,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             
             let selectedFeels = data[1][picker.selectedRowInComponent(1)]
             
-            print("Variables are saved, it is \(selectedTime) and \(selectedFeels)")
+            variableSavedIndicator.text = "Variables are saved, it is \(selectedTime) and \(selectedFeels)"
         
             
             
@@ -105,6 +109,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 
                 print("savedTimeDictionaryValue: \(savedTimeDictionaryValue)")
                 
+                variableSavedIndicator.text = "🕒: \(selectedTime) \n ⚡: \(selectedFeels) \n Saved"
             }
 
         
@@ -126,7 +131,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         picker.setValue(UIColor.whiteColor(), forKey: "textColor")
-
+        picker.layer.cornerRadius = 7
+        saveData.layer.cornerRadius = 7
+        viewGraph.layer.cornerRadius = 7
+        variableSavedIndicator.hidden = true
     }
     
     override func didReceiveMemoryWarning() {
