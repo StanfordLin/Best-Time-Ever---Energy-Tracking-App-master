@@ -73,12 +73,13 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="MZT-b9-YMw" kind="show" id="8Os-sw-meA"/>
+                                    <segue destination="MZT-b9-YMw" kind="show" identifier="ViewToChartViewControllerSegue" id="8Os-sw-meA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wz-L3-G8D">
                                 <rect key="frame" x="225" y="397" width="150" height="60"/>
                                 <color key="backgroundColor" red="0.30980392156862746" green="0.50196078431372548" blue="0.89411764705882357" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration" identifier="saveDataSegue"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="5fA-yb-CZP"/>
                                     <constraint firstAttribute="height" constant="70" id="Gmx-mK-Upa"/>
@@ -320,6 +321,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEx-Sf-vTw">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration" identifier="ResultsSegue"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="OAX-WP-cjy"/>
                                     <constraint firstAttribute="height" constant="70" id="SKz-jz-Xyo"/>

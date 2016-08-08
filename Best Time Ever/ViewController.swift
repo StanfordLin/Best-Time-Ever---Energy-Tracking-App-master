@@ -14,6 +14,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     var savedTimeDictionary: [String:Int] = [:]
     
+    var savedTimeArray: [TimeEvent] = []
+
     
     @IBOutlet weak var variableSavedIndicator: UILabel!
     @IBOutlet weak var pickerViewLabel: UIPickerView!
@@ -105,14 +107,28 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 /**/
                 userDefaults.setObject(savedMood, forKey: "mood")
                 userDefaults.setObject(savedTimeArrayDictionaryValue, forKey: "savedTimeDictionary")
-                userDefaults.synchronize()
                 
                 print("savedTimeDictionaryValue: \(savedTimeArrayDictionaryValue)")
                 
                 variableSavedIndicator.text = "🕒: \(selectedTime) \n ⚡: \(selectedFeels) \n Saved"
+                
+                
+                let timeEvent = TimeEvent()
+                timeEvent.time = Double(timeValue)
+                timeEvent.mood = feelValue
+                
+                self.savedTimeArray.append(timeEvent)
+                print("savedTimeArray in ViewController.swift: \(savedTimeArray.last!.time)")
+                
+                
+                userDefaults.synchronize()
+
+
+                
+                
             }
 
-        
+
         
         
     }
@@ -164,9 +180,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     //pass data to the chartViewController
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "saveDataSegue"{
         
-                    }
+            let destVC = segue.destinationViewController as? ChartViewController
+            destVC?.savedTimeArray = self.savedTimeArray
+            
+            print("savedTimeArray in ViewController segue: \(self.savedTimeArray.first)")
+                    
         
     }
     

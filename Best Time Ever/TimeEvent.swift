@@ -10,10 +10,12 @@ import Foundation
 
 class TimeEvent {
     
-    var time = ""
+    var time: Double = 00.00
     var mood: Int = 0
     
-    
+    func description() -> String {
+        return "Time: \(time) Mood: \(mood)"
+    }
     
 
 

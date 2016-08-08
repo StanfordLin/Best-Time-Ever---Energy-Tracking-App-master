@@ -12,8 +12,9 @@ class ListResultsViewController: UITableViewController {
     
     var alreadyRan: Bool = false
     var feelsArrayNoZeroes: [Int] = []
-    
     var feels: [Int] = []
+    var savedTimeArray: [TimeEvent] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,7 @@ class ListResultsViewController: UITableViewController {
         feels = userDefaults.valueForKey("mood") as! [Int]
         
         feelsArrayNoZeroes = feels.filter() {$0 != 0}
+        
         
 //        Filter a dictionary
         //        let savedFeels = userDefaults.valueForKey("savedTimeDictionary") as! [String: Int]
@@ -61,8 +63,9 @@ class ListResultsViewController: UITableViewController {
         
         let feelsArrayNoZeroes = feels.filter() {$0 != 0}
         
-
-            return feelsArrayNoZeroes.count
+        
+        print("savedTimeArray: \(savedTimeArray.last?.time)")
+        return savedTimeArray.count
     }
     
     // 2
@@ -87,7 +90,12 @@ class ListResultsViewController: UITableViewController {
 //
 //        } else {
 //                                                                                                            cell.storedFeelNumberLabel.layer.cornerRadius = 7
-            cell.storedFeelNumberLabel.text = "\(feelsArrayNoZeroes[indexPath.row])"
+//            cell.storedFeelNumberLabel.text = "\(savedTimeArray![indexPath.row])"
+        
+        let timeEvent = self.savedTimeArray[indexPath.row]
+        cell.storedFeelNumberLabel.text = "\(timeEvent.mood)"
+              cell.storedTimeLabel.text = "\(timeEvent.time)"
+
             cell.storedFeelNumberLabel.backgroundColor = UIColor(red: 114 / 255,
                                                                  green: 114 / 255,
                                                                  blue: 114 / 255,

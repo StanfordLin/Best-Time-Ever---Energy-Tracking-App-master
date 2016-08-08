@@ -11,6 +11,8 @@ import JBChartView
 
 class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineChartViewDelegate {
     
+    var savedTimeArray: [TimeEvent] = []
+    
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var lineChart: JBLineChartView!
@@ -216,6 +218,15 @@ class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineCh
         }
         
         return UIColor.clearColor()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+            let destVC = segue.destinationViewController as? ListResultsViewController
+            destVC?.savedTimeArray = self.savedTimeArray
+            
+            
+        
     }
 
 }
