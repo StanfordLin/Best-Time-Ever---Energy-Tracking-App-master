@@ -108,18 +108,16 @@
                                     <action selector="saveData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2DG-KW-IPI"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b21-wZ-jnZ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How are you feeling?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ni3-3R-9cL">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="179" y="137" width="42" height="21"/>
-                                </variation>
                             </label>
                         </subviews>
                         <constraints>
                             <constraint firstItem="4LY-Pw-vdg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="2di-cF-fS6"/>
+                            <constraint firstItem="4LY-Pw-vdg" firstAttribute="top" secondItem="Ni3-3R-9cL" secondAttribute="bottom" constant="51" id="2iZ-Pz-iCh"/>
                             <constraint firstItem="4LY-Pw-vdg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8Tc-JB-Ikd"/>
                             <constraint firstItem="1kZ-fe-6Mw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="60" id="9Jc-fH-YfS">
                                 <variation key="heightClass=regular-widthClass=compact" constant="-10"/>
@@ -127,6 +125,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ERp-DG-5lD" secondAttribute="bottom" constant="51" id="9VL-UC-T5e"/>
                             <constraint firstItem="4LY-Pw-vdg" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="BTC-1j-tgo"/>
                             <constraint firstItem="7Wz-L3-G8D" firstAttribute="trailing" secondItem="ERp-DG-5lD" secondAttribute="trailing" id="GIG-hp-RHK"/>
+                            <constraint firstItem="Ni3-3R-9cL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="HdB-Ts-OLa"/>
                             <constraint firstItem="1kZ-fe-6Mw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="316" id="JwZ-6V-804">
                                 <variation key="heightClass=regular-widthClass=compact" constant="-20"/>
                             </constraint>
@@ -136,6 +135,7 @@
                             </constraint>
                             <constraint firstItem="ERp-DG-5lD" firstAttribute="top" secondItem="7Wz-L3-G8D" secondAttribute="bottom" constant="21" id="Qsi-IP-cE8"/>
                             <constraint firstItem="4LY-Pw-vdg" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Tb2-sx-jDs"/>
+                            <constraint firstItem="Ni3-3R-9cL" firstAttribute="leading" secondItem="4LY-Pw-vdg" secondAttribute="leading" id="TwC-j5-hl9"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1kZ-fe-6Mw" secondAttribute="bottom" constant="336" id="bOt-Af-VBV">
                                 <variation key="heightClass=regular-widthClass=compact" constant="-10"/>
                             </constraint>
@@ -147,6 +147,7 @@
                             <constraint firstItem="7Wz-L3-G8D" firstAttribute="top" secondItem="4LY-Pw-vdg" secondAttribute="bottom" constant="41" id="oe3-TJ-mYF"/>
                             <constraint firstItem="7Wz-L3-G8D" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="orW-bz-0pW"/>
                             <constraint firstItem="7Wz-L3-G8D" firstAttribute="top" secondItem="4LY-Pw-vdg" secondAttribute="bottom" constant="41" id="u1t-Nt-PrY"/>
+                            <constraint firstItem="Ni3-3R-9cL" firstAttribute="trailing" secondItem="4LY-Pw-vdg" secondAttribute="trailing" id="vds-PI-cUK"/>
                             <constraint firstItem="4LY-Pw-vdg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="vjm-wf-jwb"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7Wz-L3-G8D" secondAttribute="bottom" constant="144" id="xtD-hd-hvu"/>
                             <constraint firstItem="4LY-Pw-vdg" firstAttribute="centerX" secondItem="7Wz-L3-G8D" secondAttribute="centerX" id="yW0-4z-k9r"/>
@@ -154,12 +155,16 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="1kZ-fe-6Mw"/>
-                                <exclude reference="b21-wZ-jnZ"/>
+                                <exclude reference="Ni3-3R-9cL"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="9Jc-fH-YfS"/>
                                 <exclude reference="JwZ-6V-804"/>
                                 <exclude reference="Q6L-x0-xhu"/>
+                                <exclude reference="HdB-Ts-OLa"/>
+                                <exclude reference="TwC-j5-hl9"/>
+                                <exclude reference="vds-PI-cUK"/>
+                                <exclude reference="2iZ-Pz-iCh"/>
                                 <exclude reference="8Tc-JB-Ikd"/>
                                 <exclude reference="LvC-3q-5Io"/>
                                 <exclude reference="Tb2-sx-jDs"/>
@@ -177,13 +182,17 @@
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="1kZ-fe-6Mw"/>
-                                <include reference="b21-wZ-jnZ"/>
+                                <include reference="Ni3-3R-9cL"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="9Jc-fH-YfS"/>
                                 <include reference="JwZ-6V-804"/>
                                 <include reference="Q6L-x0-xhu"/>
+                                <include reference="HdB-Ts-OLa"/>
+                                <include reference="TwC-j5-hl9"/>
+                                <include reference="vds-PI-cUK"/>
                                 <exclude reference="2di-cF-fS6"/>
+                                <include reference="2iZ-Pz-iCh"/>
                                 <include reference="8Tc-JB-Ikd"/>
                                 <exclude reference="BTC-1j-tgo"/>
                                 <include reference="LvC-3q-5Io"/>
@@ -206,7 +215,6 @@
                     <connections>
                         <outlet property="picker" destination="4LY-Pw-vdg" id="UhN-hs-ruw"/>
                         <outlet property="saveData" destination="7Wz-L3-G8D" id="IVj-PJ-iWP"/>
-                        <outlet property="variableSavedIndicator" destination="b21-wZ-jnZ" id="Tmh-CR-FU7"/>
                         <outlet property="viewGraph" destination="ERp-DG-5lD" id="oT1-l9-ovV"/>
                     </connections>
                 </viewController>

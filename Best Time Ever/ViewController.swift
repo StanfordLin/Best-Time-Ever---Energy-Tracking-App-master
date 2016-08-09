@@ -48,7 +48,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             
             let selectedFeels = data[1][picker.selectedRowInComponent(1)]
             
-            variableSavedIndicator.text = "Variables are saved, it is \(selectedTime) and \(selectedFeels)"
+//            variableSavedIndicator.text = "Variables are saved, it is \(selectedTime) and \(selectedFeels)"
         
             
             
@@ -150,7 +150,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         picker.layer.cornerRadius = 7
         saveData.layer.cornerRadius = 7
         viewGraph.layer.cornerRadius = 7
-        variableSavedIndicator.hidden = true
+//        variableSavedIndicator.hidden = 
         
         
         
