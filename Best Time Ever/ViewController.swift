@@ -83,7 +83,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 userDefaults.synchronize()
                 var savedMood = userDefaults.objectForKey("mood") as? [Int]
                 
-                var savedTimeArrayDictionaryValue = userDefaults.objectForKey("savedTimeDictionary") as! [String:Int]
                 
                 /* Change/update the Data according to the UIPickerView*/
                 //      When time is selected, assign it timeValue
@@ -95,7 +94,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 //        have the integers of feelingPickerData be retrieved according to what is selected
                 let savedFeelValue = Int(feelingPickerData[feelValue])
                 
-                savedTimeArrayDictionaryValue = [String(timeValue):Int((feelValue + 1))]
                 
                 
                 savedMood?[timeValue] = savedFeelValue // "something"
@@ -103,19 +101,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 
                 /**/
                 userDefaults.setObject(savedMood, forKey: "mood")
-                userDefaults.setObject(savedTimeArrayDictionaryValue, forKey: "savedTimeDictionary")
-                
-                print("savedTimeDictionaryValue: \(savedTimeArrayDictionaryValue)")
-                
                 variableSavedIndicator.text = "🕒: \(selectedTime) \n ⚡: \(selectedFeels) \n Saved"
                 
                 
                 let timeEvent = TimeEvent()
                 timeEvent.time = Int(timeValue)
                 timeEvent.mood = feelValue
-                
                 self.savedTimeArray.append(timeEvent)
                 print("savedTimeArray in ViewController.swift: \(savedTimeArray.last!.time)")
+                
                 
                 
                 userDefaults.synchronize()
@@ -188,6 +182,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @IBAction func unwindToViewController(segue: UIStoryboardSegue) {
     }
+    
+    
     
 }
 
