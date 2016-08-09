@@ -93,8 +93,8 @@ class ListResultsViewController: UITableViewController {
 //            cell.storedFeelNumberLabel.text = "\(savedTimeArray![indexPath.row])"
         
         let timeEvent = self.savedTimeArray[indexPath.row]
-        cell.storedFeelNumberLabel.text = "\(timeEvent.mood)"
-              cell.storedTimeLabel.text = "\(timeEvent.time)"
+        cell.storedFeelNumberLabel.text = "\(timeEvent.mood + 1)"
+              cell.storedTimeLabel.text = "\(timeEvent.time):00"
 
             cell.storedFeelNumberLabel.backgroundColor = UIColor(red: 114 / 255,
                                                                  green: 114 / 255,

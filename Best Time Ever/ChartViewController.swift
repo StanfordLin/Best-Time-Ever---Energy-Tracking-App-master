@@ -13,6 +13,8 @@ class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineCh
     
     var savedTimeArray: [TimeEvent] = []
     
+    @IBOutlet weak var resultsButton: UIButton!
+    @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var lineChart: JBLineChartView!
@@ -54,13 +56,15 @@ class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineCh
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.translucent = true
+        
         // Do any additional setup after loading the view, typically from a nib.
-        
-        backButton.layer.cornerRadius = 7
-        resetButton.layer.cornerRadius = 7
-        lineChart.layer.cornerRadius = 7
         informationLabel.layer.cornerRadius = 7
-        
+        lineChart.layer.cornerRadius = 7
+        resultsButton.layer.cornerRadius = 7
         print("User defaults is:\(userDefaults.valueForKey("mood") as! [Int])")
         
         chartData = userDefaults.valueForKey("mood") as! [Int]
@@ -69,17 +73,20 @@ class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineCh
         
         view.backgroundColor = UIColor.darkGrayColor()
         
+        
+        
+        
+        
+        
         // line chart setup
-        lineChart.backgroundColor = UIColor.darkGrayColor()
+        lineChart.backgroundColor = UIColor.init(red: 102, green: 153, blue: 255, alpha: 0.5)
         lineChart.delegate = self
         lineChart.dataSource = self
         lineChart.minimumValue = 0
         lineChart.maximumValue = 5
-        
 //        lineChart.contentView.layoutIfNeeded()
         
         lineChart.reloadData()
-        
         lineChart.setState(.Collapsed, animated: false)
     }
     
