@@ -37,9 +37,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         chartViewController!.userDefaults.synchronize()
     }
     
-    @IBAction func unwindBackButton(segue: UIStoryboardSegue) {
-    }
-    
     //Retrieves the data
 
     @IBAction func saveData(sender: AnyObject) {
@@ -189,7 +186,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
     }
     
-    
+    @IBAction func unwindToViewController(segue: UIStoryboardSegue) {
+    }
     
 }
 

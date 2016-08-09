@@ -57,10 +57,6 @@ class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineCh
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.translucent = true
-        
         // Do any additional setup after loading the view, typically from a nib.
         informationLabel.layer.cornerRadius = 7
         lineChart.layer.cornerRadius = 7
@@ -70,16 +66,14 @@ class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineCh
         chartData = userDefaults.valueForKey("mood") as! [Int]
         userDefaults.synchronize()
         print("Current mood is \(chartData)")
-        
-        view.backgroundColor = UIColor.darkGrayColor()
-        
+    
         
         
         
         
         
         // line chart setup
-        lineChart.backgroundColor = UIColor.init(red: 102, green: 153, blue: 255, alpha: 0.5)
+        lineChart.backgroundColor = UIColor.init(red:0.40, green:0.60, blue:1.00, alpha: 0.5)
         lineChart.delegate = self
         lineChart.dataSource = self
         lineChart.minimumValue = 0
@@ -113,14 +107,7 @@ class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineCh
         footerView.addSubview(footer1)
         footerView.addSubview(footer2)
         
-        let header = UILabel(frame: CGRectMake(0, 0, lineChart.frame.width, 50))
-        header.textColor = UIColor.whiteColor()
-        header.font = UIFont.systemFontOfSize(24)
-        header.text = "Energy Level:"
-        header.textAlignment = NSTextAlignment.Center
-        
         lineChart.footerView = footerView
-        lineChart.headerView = header
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -179,7 +166,7 @@ class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineCh
     
     func lineChartView(lineChartView: JBLineChartView!, colorForLineAtLineIndex lineIndex: UInt) -> UIColor! {
         if (lineIndex == 0) {
-            return UIColor.greenColor()
+            return UIColor.init(red:0.00, green:0.20, blue:0.60, alpha:0.5)
         }
 //        else if (lineIndex == 1) {
 //            return UIColor.whiteColor()
@@ -231,9 +218,10 @@ class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineCh
         
             let destVC = segue.destinationViewController as? ListResultsViewController
             destVC?.savedTimeArray = self.savedTimeArray
-            
-            
-        
+
+    }
+    
+    @IBAction func unwindToChartView(segue: UIStoryboardSegue) {
     }
 
 }

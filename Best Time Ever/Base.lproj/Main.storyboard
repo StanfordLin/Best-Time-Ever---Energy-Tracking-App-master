@@ -174,13 +174,12 @@
                                 <exclude reference="b21-wZ-jnZ"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="876-mC-rnj"/>
-                                <exclude reference="HHo-BA-iug"/>
-                                <exclude reference="Tat-re-Bav"/>
                                 <exclude reference="4DG-n3-oP3"/>
                                 <exclude reference="AMg-iP-Ni4"/>
                                 <exclude reference="BRC-UE-r2b"/>
                                 <exclude reference="eyY-bo-GCL"/>
+                                <exclude reference="HHo-BA-iug"/>
+                                <exclude reference="Tat-re-Bav"/>
                                 <exclude reference="8Tc-JB-Ikd"/>
                                 <exclude reference="LvC-3q-5Io"/>
                                 <exclude reference="Tb2-sx-jDs"/>
@@ -202,13 +201,13 @@
                                 <include reference="b21-wZ-jnZ"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="876-mC-rnj"/>
-                                <include reference="HHo-BA-iug"/>
-                                <include reference="Tat-re-Bav"/>
                                 <include reference="4DG-n3-oP3"/>
                                 <include reference="AMg-iP-Ni4"/>
                                 <include reference="BRC-UE-r2b"/>
                                 <include reference="eyY-bo-GCL"/>
+                                <include reference="876-mC-rnj"/>
+                                <include reference="HHo-BA-iug"/>
+                                <include reference="Tat-re-Bav"/>
                                 <exclude reference="2di-cF-fS6"/>
                                 <include reference="8Tc-JB-Ikd"/>
                                 <exclude reference="BTC-1j-tgo"/>
@@ -288,19 +287,25 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <navigationBar contentMode="scaleToFill" backIndicatorImage="back" translatesAutoresizingMaskIntoConstraints="NO" id="xKq-YW-VxO">
+                            <navigationBar contentMode="scaleToFill" shadowImage="transparent" backIndicatorImage="transparent" backIndicatorTransitionMaskImage="transparent" translatesAutoresizingMaskIntoConstraints="NO" id="xKq-YW-VxO">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" red="0.92314274329097412" green="0.92433708018421423" blue="0.94256249999999997" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.97939684985449149" green="0.98066396677590528" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
                                 <items>
-                                    <navigationItem title="Title" id="qSv-TE-MHG">
+                                    <navigationItem title="Energy Level" id="qSv-TE-MHG">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="ieK-sF-uOx">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <segue destination="SUO-ro-fuE" kind="unwind" unwindAction="unwindBackButton:" id="wuR-G8-tkd"/>
+                                                <segue destination="SUO-ro-fuE" kind="unwind" unwindAction="unwindToViewController:" id="5UF-AW-Mx7"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Reset" id="0bH-ss-cOU">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
                                                 <action selector="resetAlertConfirmation:" destination="MZT-b9-YMw" id="lg7-JJ-2bf"/>
-                                                <segue destination="SUO-ro-fuE" kind="unwind" unwindAction="unwindResetButton:" id="NjI-aK-ril"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -368,23 +373,23 @@
                                 <exclude reference="eEx-Sf-vTw"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="QxN-XB-Ct2"/>
+                                <exclude reference="jpk-OF-efJ"/>
+                                <exclude reference="75m-MQ-gTi"/>
+                                <exclude reference="VBY-4T-hX1"/>
+                                <exclude reference="VuW-Uz-X1f"/>
                                 <exclude reference="8U9-gB-kDy"/>
                                 <exclude reference="SJb-jH-UPO"/>
                                 <exclude reference="gdi-ZL-8ya"/>
                                 <exclude reference="xoS-lh-dmJ"/>
-                                <exclude reference="75m-MQ-gTi"/>
-                                <exclude reference="VBY-4T-hX1"/>
-                                <exclude reference="VuW-Uz-X1f"/>
-                                <exclude reference="0mA-Oj-cKp"/>
-                                <exclude reference="98N-dZ-e7W"/>
-                                <exclude reference="lp9-DS-eBQ"/>
                                 <exclude reference="KIx-DP-raD"/>
                                 <exclude reference="TwC-ta-eTO"/>
                                 <exclude reference="b70-yz-BTw"/>
                                 <exclude reference="cVV-3c-XAB"/>
                                 <exclude reference="xRf-f0-QxO"/>
-                                <exclude reference="QxN-XB-Ct2"/>
-                                <exclude reference="jpk-OF-efJ"/>
+                                <exclude reference="0mA-Oj-cKp"/>
+                                <exclude reference="98N-dZ-e7W"/>
+                                <exclude reference="lp9-DS-eBQ"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -395,21 +400,21 @@
                                 <include reference="eEx-Sf-vTw"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="QxN-XB-Ct2"/>
+                                <include reference="jpk-OF-efJ"/>
+                                <include reference="75m-MQ-gTi"/>
+                                <include reference="VBY-4T-hX1"/>
+                                <include reference="VuW-Uz-X1f"/>
                                 <include reference="8U9-gB-kDy"/>
                                 <include reference="SJb-jH-UPO"/>
                                 <include reference="gdi-ZL-8ya"/>
                                 <include reference="xoS-lh-dmJ"/>
-                                <include reference="75m-MQ-gTi"/>
-                                <include reference="VBY-4T-hX1"/>
-                                <include reference="VuW-Uz-X1f"/>
-                                <include reference="lp9-DS-eBQ"/>
                                 <exclude reference="KIx-DP-raD"/>
                                 <include reference="TwC-ta-eTO"/>
                                 <exclude reference="b70-yz-BTw"/>
                                 <include reference="cVV-3c-XAB"/>
                                 <include reference="xRf-f0-QxO"/>
-                                <include reference="QxN-XB-Ct2"/>
-                                <include reference="jpk-OF-efJ"/>
+                                <include reference="lp9-DS-eBQ"/>
                             </mask>
                         </variation>
                     </view>
@@ -434,12 +439,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" red="0.22671008152672584" green="0.86237614698240361" blue="0.91381250000000003" alpha="1" colorSpace="calibratedRGB"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="Mrr-ym-xtH">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="128"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nT8-q0-oIA">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <items>
                                         <navigationItem title="Results" id="jQu-Fh-xDD">
                                             <barButtonItem key="leftBarButtonItem" style="plain" id="REp-Gu-E0z">
@@ -449,7 +456,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <state key="normal" title="Back"/>
                                                     <connections>
-                                                        <segue destination="jek-3x-dbB" kind="unwind" unwindAction="unwindBackButton:" id="GtR-mN-Cu0"/>
+                                                        <segue destination="jek-3x-dbB" kind="unwind" unwindAction="unwindToChartView:" id="Eqm-qr-euI"/>
                                                     </connections>
                                                 </button>
                                             </barButtonItem>
@@ -460,7 +467,7 @@
                                     </variation>
                                 </navigationBar>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <variation key="default">
                                 <mask key="subviews">
                                     <exclude reference="nT8-q0-oIA"/>
@@ -480,40 +487,39 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wzb-sM-8ob">
-                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="60"/>
-                                            <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="34" y="3" width="80" height="73"/>
-                                            </variation>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11:00 AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DT1-su-lxN">
                                             <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                            <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                                 <rect key="frame" x="158" y="6" width="243" height="70"/>
                                             </variation>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wzb-sM-8ob">
+                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="34" y="3" width="80" height="73"/>
+                                            </variation>
+                                        </label>
                                     </subviews>
                                     <variation key="default">
                                         <mask key="subviews">
-                                            <exclude reference="Wzb-sM-8ob"/>
                                             <exclude reference="DT1-su-lxN"/>
+                                            <exclude reference="Wzb-sM-8ob"/>
                                         </mask>
                                     </variation>
                                     <variation key="heightClass=regular-widthClass=compact">
                                         <mask key="subviews">
-                                            <include reference="Wzb-sM-8ob"/>
                                             <include reference="DT1-su-lxN"/>
+                                            <include reference="Wzb-sM-8ob"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.3095885833" green="0.50332859299999999" blue="0.894772813" alpha="0.46839978450000003" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="storedFeelNumberLabel" destination="Wzb-sM-8ob" id="9jI-v0-yqV"/>
                                     <outlet property="storedTimeLabel" destination="DT1-su-lxN" id="n5g-qz-Xj8"/>
@@ -533,7 +539,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back" width="13" height="22"/>
+        <image name="transparent" width="2100" height="1500"/>
         <image name="wallpaper" width="375" height="667"/>
     </resources>
 </document>
