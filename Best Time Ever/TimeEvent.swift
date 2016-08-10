@@ -7,15 +7,16 @@
 //
 
 import Foundation
+import UIKit
 
 class TimeEvent : NSObject, NSCoding {
     
     var time: Int = 0
-    var mood: Int = 0
+    var feels: Int = 0
     
-    init(time: Int, mood: Int) {
+    init(time: Int, feels: Int) {
         self.time = time
-        self.mood = mood
+        self.feels = (feels + 1)
         
         super.init()  // call NSObject's init method
     }
@@ -25,20 +26,26 @@ class TimeEvent : NSObject, NSCoding {
 //    }
     
     
+    static func thisIsAClassMethod() {
+        
+    }
+    
     required init(coder aDecoder: NSCoder) {
-        time = aDecoder.decodeObjectForKey("timeEventTime") as! Int
-        mood = aDecoder.decodeObjectForKey("timeEventMood") as! Int
+        
+        self.time = aDecoder.decodeObjectForKey("time") as! Int
+        self.feels = aDecoder.decodeObjectForKey("feels") as! Int
     }
     
     func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(time, forKey: "timeEventTime")
-        aCoder.encodeObject(mood, forKey: "timeEventMood")
+        aCoder.encodeObject(time, forKey: "time")
+        aCoder.encodeObject(feels, forKey: "feels")
     }
-    
     func save() {
-        let savedData = NSKeyedArchiver.archivedDataWithRootObject(TimeEvent)
+        let savedData = NSKeyedArchiver.archivedDataWithRootObject(self)
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setObject(savedData, forKey: "timeEvent")
+        
+
     }
     
     

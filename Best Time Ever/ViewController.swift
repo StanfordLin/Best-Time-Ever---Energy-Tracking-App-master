@@ -14,7 +14,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     var savedTimeDictionary: [String:Int] = [:]
     
-    var savedTimeArray: [TimeEvent] = []
+    var savedTimeMoodArray: [TimeEvent] = []
 
     
     @IBOutlet weak var variableSavedIndicator: UILabel!
@@ -22,7 +22,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var saveData: UIButton!
     @IBOutlet weak var viewGraph: UIButton!
-
+    
     //Resets the values for the graph
     
     @IBAction func unwindResetButton(segue: UIStoryboardSegue) {
@@ -38,95 +38,96 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     //Retrieves the data
-
+    
     @IBAction func saveData(sender: AnyObject) {
-            
-            let selectedTime = data[0][picker.selectedRowInComponent(0)]
-            
-            let selectedFeels = data[1][picker.selectedRowInComponent(1)]
-            
-            variableSavedIndicator.text = "Variables are saved, it is \(selectedTime) and \(selectedFeels)"
         
+        let selectedTime = data[0][picker.selectedRowInComponent(0)]
+        
+        let selectedFeels = data[1][picker.selectedRowInComponent(1)]
+        
+        variableSavedIndicator.text = "Variables are saved, it is \(selectedTime) and \(selectedFeels)"
+        
+        
+        
+        
+        if userDefaults.objectForKey("mood") as? [Int] == nil {
+            
+            let chartViewController: ChartViewController = ChartViewController()
+            
+            //       When a time is selected, assign it as selectedInThePickerTimesComponent
+            let selectedInThePickerTimesComponent = picker.selectedRowInComponent(0)// todo
+            
+            //      When time is selected, assign it timeValue
+            let timeValue = picker.selectedRowInComponent(0)
+            //        When feeling is selected, assign it to feelValue
+            let feelValueIndex = picker.selectedRowInComponent(1)
+            
+            //        have the integers of feelingPickerData be retrieved according to what is selected
+            let feelValue = Int(feelingPickerData[feelValueIndex])
+            
+            //        Have a range selected?!
+            let range: Range<Int> = selectedInThePickerTimesComponent...selectedInThePickerTimesComponent
+            
+            
+            //        replace the range with the feel Value?!
+            chartViewController.chartData.replaceRange(range, with: [feelValue])
+            
+            //                Saves mood/feels for ChartView
+            let userDefaults = NSUserDefaults.standardUserDefaults()
+            userDefaults.setObject(chartViewController.chartData, forKey: "mood")
+            
+            //                Save time and mood for List Results Table View
+            let timeEvent = TimeEvent(time: timeValue, feels: feelValue)
+            timeEvent.save()
+            userDefaults.synchronize()
             
             
             
-            if userDefaults.objectForKey("mood") as? [Int] == nil {
-                
-                let chartViewController: ChartViewController = ChartViewController()
-                
-                //       When a time is selected, assign it as selectedInThePickerTimesComponent
-                let selectedInThePickerTimesComponent = picker.selectedRowInComponent(0)// todo
-                
-                //        When feeling is selected, assign it to feelValue
-                let feelValueIndex = picker.selectedRowInComponent(1)
-                
-                //        have the integers of feelingPickerData be retrieved according to what is selected
-                let feelValue = Int(feelingPickerData[feelValueIndex])
-                
-                //        Have a range selected?!
-                let range: Range<Int> = selectedInThePickerTimesComponent...selectedInThePickerTimesComponent
-                
-                
-                //        replace the range with the feel Value?!
-                chartViewController.chartData.replaceRange(range, with: [feelValue])
-                
-                let userDefaults = NSUserDefaults.standardUserDefaults()
-                userDefaults.setObject(chartViewController.chartData, forKey: "mood")
-                userDefaults.synchronize()
-                
-                
-                
-            } else if userDefaults.objectForKey("mood") as? [Int] != nil {
-                
-                /* RETRIEVE THE DATA from NSUserDefaults*/
-                
-                userDefaults.synchronize()
-                var savedMood = userDefaults.objectForKey("mood") as? [Int]
-                
-                
-                /* Change/update the Data according to the UIPickerView*/
-                //      When time is selected, assign it timeValue
-                let timeValue = picker.selectedRowInComponent(0)
-                
-                //      When feeling is selected, assign it to feelValue
-                let feelValue = picker.selectedRowInComponent(1)
-                
-                //        have the integers of feelingPickerData be retrieved according to what is selected
-                let savedFeelValue = Int(feelingPickerData[feelValue])
-                
-                
-                
-                savedMood?[timeValue] = savedFeelValue // "something"
-                
-                
-                /**/
-                userDefaults.setObject(savedMood, forKey: "mood")
-                variableSavedIndicator.text = "🕒: \(selectedTime) \n ⚡: \(selectedFeels) \n Saved"
-                
-//                Mood and time for ListResultsViewController
-               
-                let timeEvent = TimeEvent(time: timeValue, mood: feelValue)
-                timeEvent.save()
-//                self.savedTimeArray.append(timeEvent)
-//                print("savedTimeArray in ViewController.swift: \(savedTimeArray.last!.time)")
+        } else if userDefaults.objectForKey("mood") as? [Int] != nil {
             
-                
-                
-                
-//                save data
-                let savedData = NSKeyedArchiver.archivedDataWithRootObject(TimeEvent)
-                let defaults = NSUserDefaults.standardUserDefaults()
-                defaults.setObject(savedData, forKey: "timeEventSavedObject")
-                
-                
-                userDefaults.synchronize()
+            /* RETRIEVE THE DATA from NSUserDefaults*/
+            
+            userDefaults.synchronize()
+            var savedMood = userDefaults.objectForKey("mood") as? [Int]
+            
+            
+            /* Change/update the Data according to the UIPickerView*/
+            //      When time is selected, assign it timeValue
+            let timeValue = picker.selectedRowInComponent(0)
+            
+            //      When feeling is selected, assign it to feelValue
+            let feelValue = picker.selectedRowInComponent(1)
+            
+            //        have the integers of feelingPickerData be retrieved according to what is selected
+            let savedFeelValue = Int(feelingPickerData[feelValue])
+            
+            
+            
+            savedMood?[timeValue] = savedFeelValue // "something"
+            
+            
+            /**/
+            userDefaults.setObject(savedMood, forKey: "mood")
+            variableSavedIndicator.text = "🕒: \(selectedTime) \n ⚡: \(selectedFeels) \n Saved"
+            
+            //                Mood and time for ListResultsViewController
+            
+            
+            //                Saves time and mood values
+            let timeEvent = TimeEvent(time: timeValue, feels: feelValue)
+            timeEvent.save()
+            self.savedTimeMoodArray.append(timeEvent)
 
-
-                
-                
-            }
-
-
+            print("savedTimeArray in ViewController.swift: \(savedTimeMoodArray.last!.time) savedMoodArray in ViewController.swift: \(savedTimeMoodArray.last!.feels) ")
+            
+            userDefaults.synchronize()
+            
+            
+            
+            
+        }
+        
+        
         
         
     }
@@ -179,11 +180,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     //pass data to the chartViewController
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-            let destVC = segue.destinationViewController as? ChartViewController
-            destVC?.savedTimeArray = self.savedTimeArray
-            
-            print("savedTimeArray in ViewController segue: \(self.savedTimeArray.first)")
-                    
+        let destVC = segue.destinationViewController as? ChartViewController
+        destVC?.savedTimeMoodArray = self.savedTimeMoodArray
+        
+        print("savedTimeArray in ViewController segue: \(self.savedTimeMoodArray.first)")
+        
         
     }
     

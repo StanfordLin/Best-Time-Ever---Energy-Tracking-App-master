@@ -11,7 +11,7 @@ import JBChartView
 
 class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineChartViewDelegate {
     
-    var savedTimeArray: [TimeEvent] = []
+    var savedTimeMoodArray: [TimeEvent] = []
     
     @IBOutlet weak var resultsButton: UIButton!
     @IBOutlet weak var navigationBar: UINavigationBar!
@@ -217,7 +217,8 @@ class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineCh
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
             let destVC = segue.destinationViewController as? ListResultsViewController
-            destVC?.savedTimeArray = self.savedTimeArray
+            destVC?.savedTimeMoodArray = self.savedTimeMoodArray
+        print("Saved time array:    \(savedTimeMoodArray) savedTimeMoodArray.count \(savedTimeMoodArray.count), savedTimeFeels: \(savedTimeMoodArray.last!.feels), savedTime: \(savedTimeMoodArray.last!.time)")
 
     }
     
