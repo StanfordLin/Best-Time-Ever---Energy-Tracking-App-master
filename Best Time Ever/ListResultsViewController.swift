@@ -25,27 +25,11 @@ class ListResultsViewController: UITableViewController {
         
         feelsArrayNoZeroes = feels.filter() {$0 != 0}
         
-        
-//        Filter a dictionary
-        //        let savedFeels = userDefaults.valueForKey("savedTimeDictionary") as! [String: Int]
-        //        self.feelsArrayNoZeroes = savedFeels.filter() {$0 != 0}
-        
-        
-        
-        
-//        self.feelsArrayNoZeroes = feels.filter() {$0 != 0}
-//                for num in feels {
-//        
-//        
-//                    let timeEvent = TimeEvent()
-//                    timeEvent.time = time
-//                    timeEvent.mood = feelsArrayNoZeroes
-//        
-//                    self.chartData.append(timeEvent)
-//        
-//                    x += 1
-        
-        alreadyRan = false
+        if let savedPeople = userDefaults.objectForKey("timeEvent") as? NSData {
+        savedTimeArray = NSKeyedUnarchiver.unarchiveObjectWithData(savedPeople) as! [TimeEvent]
+        }
+
+
         
     }
     
@@ -60,10 +44,6 @@ class ListResultsViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        
-        let feelsArrayNoZeroes = feels.filter() {$0 != 0}
-        
-        
         print("savedTimeArray: \(savedTimeArray.last?.time)")
         return savedTimeArray.count
     }
@@ -77,20 +57,7 @@ class ListResultsViewController: UITableViewController {
         
         
         print("indexPath: \(indexPath.row)")
-//        print("feels: \(time[""])")
         
-        // 2
-//        if (feels[indexPath.row] == 0) {
-//            
-//            cell.hidden = true
-//            yourArray.removeAtIndex(indexPath.row)
-//            self.tableView.reloadData()
-//
-//            }
-//
-//        } else {
-//                                                                                                            cell.storedFeelNumberLabel.layer.cornerRadius = 7
-//            cell.storedFeelNumberLabel.text = "\(savedTimeArray![indexPath.row])"
         
         let timeEvent = self.savedTimeArray[indexPath.row]
         cell.storedFeelNumberLabel.text = "\(timeEvent.mood + 1)"
@@ -100,6 +67,9 @@ class ListResultsViewController: UITableViewController {
                                                                  green: 114 / 255,
                                                                  blue: 114 / 255,
                                                                  alpha: 1.0)
+        
+        
+        
 //        }
         
         //        cell.storedTimeLabel.layer.cornerRadius = 8 WHY DOESNT IT WORK

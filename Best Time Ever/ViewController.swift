@@ -103,13 +103,20 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 userDefaults.setObject(savedMood, forKey: "mood")
                 variableSavedIndicator.text = "🕒: \(selectedTime) \n ⚡: \(selectedFeels) \n Saved"
                 
+//                Mood and time for ListResultsViewController
+               
+                let timeEvent = TimeEvent(time: timeValue, mood: feelValue)
+                timeEvent.save()
+//                self.savedTimeArray.append(timeEvent)
+//                print("savedTimeArray in ViewController.swift: \(savedTimeArray.last!.time)")
+            
                 
-                let timeEvent = TimeEvent()
-                timeEvent.time = Int(timeValue)
-                timeEvent.mood = feelValue
-                self.savedTimeArray.append(timeEvent)
-                print("savedTimeArray in ViewController.swift: \(savedTimeArray.last!.time)")
                 
+                
+//                save data
+                let savedData = NSKeyedArchiver.archivedDataWithRootObject(TimeEvent)
+                let defaults = NSUserDefaults.standardUserDefaults()
+                defaults.setObject(savedData, forKey: "timeEventSavedObject")
                 
                 
                 userDefaults.synchronize()
