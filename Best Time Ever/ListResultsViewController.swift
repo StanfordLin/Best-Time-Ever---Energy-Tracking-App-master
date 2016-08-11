@@ -27,14 +27,19 @@ class ListResultsViewController: UITableViewController {
 //            savedTimeMoodArray.append(savedTimeMood!)
 //        }
         
-        TimeEvent.load()
         
-//        if let timeEvent = defaults.objectForKey("timeEvent") as? NSData {
-//            let timeMoodData = NSKeyedUnarchiver.unarchiveObjectWithData(timeEvent) as! TimeEvent
-//            self.savedTimeMoodArray += [timeMoodData]
-//            print("timeMoodData is: \(savedTimeMood.last!.time), timeay, timeMoodData: \(timeMoodData.last!.feels)")
+        let archivedTimeMoodData = NSUserDefaults.standardUserDefaults().objectForKey("savedTimeMoodArray") as? NSData
+        
+        if let archivedTimeMoodData = archivedTimeMoodData {
+            savedTimeMoodArray = (NSKeyedUnarchiver.unarchiveObjectWithData(archivedTimeMoodData) as? [TimeEvent])!
+            
+            //                if var savedTimeMoodArray = savedTimeMoodArray {
+            print("savedTimeMoodArray: \(savedTimeMoodArray)")
+        } else {
+            print("SODNFPOISJDFPOIJSDFOPSJDIOF NOHTINGGGGGG")
+        }
+
             print("Saved time array:    \(savedTimeMoodArray) savedTimeMoodArray.count \(savedTimeMoodArray.count), savedTimeFeels: \(savedTimeMoodArray.last!.feels), savedTime: \(savedTimeMoodArray.last!.time)")
-//        }
     }
     
     
