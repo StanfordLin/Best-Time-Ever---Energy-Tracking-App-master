@@ -59,7 +59,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         let selectedFeels = data[1][picker.selectedRowInComponent(1)]
         
-        variableSavedIndicator.text = "Variables are saved, it is \(selectedTime) and \(selectedFeels)"
         
         
         
@@ -124,7 +123,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             
             /**/
             userDefaults.setObject(savedMood, forKey: "mood")
-            variableSavedIndicator.text = "🕒: \(selectedTime) \n ⚡: \(selectedFeels) \n Saved"
+            variableSavedIndicator.text = "🕒: \(selectedTime) \n \(selectedFeels) Saved"
             
             //     Retrieve Mood and time for ListResultsViewController
             TimeEvent.load()
@@ -168,10 +167,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         picker.setValue(UIColor.whiteColor(), forKey: "textColor")
         picker.layer.cornerRadius = 7
         saveData.layer.cornerRadius = 7
-        viewGraph.layer.cornerRadius = 7
-        variableSavedIndicator.hidden = true
-        
-        
+        viewGraph.layer.cornerRadius = 7        
+        variableSavedIndicator.text = ""
         
     }
     
