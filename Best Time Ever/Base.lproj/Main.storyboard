@@ -187,14 +187,14 @@
                                 <exclude reference="O4W-vs-flx"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="LpI-Nq-STc"/>
-                                <exclude reference="eHv-Zs-pjM"/>
-                                <exclude reference="Mv1-Bk-JlI"/>
-                                <exclude reference="sgy-TE-VBx"/>
                                 <exclude reference="7mT-lb-LHl"/>
                                 <exclude reference="vbW-3V-dp1"/>
                                 <exclude reference="xlO-jA-8oG"/>
                                 <exclude reference="xyj-vG-L4s"/>
+                                <exclude reference="LpI-Nq-STc"/>
+                                <exclude reference="eHv-Zs-pjM"/>
+                                <exclude reference="Mv1-Bk-JlI"/>
+                                <exclude reference="sgy-TE-VBx"/>
                                 <exclude reference="sD7-vQ-GrB"/>
                                 <exclude reference="sbS-cg-nCO"/>
                                 <exclude reference="u1t-Nt-PrY"/>
@@ -211,6 +211,10 @@
                                 <include reference="O4W-vs-flx"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="7mT-lb-LHl"/>
+                                <include reference="vbW-3V-dp1"/>
+                                <include reference="xlO-jA-8oG"/>
+                                <include reference="xyj-vG-L4s"/>
                                 <include reference="LpI-Nq-STc"/>
                                 <include reference="eHv-Zs-pjM"/>
                                 <exclude reference="2di-cF-fS6"/>
@@ -218,10 +222,6 @@
                                 <include reference="Mv1-Bk-JlI"/>
                                 <include reference="sgy-TE-VBx"/>
                                 <exclude reference="yW0-4z-k9r"/>
-                                <include reference="7mT-lb-LHl"/>
-                                <include reference="vbW-3V-dp1"/>
-                                <include reference="xlO-jA-8oG"/>
-                                <include reference="xyj-vG-L4s"/>
                                 <exclude reference="GIG-hp-RHK"/>
                                 <exclude reference="lik-Jl-y37"/>
                                 <exclude reference="oe3-TJ-mYF"/>
