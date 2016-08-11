@@ -179,7 +179,7 @@
 				TargetAttributes = {
 					E6BE1D941D3801980088742B = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 9K26VNJ2ZL;
+						DevelopmentTeam = P598M2H98D;
 					};
 				};
 			};
@@ -395,7 +395,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "Best Time Ever/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.stanford.Best-Time-Ever";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.stanford.best-time";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -411,7 +411,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "Best Time Ever/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.stanford.Best-Time-Ever";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.stanford.best-time";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
