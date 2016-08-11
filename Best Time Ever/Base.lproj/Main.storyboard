@@ -106,6 +106,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="478" width="400" height="42"/>
+                                </variation>
                             </label>
                         </subviews>
                         <constraints>
@@ -413,8 +416,7 @@
                             <subviews>
                                 <navigationBar contentMode="scaleToFill" translucent="NO" shadowImage="transparent" backIndicatorImage="transparent" translatesAutoresizingMaskIntoConstraints="NO" id="nT8-q0-oIA">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="barTintColor" red="0.3095885833" green="0.50332859299999999" blue="0.894772813" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="barTintColor" red="0.30980392156862746" green="0.50196078431372548" blue="0.89411764705882346" alpha="1" colorSpace="calibratedRGB"/>
                                     <textAttributes key="titleTextAttributes">
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </textAttributes>
@@ -440,7 +442,7 @@
                                     </variation>
                                 </navigationBar>
                             </subviews>
-                            <color key="backgroundColor" red="0.3095885833" green="0.50332859299999999" blue="0.894772813" alpha="0.46839978450000003" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.30980392156862746" green="0.50196078431372548" blue="0.89411764705882346" alpha="0.46839978450000003" colorSpace="calibratedRGB"/>
                             <variation key="default">
                                 <mask key="subviews">
                                     <exclude reference="nT8-q0-oIA"/>
