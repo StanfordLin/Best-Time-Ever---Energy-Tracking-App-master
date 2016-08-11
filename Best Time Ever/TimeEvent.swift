@@ -14,6 +14,8 @@ class TimeEvent : NSObject, NSCoding {
     var time: Int = 0
     var feels: Int = 0
     
+    var savedTimeMoodArray: [TimeEvent] = []
+
     init(time: Int, feels: Int) {
         self.time = time
         self.feels = (feels + 1)
@@ -26,10 +28,6 @@ class TimeEvent : NSObject, NSCoding {
 //    }
     
     
-    static func thisIsAClassMethod() {
-        
-    }
-    
     required init(coder aDecoder: NSCoder) {
         
         self.time = aDecoder.decodeObjectForKey("time") as! Int
@@ -41,13 +39,29 @@ class TimeEvent : NSObject, NSCoding {
         aCoder.encodeObject(feels, forKey: "feels")
     }
     func save() {
-        let savedTimeMoodArray = NSKeyedArchiver.archivedDataWithRootObject(self)
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(savedTimeMoodArray, forKey: "savedTimeMoodArray")
-        defaults.synchronize()
+        let archivedTimeMoodData = NSKeyedArchiver.archivedDataWithRootObject(savedTimeMoodArray)
+        NSUserDefaults.standardUserDefaults().setObject(archivedTimeMoodData, forKey: "savedTimeMoodArray")
+//        let savedTimeMoodArray = NSKeyedArchiver.archivedDataWithRootObject(self)
+//        let defaults = NSUserDefaults.standardUserDefaults()
+//        defaults.setObject(savedTimeMoodArray, forKey: "savedTimeMoodArray")
+//        defaults.synchronize()
         
     }
     
+    func load() {
+            let archivedTimeMoodData = NSUserDefaults.standardUserDefaults().objectForKey("savedTimeMoodArray") as? NSData
+            
+            if let archivedTimeMoodData = archivedTimeMoodData {
+                savedTimeMoodArray = (NSKeyedUnarchiver.unarchiveObjectWithData(archivedTimeMoodData) as? [TimeEvent])!
+                
+//                if var savedTimeMoodArray = savedTimeMoodArray {
+                    print("savedTimeMoodArray: \(savedTimeMoodArray)")
+            } else {
+                print("SODNFPOISJDFPOIJSDFOPSJDIOF NOHTINGGGGGG")
+        }
+        
+            }
+    }
     
     
     
@@ -75,4 +89,3 @@ class TimeEvent : NSObject, NSCoding {
     
     
 
-}

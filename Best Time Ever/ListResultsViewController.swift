@@ -13,24 +13,27 @@ class ListResultsViewController: UITableViewController {
     var alreadyRan: Bool = false
     var feels: [Int] = []
     var savedTimeMoodArray: [TimeEvent] = []
-    
+    var savedTimeMood: TimeEvent?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
         
-        let defaults = NSUserDefaults.standardUserDefaults()
+//        let userDefaults = NSUserDefaults.standardUserDefaults()
 //        if let timeEvent = userDefaults.objectForKey("timeEvent") as? NSData {
-//            savedTimeMood = NSKeyedUnarchiver.unarchiveObjectWithData(timeEvent) as! TimeEvent
-//            savedTimeMoodArray.append(savedTimeMood)
+//            savedTimeMood = NSKeyedUnarchiver.unarchiveObjectWithData(timeEvent) as? TimeEvent
+//            savedTimeMoodArray.append(savedTimeMood!)
 //        }
+        
+        TimeEvent.load()
         
 //        if let timeEvent = defaults.objectForKey("timeEvent") as? NSData {
 //            let timeMoodData = NSKeyedUnarchiver.unarchiveObjectWithData(timeEvent) as! TimeEvent
 //            self.savedTimeMoodArray += [timeMoodData]
-//            print("timeMoodData is: \(timeMoodData.time), timeay, timeMoodData: \(timeMoodData)")
-//            print("Saved time array:    \(savedTimeMoodArray) savedTimeMoodArray.count \(savedTimeMoodArray.count), savedTimeFeels: \(savedTimeMoodArray.last!.feels), savedTime: \(savedTimeMoodArray.last!.time)")
+//            print("timeMoodData is: \(savedTimeMood.last!.time), timeay, timeMoodData: \(timeMoodData.last!.feels)")
+            print("Saved time array:    \(savedTimeMoodArray) savedTimeMoodArray.count \(savedTimeMoodArray.count), savedTimeFeels: \(savedTimeMoodArray.last!.feels), savedTime: \(savedTimeMoodArray.last!.time)")
 //        }
     }
     

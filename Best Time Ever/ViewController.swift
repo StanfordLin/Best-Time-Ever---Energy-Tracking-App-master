@@ -16,6 +16,17 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var savedTimeMoodArray: [TimeEvent] = []
     
     var savedTimeMood: TimeEvent?
+    
+    let data = [
+        
+        [ "00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00" ],
+        
+        ["1 ☹️", "2 😞", "3 😐", "4 🙂", "5 😄"]
+        
+    ]
+    
+    let feelingPickerData = [1, 2, 3, 4, 5]
+
 
     
     @IBOutlet weak var variableSavedIndicator: UILabel!
@@ -116,14 +127,21 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             variableSavedIndicator.text = "🕒: \(selectedTime) \n ⚡: \(selectedFeels) \n Saved"
             
             //     Retrieve Mood and time for ListResultsViewController
-//            if let timeEvent = userDefaults.objectForKey("timeEvent") as? NSData {
-//                let savedTimeMood1 = NSKeyedUnarchiver.unarchiveObjectWithData(timeEvent) as! TimeEvent
-
+            TimeEvent.load()
+                
                 savedTimeMoodArray.append(savedTimeMood!)
             
-            
+//                TimeEvent.encodeWithCoder(savedTimeMoodArray)
+//                
+//                let savedTimeMoodArrayArchive = savedTimeMoodArray as? [NSData]
+//            
+//                savedTimeMoodArray = NSKeyedArchiver.archivedDataWithRootObject(self)
+                
+            let archivedTimeMoodData = NSKeyedArchiver.archivedDataWithRootObject(savedTimeMoodArray)
+            NSUserDefaults.standardUserDefaults().setObject(archivedTimeMoodData, forKey: "savedTimeMoodArray")
             print("savedTimeMood: \(savedTimeMood)")
 //            }
+
 
 
             print("savedTimeArray in ViewController.swift: \(savedTimeMoodArray.last!.time) savedMoodArray in ViewController.swift: \(savedTimeMoodArray.last!.feels) ")
@@ -134,9 +152,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             
             userDefaults.synchronize()
             
-            
-            
-            
         }
         
         
@@ -144,16 +159,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
     }
     
-    let data = [
-        
-        [ "00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00" ],
-        
-        ["1 ☹️", "2 😞", "3 😐", "4 🙂", "5 😄"]
-        
-    ]
     
     
-    let feelingPickerData = [1, 2, 3, 4, 5]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -191,15 +199,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     //pass data to the chartViewController
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "ViewToChartViewControllerSegue"{
-            
-            let destVC = segue.destinationViewController as? ChartViewController
-            destVC?.savedTimeMoodArray = self.savedTimeMoodArray
-            
-            print("savedTimeArray in ViewController segue: \(self.savedTimeMoodArray.first)")
-            
-            
-        }
+//        if segue.identifier == "ViewToChartViewControllerSegue"{
+//            
+//            let destVC = segue.destinationViewController as? ChartViewController
+//            destVC?.savedTimeMoodArray = self.savedTimeMoodArray
+//            
+//            print("savedTimeArray in ViewController segue: \(self.savedTimeMoodArray.first)")
+//            
+//            
+//        }
     }
     
     @IBAction func unwindToViewController(segue: UIStoryboardSegue) {

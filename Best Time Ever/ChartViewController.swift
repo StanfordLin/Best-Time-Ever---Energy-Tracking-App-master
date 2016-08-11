@@ -92,7 +92,7 @@ class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineCh
         super.viewDidAppear(animated)
         
         //        Animation that loads after 0.5 seconds of viewcontroller loading
-        var timer = NSTimer.scheduledTimerWithTimeInterval(0.25, target: self, selector: #selector(ChartViewController.showChart), userInfo: nil, repeats: false)
+        _ = NSTimer.scheduledTimerWithTimeInterval(0.25, target: self, selector: #selector(ChartViewController.showChart), userInfo: nil, repeats: false)
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -194,22 +194,22 @@ class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineCh
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if segue.identifier == "ChartViewToListResultsViewControllerSegue"{
-            
-            if (chartData == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) {
-                
-                let alert = UIAlertController(title: "Error", message: "Ohhh noo... No values were saved", preferredStyle: UIAlertControllerStyle.Alert)
-                alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
-                self.presentViewController(alert, animated: true, completion: nil)
-                
-                
-            } else {
-                
-                let destVC = segue.destinationViewController as? ListResultsViewController
-                destVC?.savedTimeMoodArray = self.savedTimeMoodArray
-                print("wooooo")
-            }
-        }
+//        if segue.identifier == "ChartViewToListResultsViewControllerSegue"{
+//            
+//            if (chartData == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) {
+//                
+//                let alert = UIAlertController(title: "Error", message: "Ohhh noo... No values were saved", preferredStyle: UIAlertControllerStyle.Alert)
+//                alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+//                self.presentViewController(alert, animated: true, completion: nil)
+//                
+//                
+//            } else {
+//                
+//                let destVC = segue.destinationViewController as? ListResultsViewController
+//                destVC?.savedTimeMoodArray = self.savedTimeMoodArray
+//                print("wooooo")
+//            }
+//        }
         
     }
     
