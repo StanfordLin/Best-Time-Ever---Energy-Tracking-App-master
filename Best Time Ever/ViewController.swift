@@ -40,13 +40,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBAction func unwindResetButton(segue: UIStoryboardSegue) {
         let chartViewController = segue.sourceViewController as? ChartViewController
         
+        NSUserDefaults.standardUserDefaults().removeObjectForKey("savedTimeMoodArray")
+        
         chartViewController!.chartData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         
         savedTimeDictionary = [:]
         
         chartViewController!.userDefaults.setObject(chartViewController!.chartData, forKey: "mood")
         
-        savedTimeMoodArray = []
         
         chartViewController!.userDefaults.synchronize()
     }
