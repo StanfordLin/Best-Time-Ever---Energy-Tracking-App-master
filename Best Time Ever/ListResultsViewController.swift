@@ -14,18 +14,18 @@ class ListResultsViewController: UITableViewController {
     var feels: [Int] = []
     var savedTimeMoodArray: [TimeEvent] = []
     var savedTimeMood: TimeEvent?
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
         
-//        let userDefaults = NSUserDefaults.standardUserDefaults()
-//        if let timeEvent = userDefaults.objectForKey("timeEvent") as? NSData {
-//            savedTimeMood = NSKeyedUnarchiver.unarchiveObjectWithData(timeEvent) as? TimeEvent
-//            savedTimeMoodArray.append(savedTimeMood!)
-//        }
+        //        let userDefaults = NSUserDefaults.standardUserDefaults()
+        //        if let timeEvent = userDefaults.objectForKey("timeEvent") as? NSData {
+        //            savedTimeMood = NSKeyedUnarchiver.unarchiveObjectWithData(timeEvent) as? TimeEvent
+        //            savedTimeMoodArray.append(savedTimeMood!)
+        //        }
         
         
         let archivedTimeMoodData = NSUserDefaults.standardUserDefaults().objectForKey("savedTimeMoodArray") as? NSData
@@ -38,8 +38,8 @@ class ListResultsViewController: UITableViewController {
         } else {
             print("SODNFPOISJDFPOIJSDFOPSJDIOF NOHTINGGGGGG")
         }
-
-            print("Saved time array:    \(savedTimeMoodArray) savedTimeMoodArray.count \(savedTimeMoodArray.count), savedTimeFeels: \(savedTimeMoodArray.last!.feels), savedTime: \(savedTimeMoodArray.last!.time)")
+        
+        print("Saved time array:    \(savedTimeMoodArray) savedTimeMoodArray.count \(savedTimeMoodArray.count), savedTimeFeels: \(savedTimeMoodArray.last!.feels), savedTime: \(savedTimeMoodArray.last!.time)")
     }
     
     
@@ -59,10 +59,8 @@ class ListResultsViewController: UITableViewController {
         return savedTimeMoodArray.count
     }
     
-    // 2
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        // 1
         let cell = tableView.dequeueReusableCellWithIdentifier("listResultsTableViewCell", forIndexPath: indexPath) as! ListResultsTableViewCell
         
         
@@ -72,21 +70,13 @@ class ListResultsViewController: UITableViewController {
         
         let timeEvent = savedTimeMoodArray[indexPath.row]
         timeEvent.save()
-
+        
         cell.storedFeelNumberLabel.text = "\(timeEvent.feels)"
-              cell.storedTimeLabel.text = "\(timeEvent.time):00"
+        cell.storedTimeLabel.text = "\(timeEvent.time):00"
+        
 
-            cell.storedFeelNumberLabel.backgroundColor = UIColor(red: 114 / 255,
-                                                                 green: 114 / 255,
-                                                                 blue: 114 / 255,
-                                                                 alpha: 1.0)
         
         print("Saved time array:    \(savedTimeMoodArray) savedTimeMoodArray.count \(savedTimeMoodArray.count), savedTimeFeels: \(savedTimeMoodArray.last!.feels), savedTime: \(savedTimeMoodArray.last!.time)")
-        
-        
-//        }
-        
-        //        cell.storedTimeLabel.layer.cornerRadius = 8 WHY DOESNT IT WORK
         
         return cell
         

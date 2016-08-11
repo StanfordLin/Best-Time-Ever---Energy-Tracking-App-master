@@ -172,6 +172,7 @@
                     <connections>
                         <outlet property="picker" destination="4LY-Pw-vdg" id="UhN-hs-ruw"/>
                         <outlet property="saveData" destination="7Wz-L3-G8D" id="IVj-PJ-iWP"/>
+                        <outlet property="variableSavedIndicator" destination="ri0-IE-YYm" id="BQR-Xz-kKm"/>
                         <outlet property="viewGraph" destination="ERp-DG-5lD" id="oT1-l9-ovV"/>
                     </connections>
                 </viewController>
