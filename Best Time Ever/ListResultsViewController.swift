@@ -11,7 +11,6 @@ import UIKit
 class ListResultsViewController: UITableViewController {
     
     var alreadyRan: Bool = false
-    var feelsArrayNoZeroes: [Int] = []
     var feels: [Int] = []
     var savedTimeMoodArray: [TimeEvent] = []
     
@@ -19,22 +18,22 @@ class ListResultsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let userDefaults = NSUserDefaults.standardUserDefaults()
-//        
-//        feels = userDefaults.valueForKey("mood") as! [Int]
-        
-        feelsArrayNoZeroes = feels.filter() {$0 != 0}
-        print("Saved time array:    \(savedTimeMoodArray) savedTimeMoodArray.count \(savedTimeMoodArray.count), savedTimeFeels: \(savedTimeMoodArray.last!.feels), savedTime: \(savedTimeMoodArray.last!.time)")
-
         
         
-        //        let defaults = NSUserDefaults.standardUserDefaults()
+        let defaults = NSUserDefaults.standardUserDefaults()
+//        if let timeEvent = userDefaults.objectForKey("timeEvent") as? NSData {
+//            savedTimeMood = NSKeyedUnarchiver.unarchiveObjectWithData(timeEvent) as! TimeEvent
+//            savedTimeMoodArray.append(savedTimeMood)
+//        }
+        
 //        if let timeEvent = defaults.objectForKey("timeEvent") as? NSData {
-//            savedTimeMoodArray = NSKeyedUnarchiver.unarchiveObjectWithData(timeEvent) as! [TimeEvent]
-        }
-
-
-        
+//            let timeMoodData = NSKeyedUnarchiver.unarchiveObjectWithData(timeEvent) as! TimeEvent
+//            self.savedTimeMoodArray += [timeMoodData]
+//            print("timeMoodData is: \(timeMoodData.time), timeay, timeMoodData: \(timeMoodData)")
+//            print("Saved time array:    \(savedTimeMoodArray) savedTimeMoodArray.count \(savedTimeMoodArray.count), savedTimeFeels: \(savedTimeMoodArray.last!.feels), savedTime: \(savedTimeMoodArray.last!.time)")
+//        }
+    }
+    
     
     
     override func didReceiveMemoryWarning() {
@@ -64,7 +63,9 @@ class ListResultsViewController: UITableViewController {
         
         
         let timeEvent = savedTimeMoodArray[indexPath.row]
-        cell.storedFeelNumberLabel.text = "\(timeEvent.feels + 1)"
+        timeEvent.save()
+
+        cell.storedFeelNumberLabel.text = "\(timeEvent.feels)"
               cell.storedTimeLabel.text = "\(timeEvent.time):00"
 
             cell.storedFeelNumberLabel.backgroundColor = UIColor(red: 114 / 255,
@@ -72,6 +73,7 @@ class ListResultsViewController: UITableViewController {
                                                                  blue: 114 / 255,
                                                                  alpha: 1.0)
         
+        print("Saved time array:    \(savedTimeMoodArray) savedTimeMoodArray.count \(savedTimeMoodArray.count), savedTimeFeels: \(savedTimeMoodArray.last!.feels), savedTime: \(savedTimeMoodArray.last!.time)")
         
         
 //        }
@@ -79,6 +81,8 @@ class ListResultsViewController: UITableViewController {
         //        cell.storedTimeLabel.layer.cornerRadius = 8 WHY DOESNT IT WORK
         
         return cell
+        
+        
     }
 }
 

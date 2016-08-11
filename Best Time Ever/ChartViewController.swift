@@ -19,39 +19,17 @@ class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineCh
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var lineChart: JBLineChartView!
     @IBOutlet weak var informationLabel: UILabel!
-    @IBAction func resetAlertConfirmation(sender: AnyObject) {
-        
-        let alert = UIAlertController(title: "Reset", message: "Are you sure you want to reset all values?", preferredStyle: UIAlertControllerStyle.Alert)
-        
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
-        
-        
-        alert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { action in
-            switch action.style{
-            case .Default:
-                self.performSegueWithIdentifier("unwindResetButtonToViewController", sender: self)
-                print("default")
-                
-            case .Cancel:
-                print("cancel")
-                
-            case .Destructive:
-                print("destructive")
-            }
-        }))
-        
-        self.presentViewController(alert, animated: true, completion: nil)
-    }
+
     
     var chartLegend = ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"]
     
     var chartData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-
+    
     let userDefaults = NSUserDefaults.standardUserDefaults()
-
-//    --------------------------------------------------------------
-//var lastYearChartData = [75, 88, 79, 95, 72, 55, 90]
-//    --------------------------------------------------------------
+    
+    //    --------------------------------------------------------------
+    //var lastYearChartData = [75, 88, 79, 95, 72, 55, 90]
+    //    --------------------------------------------------------------
     
     
     override func viewDidLoad() {
@@ -66,7 +44,7 @@ class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineCh
         chartData = userDefaults.valueForKey("mood") as! [Int]
         userDefaults.synchronize()
         print("Current mood is \(chartData)")
-    
+        
         
         
         
@@ -78,16 +56,16 @@ class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineCh
         lineChart.dataSource = self
         lineChart.minimumValue = 0
         lineChart.maximumValue = 5
-//        lineChart.contentView.layoutIfNeeded()
+        //        lineChart.contentView.layoutIfNeeded()
         
         lineChart.reloadData()
         lineChart.setState(.Collapsed, animated: false)
     }
     
-//    --------------------------------------------------------------
-//      footer,header
-//    --------------------------------------------------------------
-
+    //    --------------------------------------------------------------
+    //      footer,header
+    //    --------------------------------------------------------------
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -113,7 +91,7 @@ class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineCh
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-//        Animation that loads after 0.5 seconds of viewcontroller loading
+        //        Animation that loads after 0.5 seconds of viewcontroller loading
         var timer = NSTimer.scheduledTimerWithTimeInterval(0.25, target: self, selector: #selector(ChartViewController.showChart), userInfo: nil, repeats: false)
     }
     
@@ -146,9 +124,9 @@ class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineCh
             return UInt(chartData.count)
         }
         
-//        else if (lineIndex == 1) {
-//            return UInt(lastYearChartData.count)
-//        }
+        //        else if (lineIndex == 1) {
+        //            return UInt(lastYearChartData.count)
+        //        }
         
         return 0
     }
@@ -157,9 +135,9 @@ class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineCh
         if (lineIndex == 0) {
             return CGFloat(chartData[Int(horizontalIndex)])
         }
-//        else if (lineIndex == 1) {
-//            return CGFloat(lastYearChartData[Int(horizontalIndex)])
-//        }
+        //        else if (lineIndex == 1) {
+        //            return CGFloat(lastYearChartData[Int(horizontalIndex)])
+        //        }
         
         return 0
     }
@@ -168,16 +146,16 @@ class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineCh
         if (lineIndex == 0) {
             return UIColor.init(red:0.00, green:0.20, blue:0.60, alpha:0.5)
         }
-//        else if (lineIndex == 1) {
-//            return UIColor.whiteColor()
-//        }
+        //        else if (lineIndex == 1) {
+        //            return UIColor.whiteColor()
+        //        }
         
         return UIColor.lightGrayColor()
     }
     
     func lineChartView(lineChartView: JBLineChartView!, showsDotsForLineAtLineIndex lineIndex: UInt) -> Bool {
         if (lineIndex == 0) { return false }
-//        else if (lineIndex == 1) { return false }
+        //        else if (lineIndex == 1) { return false }
         
         return false
     }
@@ -188,7 +166,7 @@ class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineCh
     
     func lineChartView(lineChartView: JBLineChartView!, smoothLineAtLineIndex lineIndex: UInt) -> Bool {
         if (lineIndex == 0) { return true }
-//        else if (lineIndex == 1) { return true }
+        //        else if (lineIndex == 1) { return true }
         
         return true
     }
@@ -199,11 +177,11 @@ class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineCh
             let key = chartLegend[Int(horizontalIndex)]
             informationLabel.text = "🕒 \(key) \n ⚡: \(data)"
         }
-//        else if (lineIndex == 1) {
-//            let data = lastYearChartData[Int(horizontalIndex)]
-//            let key = chartLegend[Int(horizontalIndex)]
-//            informationLabel.text = "Weather last year on \(key): \(data)"
-//        }
+        //        else if (lineIndex == 1) {
+        //            let data = lastYearChartData[Int(horizontalIndex)]
+        //            let key = chartLegend[Int(horizontalIndex)]
+        //            informationLabel.text = "Weather last year on \(key): \(data)"
+        //        }
     }
     
     func lineChartView(lineChartView: JBLineChartView!, fillColorForLineAtLineIndex lineIndex: UInt) -> UIColor! {
@@ -216,13 +194,49 @@ class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineCh
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-            let destVC = segue.destinationViewController as? ListResultsViewController
-            destVC?.savedTimeMoodArray = self.savedTimeMoodArray
-        print("Saved time array:    \(savedTimeMoodArray) savedTimeMoodArray.count \(savedTimeMoodArray.count), savedTimeFeels: \(savedTimeMoodArray.last!.feels), savedTime: \(savedTimeMoodArray.last!.time)")
-
+        if segue.identifier == "ChartViewToListResultsViewControllerSegue"{
+            
+            if (chartData == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) {
+                
+                let alert = UIAlertController(title: "Error", message: "Ohhh noo... No values were saved", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+                
+                
+            } else {
+                
+                let destVC = segue.destinationViewController as? ListResultsViewController
+                destVC?.savedTimeMoodArray = self.savedTimeMoodArray
+                print("wooooo")
+            }
+        }
+        
     }
     
     @IBAction func unwindToChartView(segue: UIStoryboardSegue) {
     }
-
+    
+    @IBAction func resetAlertConfirmation(sender: AnyObject) {
+        
+        let alert = UIAlertController(title: "Reset", message: "Are you sure you want to reset all values?", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
+        
+        
+        alert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { action in
+            switch action.style{
+            case .Default:
+                self.performSegueWithIdentifier("unwindResetButtonToViewController", sender: self)
+                print("default")
+                
+            case .Cancel:
+                print("cancel")
+                
+            case .Destructive:
+                print("destructive")
+            }
+        }))
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
 }

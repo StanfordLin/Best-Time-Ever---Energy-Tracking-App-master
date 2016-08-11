@@ -82,13 +82,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E65C41E61D5BEAF500AF9CBA /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				E6A5490D1D590271009F3A16 /* TimeEvent.swift */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
 		E67D15481D5487CF00E96FAA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				E6BE1D9A1D3801990088742B /* ViewController.swift */,
 				E6C027381D525A5500C16F04 /* ChartViewController.swift */,
 				E6350A231D54323B00C65073 /* ListResultsViewController.swift */,
-				E6A5490D1D590271009F3A16 /* TimeEvent.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -124,6 +131,7 @@
 			children = (
 				E67D15481D5487CF00E96FAA /* Controllers */,
 				E67D15491D54880000E96FAA /* Views */,
+				E65C41E61D5BEAF500AF9CBA /* Helper */,
 				E6BE1D981D3801990088742B /* AppDelegate.swift */,
 				E6BE1D9C1D3801990088742B /* Main.storyboard */,
 				E6BE1D9F1D3801990088742B /* Assets.xcassets */,

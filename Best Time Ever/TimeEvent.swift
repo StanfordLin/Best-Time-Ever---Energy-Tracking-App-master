@@ -41,11 +41,11 @@ class TimeEvent : NSObject, NSCoding {
         aCoder.encodeObject(feels, forKey: "feels")
     }
     func save() {
-        let savedData = NSKeyedArchiver.archivedDataWithRootObject(self)
+        let savedTimeMoodArray = NSKeyedArchiver.archivedDataWithRootObject(self)
         let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(savedData, forKey: "timeEvent")
+        defaults.setObject(savedTimeMoodArray, forKey: "savedTimeMoodArray")
+        defaults.synchronize()
         
-
     }
     
     

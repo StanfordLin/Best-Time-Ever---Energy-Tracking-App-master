@@ -68,7 +68,7 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wz-L3-G8D">
                                 <rect key="frame" x="225" y="397" width="150" height="60"/>
                                 <color key="backgroundColor" red="0.3095885833" green="0.50332859299999999" blue="0.894772813" alpha="1" colorSpace="calibratedRGB"/>
-                                <accessibility key="accessibilityConfiguration" identifier="saveDataSegue"/>
+                                <accessibility key="accessibilityConfiguration" identifier="saveButtonSegue"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="7Wz-L3-G8D" secondAttribute="height" multiplier="20:7" id="7jU-Z1-QHk"/>
                                     <constraint firstAttribute="height" constant="59" id="Q4I-fA-3Sm"/>
@@ -282,7 +282,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEx-Sf-vTw">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <color key="backgroundColor" red="0.3095885833" green="0.50332859299999999" blue="0.894772813" alpha="1" colorSpace="calibratedRGB"/>
-                                <accessibility key="accessibilityConfiguration" identifier="ResultsSegue"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="OAX-WP-cjy"/>
                                     <constraint firstAttribute="height" constant="70" id="SKz-jz-Xyo"/>
@@ -304,7 +303,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="s1S-Vx-o13" kind="show" id="8zj-ez-8gr"/>
+                                    <segue destination="s1S-Vx-o13" kind="show" identifier="ChartViewToListResultsViewControllerSegue" id="8zj-ez-8gr"/>
                                 </connections>
                             </button>
                         </subviews>

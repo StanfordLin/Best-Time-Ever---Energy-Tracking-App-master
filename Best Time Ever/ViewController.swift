@@ -5,7 +5,6 @@
 //  Created by Stanford on 2016-07-14.
 //  Copyright © 2016 Stanford. All rights reserved.
 //
-import JBChartView
 import UIKit
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
@@ -15,6 +14,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var savedTimeDictionary: [String:Int] = [:]
     
     var savedTimeMoodArray: [TimeEvent] = []
+    
+    var savedTimeMood: TimeEvent?
 
     
     @IBOutlet weak var variableSavedIndicator: UILabel!
@@ -33,6 +34,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         savedTimeDictionary = [:]
         
         chartViewController!.userDefaults.setObject(chartViewController!.chartData, forKey: "mood")
+        
+        savedTimeMoodArray = []
         
         chartViewController!.userDefaults.synchronize()
     }
@@ -78,7 +81,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             
             //                Save time and mood for List Results Table View
             let timeEvent = TimeEvent(time: timeValue, feels: feelValue)
+            self.savedTimeMoodArray.append(timeEvent)
             timeEvent.save()
+            
             userDefaults.synchronize()
             
             
@@ -101,7 +106,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             //        have the integers of feelingPickerData be retrieved according to what is selected
             let savedFeelValue = Int(feelingPickerData[feelValue])
             
-            
+            savedTimeMood = TimeEvent(time: timeValue, feels: feelValue)
             
             savedMood?[timeValue] = savedFeelValue // "something"
             
@@ -110,15 +115,22 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             userDefaults.setObject(savedMood, forKey: "mood")
             variableSavedIndicator.text = "🕒: \(selectedTime) \n ⚡: \(selectedFeels) \n Saved"
             
-            //                Mood and time for ListResultsViewController
+            //     Retrieve Mood and time for ListResultsViewController
+//            if let timeEvent = userDefaults.objectForKey("timeEvent") as? NSData {
+//                let savedTimeMood1 = NSKeyedUnarchiver.unarchiveObjectWithData(timeEvent) as! TimeEvent
+
+                savedTimeMoodArray.append(savedTimeMood!)
             
             
-            //                Saves time and mood values
-            let timeEvent = TimeEvent(time: timeValue, feels: feelValue)
-            timeEvent.save()
-            self.savedTimeMoodArray.append(timeEvent)
+            print("savedTimeMood: \(savedTimeMood)")
+//            }
+
 
             print("savedTimeArray in ViewController.swift: \(savedTimeMoodArray.last!.time) savedMoodArray in ViewController.swift: \(savedTimeMoodArray.last!.feels) ")
+            
+//            let defaults = NSUserDefaults.standardUserDefaults()
+//            let array = defaults.arrayForKey("timeEvent")
+
             
             userDefaults.synchronize()
             
@@ -179,13 +191,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     //pass data to the chartViewController
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        let destVC = segue.destinationViewController as? ChartViewController
-        destVC?.savedTimeMoodArray = self.savedTimeMoodArray
-        
-        print("savedTimeArray in ViewController segue: \(self.savedTimeMoodArray.first)")
-        
-        
+        if segue.identifier == "ViewToChartViewControllerSegue"{
+            
+            let destVC = segue.destinationViewController as? ChartViewController
+            destVC?.savedTimeMoodArray = self.savedTimeMoodArray
+            
+            print("savedTimeArray in ViewController segue: \(self.savedTimeMoodArray.first)")
+            
+            
+        }
     }
     
     @IBAction func unwindToViewController(segue: UIStoryboardSegue) {
