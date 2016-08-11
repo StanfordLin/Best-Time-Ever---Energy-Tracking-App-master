@@ -22,25 +22,14 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallpaper" translatesAutoresizingMaskIntoConstraints="NO" id="CMc-61-zQx">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="How are you feeling?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4BX-9v-kd9">
-                                <rect key="frame" x="162" y="45" width="277" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="How are you feeling?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4BX-9v-kd9">
+                                <rect key="frame" x="162" y="60" width="277" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4LY-Pw-vdg">
-                                <rect key="frame" x="20" y="111" width="560" height="216"/>
-                                <color key="backgroundColor" red="0.30588235294117649" green="0.41568627450980394" blue="0.69411764705882351" alpha="0.5" colorSpace="calibratedRGB"/>
-                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="20" y="125" width="360" height="216"/>
-                                </variation>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="aof-8O-5vd"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="y2d-hm-WwI"/>
-                                </connections>
-                            </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ERp-DG-5lD">
-                                <rect key="frame" x="225" y="489" width="150" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ERp-DG-5lD">
+                                <rect key="frame" x="240" y="490" width="121" height="60"/>
                                 <color key="backgroundColor" red="0.3095885833" green="0.50332859299999999" blue="0.894772813" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Nbw-1U-H2g">
@@ -68,8 +57,8 @@
                                     <segue destination="MZT-b9-YMw" kind="show" identifier="ViewToChartViewControllerSegue" id="8Os-sw-meA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wz-L3-G8D">
-                                <rect key="frame" x="225" y="397" width="150" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wz-L3-G8D">
+                                <rect key="frame" x="240" y="397" width="121" height="60"/>
                                 <color key="backgroundColor" red="0.3095885833" green="0.50332859299999999" blue="0.894772813" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" identifier="saveButtonSegue"/>
                                 <constraints>
@@ -95,8 +84,8 @@
                                     <action selector="saveData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2DG-KW-IPI"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ri0-IE-YYm">
-                                <rect key="frame" x="232" y="368" width="160" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ri0-IE-YYm">
+                                <rect key="frame" x="0.0" y="359" width="600" height="9"/>
                                 <color key="backgroundColor" red="0.30980392159999998" green="0.50196078430000002" blue="0.89411764709999997" alpha="0.46839978450000003" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="19"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -105,32 +94,52 @@
                                     <rect key="frame" x="20" y="413" width="360" height="23"/>
                                 </variation>
                             </label>
+                            <pickerView contentMode="scaleToFill" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="4LY-Pw-vdg">
+                                <rect key="frame" x="20" y="126" width="560" height="216"/>
+                                <color key="backgroundColor" red="0.30588235294117649" green="0.41568627450980394" blue="0.69411764705882351" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="20" y="125" width="360" height="216"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="aof-8O-5vd"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="y2d-hm-WwI"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="0.30980392159999998" green="0.50196078430000002" blue="0.89411764709999997" alpha="0.46839978450000003" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="7Wz-L3-G8D" firstAttribute="top" relation="lessThanOrEqual" secondItem="ri0-IE-YYm" secondAttribute="bottom" constant="30" id="0yX-4X-jHd"/>
                             <constraint firstItem="4LY-Pw-vdg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="2di-cF-fS6"/>
                             <constraint firstItem="ERp-DG-5lD" firstAttribute="width" secondItem="7Wz-L3-G8D" secondAttribute="width" id="6z4-Eq-8q0"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ERp-DG-5lD" secondAttribute="bottom" constant="51" id="9VL-UC-T5e"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" relation="lessThanOrEqual" secondItem="ERp-DG-5lD" secondAttribute="bottom" constant="50" id="9VL-UC-T5e"/>
                             <constraint firstItem="4LY-Pw-vdg" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="BTC-1j-tgo"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ERp-DG-5lD" secondAttribute="bottom" constant="50" id="CBt-is-rly"/>
                             <constraint firstItem="ERp-DG-5lD" firstAttribute="height" secondItem="7Wz-L3-G8D" secondAttribute="height" id="E5J-Wo-EXf"/>
                             <constraint firstItem="CMc-61-zQx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="F8X-dz-GUj"/>
                             <constraint firstItem="4LY-Pw-vdg" firstAttribute="top" relation="greaterThanOrEqual" secondItem="4BX-9v-kd9" secondAttribute="bottom" constant="30" id="Fnj-Mr-TeL"/>
-                            <constraint firstItem="7Wz-L3-G8D" firstAttribute="trailing" secondItem="ERp-DG-5lD" secondAttribute="trailing" id="GIG-hp-RHK"/>
                             <constraint firstItem="4LY-Pw-vdg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="GQl-Tr-FjG"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="CMc-61-zQx" secondAttribute="bottom" id="J67-h8-iVR"/>
                             <constraint firstItem="4BX-9v-kd9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LRg-pF-1CI"/>
                             <constraint firstItem="ERp-DG-5lD" firstAttribute="top" secondItem="7Wz-L3-G8D" secondAttribute="bottom" constant="21" id="Qsi-IP-cE8"/>
                             <constraint firstItem="4LY-Pw-vdg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Rw1-yq-vCS"/>
+                            <constraint firstItem="ERp-DG-5lD" firstAttribute="top" secondItem="7Wz-L3-G8D" secondAttribute="bottom" constant="32" id="V2E-cc-9jJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="CMc-61-zQx" secondAttribute="trailing" constant="-20" id="Zg7-yc-5tk"/>
-                            <constraint firstItem="4BX-9v-kd9" firstAttribute="top" relation="greaterThanOrEqual" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="25" id="dWA-i3-eAH"/>
+                            <constraint firstItem="4BX-9v-kd9" firstAttribute="top" relation="greaterThanOrEqual" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="dWA-i3-eAH"/>
+                            <constraint firstItem="ri0-IE-YYm" firstAttribute="top" relation="lessThanOrEqual" secondItem="4LY-Pw-vdg" secondAttribute="bottom" constant="35" id="hKz-uE-sxK"/>
+                            <constraint firstItem="7Wz-L3-G8D" firstAttribute="top" secondItem="ri0-IE-YYm" secondAttribute="bottom" constant="30" id="jrY-S5-ft7"/>
                             <constraint firstItem="ERp-DG-5lD" firstAttribute="top" secondItem="7Wz-L3-G8D" secondAttribute="bottom" constant="32" id="kzK-BG-Tlk"/>
                             <constraint firstItem="7Wz-L3-G8D" firstAttribute="leading" secondItem="ERp-DG-5lD" secondAttribute="leading" id="lik-Jl-y37"/>
+                            <constraint firstItem="ri0-IE-YYm" firstAttribute="top" secondItem="4LY-Pw-vdg" secondAttribute="bottom" constant="17" id="oEY-ON-gQ4"/>
                             <constraint firstItem="7Wz-L3-G8D" firstAttribute="top" secondItem="4LY-Pw-vdg" secondAttribute="bottom" constant="41" id="oe3-TJ-mYF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ri0-IE-YYm" secondAttribute="trailing" constant="-20" id="rJY-OF-ADg"/>
                             <constraint firstItem="CMc-61-zQx" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="twJ-QA-j09"/>
                             <constraint firstItem="7Wz-L3-G8D" firstAttribute="top" secondItem="4LY-Pw-vdg" secondAttribute="bottom" constant="41" id="u1t-Nt-PrY"/>
                             <constraint firstItem="4BX-9v-kd9" firstAttribute="trailing" secondItem="4LY-Pw-vdg" secondAttribute="trailing" id="wXC-fs-OPx"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7Wz-L3-G8D" secondAttribute="bottom" constant="144" id="xtD-hd-hvu"/>
+                            <constraint firstItem="ERp-DG-5lD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xyd-fq-sy0"/>
+                            <constraint firstItem="ri0-IE-YYm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="y4X-IT-U6z"/>
                             <constraint firstItem="4LY-Pw-vdg" firstAttribute="centerX" secondItem="7Wz-L3-G8D" secondAttribute="centerX" id="yW0-4z-k9r"/>
+                            <constraint firstItem="ri0-IE-YYm" firstAttribute="centerX" secondItem="7Wz-L3-G8D" secondAttribute="centerX" id="z4t-bG-33U"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -151,7 +160,6 @@
                                 <exclude reference="BTC-1j-tgo"/>
                                 <include reference="GQl-Tr-FjG"/>
                                 <exclude reference="yW0-4z-k9r"/>
-                                <exclude reference="GIG-hp-RHK"/>
                                 <exclude reference="lik-Jl-y37"/>
                                 <exclude reference="oe3-TJ-mYF"/>
                                 <include reference="6z4-Eq-8q0"/>
@@ -169,7 +177,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="455" y="316"/>
+            <point key="canvasLocation" x="534" y="283"/>
         </scene>
         <!--Chart View Controller-->
         <scene sceneID="Ry3-jm-0vp">
