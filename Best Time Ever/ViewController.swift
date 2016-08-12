@@ -55,12 +55,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBAction func saveData(sender: AnyObject) {
         
         let selectedTime = data[0][picker.selectedRowInComponent(0)]
-        
         let selectedFeels = data[1][picker.selectedRowInComponent(1)]
-        
-        
-        
-        
         
         if userDefaults.objectForKey("mood") as? [Int] == nil {
             
@@ -91,12 +86,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             //                Save time and mood for List Results Table View
             let timeEvent = TimeEvent(time: timeValue, feels: feelValue)
             self.savedTimeMoodArray.append(timeEvent)
-            timeEvent.save()
-            
             userDefaults.synchronize()
-            
-            
-            
+
         } else if userDefaults.objectForKey("mood") as? [Int] != nil {
             
             /* RETRIEVE THE DATA from NSUserDefaults*/

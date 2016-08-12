@@ -20,32 +20,20 @@ class ListResultsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
-        //        let userDefaults = NSUserDefaults.standardUserDefaults()
-        //        if let timeEvent = userDefaults.objectForKey("timeEvent") as? NSData {
-        //            savedTimeMood = NSKeyedUnarchiver.unarchiveObjectWithData(timeEvent) as? TimeEvent
-        //            savedTimeMoodArray.append(savedTimeMood!)
-        //        }
-        
-        
         let archivedTimeMoodData = NSUserDefaults.standardUserDefaults().objectForKey("savedTimeMoodArray") as? NSData
         
         if let archivedTimeMoodData = archivedTimeMoodData {
             savedTimeMoodArray = (NSKeyedUnarchiver.unarchiveObjectWithData(archivedTimeMoodData) as? [TimeEvent])!
             
-//        TimeEvent.load()
             if unpackedName == unpackedName {
                 savedTimeMood = unpackedName
             } else {
                 print("hahh gay, it's nil")
             }
             
-    
-//        print("Saved time array:    \(savedTimeMoodArray) savedTimeMoodArray.count \(savedTimeMoodArray.count), savedTimeFeels: \(savedTimeMoodArray.last!.feels), savedTime: \(savedTimeMoodArray.last!.time)")
-    }
-    
-    
+        }
+        
+        
     }
     override func didReceiveMemoryWarning() {
         didReceiveMemoryWarning()
@@ -66,21 +54,12 @@ class ListResultsViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("listResultsTableViewCell", forIndexPath: indexPath) as! ListResultsTableViewCell
         
-        
-        
-        print("indexPath: \(indexPath.row)")
-        
-        
         let timeEvent = savedTimeMoodArray[indexPath.row]
-        timeEvent.save()
         
         cell.storedFeelNumberLabel.text = "\(timeEvent.feels)"
         cell.storedTimeLabel.text = "\(timeEvent.time):00"
-        
 
-        
-        print("Saved time array:    \(savedTimeMoodArray) savedTimeMoodArray.count \(savedTimeMoodArray.count), savedTimeFeels: \(savedTimeMoodArray.last!.feels), savedTime: \(savedTimeMoodArray.last!.time)")
-        
+        NSUserDefaults().synchronize()
         return cell
         
         
