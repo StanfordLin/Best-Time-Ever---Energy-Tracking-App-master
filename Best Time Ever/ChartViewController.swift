@@ -11,7 +11,7 @@ import JBChartView
 
 class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineChartViewDelegate {
     
-    var savedTimeMoodArray: [TimeEvent] = []
+//    var savedTimeMoodArray: [TimeEvent] = []
     
     @IBOutlet weak var resultsButton: UIButton!
     @IBOutlet weak var navigationBar: UINavigationBar!
@@ -194,23 +194,22 @@ class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineCh
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-                if segue.identifier == "ChartViewToListResultsViewControllerSegue"{
-        
-                    if (chartData == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) {
-        
-                        let alert = UIAlertController(title: "Error", message: "Ohhh noo... No values were saved", preferredStyle: UIAlertControllerStyle.Alert)
-                        alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
-                        self.presentViewController(alert, animated: true, completion: nil)
-        
-                    }
-                    
+//                if segue.identifier == "ChartViewToListResultsViewControllerSegue"{
+//        
+//                    if (chartData == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) {
+//        
+//                        let alert = UIAlertController(title: "Error", message: "Ohhh noo... No values were saved", preferredStyle: UIAlertControllerStyle.Alert)
+//                        alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+//                        self.presentViewController(alert, animated: true, completion: nil)
+//        
+//        
 //                    } else {
 //        
-//                        let destVC = segue.destinationViewController as! ListResultsViewController
-//                        destVC.savedTimeMoodArray = self.savedTimeMoodArray
+////                        let destVC = segue.destinationViewController as? ListResultsViewController
+////                        destVC?.savedTimeMoodArray = self.savedTimeMoodArray
 //                        print("wooooo")
 //                    }
-                }
+//                }
         
     }
     

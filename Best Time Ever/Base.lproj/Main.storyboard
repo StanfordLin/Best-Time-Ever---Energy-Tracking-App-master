@@ -4,14 +4,13 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Best_Time" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Best_Time_Ever" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -23,7 +22,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallpaper" translatesAutoresizingMaskIntoConstraints="NO" id="CMc-61-zQx">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" ambiguous="YES" text="How are you feeling?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4BX-9v-kd9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="How are you feeling?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4BX-9v-kd9">
                                 <rect key="frame" x="162" y="60" width="277" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -47,7 +46,8 @@
                                         <exclude reference="TYp-hh-Pgo"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="100" y="565" width="200" height="70"/>
                                     <mask key="constraints">
                                         <exclude reference="Nbw-1U-H2g"/>
                                         <exclude reference="TYp-hh-Pgo"/>
@@ -64,7 +64,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="59" id="Q4I-fA-3Sm"/>
                                     <constraint firstAttribute="height" constant="60" id="dEa-ia-zrP"/>
-                                    <constraint firstAttribute="width" secondItem="7Wz-L3-G8D" secondAttribute="height" multiplier="4.5" id="mx8-hf-Fuz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="22"/>
                                 <state key="normal" title="Save">
@@ -73,42 +72,34 @@
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="Q4I-fA-3Sm"/>
-                                        <exclude reference="mx8-hf-Fuz"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="100" y="460" width="200" height="70"/>
                                     <mask key="constraints">
                                         <exclude reference="dEa-ia-zrP"/>
-                                        <include reference="mx8-hf-Fuz"/>
                                     </mask>
                                 </variation>
                                 <connections>
                                     <action selector="saveData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2DG-KW-IPI"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ri0-IE-YYm">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ri0-IE-YYm">
                                 <rect key="frame" x="0.0" y="359" width="600" height="9"/>
                                 <color key="backgroundColor" red="0.30980392159999998" green="0.50196078430000002" blue="0.89411764709999997" alpha="0.46839978450000003" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="rAo-kr-oqf"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="19"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="rAo-kr-oqf"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="rAo-kr-oqf"/>
-                                    </mask>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="20" y="413" width="360" height="23"/>
                                 </variation>
                             </label>
-                            <pickerView contentMode="scaleToFill" verticalCompressionResistancePriority="751" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4LY-Pw-vdg">
+                            <pickerView contentMode="scaleToFill" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="4LY-Pw-vdg">
                                 <rect key="frame" x="20" y="126" width="560" height="216"/>
                                 <color key="backgroundColor" red="0.30588235294117649" green="0.41568627450980394" blue="0.69411764705882351" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="20" y="125" width="360" height="216"/>
+                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="aof-8O-5vd"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="y2d-hm-WwI"/>
@@ -127,7 +118,6 @@
                             <constraint firstItem="CMc-61-zQx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="F8X-dz-GUj"/>
                             <constraint firstItem="4LY-Pw-vdg" firstAttribute="top" relation="greaterThanOrEqual" secondItem="4BX-9v-kd9" secondAttribute="bottom" constant="30" id="Fnj-Mr-TeL"/>
                             <constraint firstItem="4LY-Pw-vdg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="GQl-Tr-FjG"/>
-                            <constraint firstItem="ri0-IE-YYm" firstAttribute="top" secondItem="4LY-Pw-vdg" secondAttribute="bottom" constant="35" id="Gy6-aL-Vh6"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="CMc-61-zQx" secondAttribute="bottom" id="J67-h8-iVR"/>
                             <constraint firstItem="4BX-9v-kd9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LRg-pF-1CI"/>
                             <constraint firstItem="ERp-DG-5lD" firstAttribute="top" secondItem="7Wz-L3-G8D" secondAttribute="bottom" constant="21" id="Qsi-IP-cE8"/>
@@ -135,21 +125,15 @@
                             <constraint firstItem="ERp-DG-5lD" firstAttribute="top" secondItem="7Wz-L3-G8D" secondAttribute="bottom" constant="32" id="V2E-cc-9jJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="CMc-61-zQx" secondAttribute="trailing" constant="-20" id="Zg7-yc-5tk"/>
                             <constraint firstItem="4BX-9v-kd9" firstAttribute="top" relation="greaterThanOrEqual" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="dWA-i3-eAH"/>
-                            <constraint firstItem="ri0-IE-YYm" firstAttribute="top" relation="greaterThanOrEqual" secondItem="4LY-Pw-vdg" secondAttribute="bottom" constant="35" id="hKz-uE-sxK">
-                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
-                            </constraint>
-                            <constraint firstItem="7Wz-L3-G8D" firstAttribute="top" secondItem="ri0-IE-YYm" secondAttribute="bottom" constant="30" id="jrY-S5-ft7">
-                                <variation key="heightClass=regular-widthClass=compact" constant="18"/>
-                            </constraint>
-                            <constraint firstItem="7Wz-L3-G8D" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="koe-MF-ZSa"/>
+                            <constraint firstItem="ri0-IE-YYm" firstAttribute="top" relation="lessThanOrEqual" secondItem="4LY-Pw-vdg" secondAttribute="bottom" constant="35" id="hKz-uE-sxK"/>
+                            <constraint firstItem="7Wz-L3-G8D" firstAttribute="top" secondItem="ri0-IE-YYm" secondAttribute="bottom" constant="30" id="jrY-S5-ft7"/>
                             <constraint firstItem="ERp-DG-5lD" firstAttribute="top" secondItem="7Wz-L3-G8D" secondAttribute="bottom" constant="32" id="kzK-BG-Tlk"/>
                             <constraint firstItem="7Wz-L3-G8D" firstAttribute="leading" secondItem="ERp-DG-5lD" secondAttribute="leading" id="lik-Jl-y37"/>
+                            <constraint firstItem="ri0-IE-YYm" firstAttribute="top" secondItem="4LY-Pw-vdg" secondAttribute="bottom" constant="17" id="oEY-ON-gQ4"/>
                             <constraint firstItem="7Wz-L3-G8D" firstAttribute="top" secondItem="4LY-Pw-vdg" secondAttribute="bottom" constant="41" id="oe3-TJ-mYF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ri0-IE-YYm" secondAttribute="trailing" constant="-20" id="rJY-OF-ADg"/>
-                            <constraint firstItem="4LY-Pw-vdg" firstAttribute="top" secondItem="4BX-9v-kd9" secondAttribute="bottom" constant="30" id="rZ8-24-gbv"/>
                             <constraint firstItem="CMc-61-zQx" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="twJ-QA-j09"/>
                             <constraint firstItem="7Wz-L3-G8D" firstAttribute="top" secondItem="4LY-Pw-vdg" secondAttribute="bottom" constant="41" id="u1t-Nt-PrY"/>
-                            <constraint firstAttribute="trailing" secondItem="7Wz-L3-G8D" secondAttribute="trailing" constant="20" symbolic="YES" id="uJX-4o-ddK"/>
                             <constraint firstItem="4BX-9v-kd9" firstAttribute="trailing" secondItem="4LY-Pw-vdg" secondAttribute="trailing" id="wXC-fs-OPx"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7Wz-L3-G8D" secondAttribute="bottom" constant="144" id="xtD-hd-hvu"/>
                             <constraint firstItem="ERp-DG-5lD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xyd-fq-sy0"/>
@@ -160,14 +144,10 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="GQl-Tr-FjG"/>
-                                <exclude reference="rZ8-24-gbv"/>
                                 <exclude reference="yW0-4z-k9r"/>
                                 <exclude reference="wXC-fs-OPx"/>
-                                <exclude reference="Gy6-aL-Vh6"/>
-                                <exclude reference="koe-MF-ZSa"/>
                                 <exclude reference="oe3-TJ-mYF"/>
                                 <exclude reference="u1t-Nt-PrY"/>
-                                <exclude reference="uJX-4o-ddK"/>
                                 <exclude reference="6z4-Eq-8q0"/>
                                 <exclude reference="E5J-Wo-EXf"/>
                                 <exclude reference="Qsi-IP-cE8"/>
@@ -179,13 +159,9 @@
                                 <exclude reference="2di-cF-fS6"/>
                                 <exclude reference="BTC-1j-tgo"/>
                                 <include reference="GQl-Tr-FjG"/>
-                                <include reference="rZ8-24-gbv"/>
                                 <exclude reference="yW0-4z-k9r"/>
-                                <include reference="Gy6-aL-Vh6"/>
-                                <include reference="koe-MF-ZSa"/>
                                 <exclude reference="lik-Jl-y37"/>
                                 <exclude reference="oe3-TJ-mYF"/>
-                                <include reference="uJX-4o-ddK"/>
                                 <include reference="6z4-Eq-8q0"/>
                                 <include reference="E5J-Wo-EXf"/>
                                 <exclude reference="kzK-BG-Tlk"/>
@@ -202,12 +178,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="285" y="303"/>
+            <point key="canvasLocation" x="534" y="283"/>
         </scene>
         <!--Chart View Controller-->
         <scene sceneID="Ry3-jm-0vp">
             <objects>
-                <viewController id="MZT-b9-YMw" customClass="ChartViewController" customModule="Best_Time" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="MZT-b9-YMw" customClass="ChartViewController" customModule="Best_Time_Ever" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qXZ-WA-9Sw"/>
                         <viewControllerLayoutGuide type="bottom" id="bUa-DB-DkT"/>
@@ -229,6 +205,29 @@
                                     <constraint firstAttribute="height" constant="241" id="DgC-li-9w9"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the graph!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMt-Ov-71J">
+                                <rect key="frame" x="20" y="350" width="560" height="81"/>
+                                <color key="backgroundColor" red="0.3095885833" green="0.50332859299999999" blue="0.894772813" alpha="0.46839978448275871" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="MQn-rA-8vp"/>
+                                    <constraint firstAttribute="height" constant="130" id="diE-oM-dkR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="37"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="MQn-rA-8vp"/>
+                                        <exclude reference="diE-oM-dkR"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="MQn-rA-8vp"/>
+                                        <include reference="diE-oM-dkR"/>
+                                    </mask>
+                                </variation>
+                            </label>
                             <navigationBar contentMode="scaleToFill" shadowImage="transparent" backIndicatorImage="transparent" backIndicatorTransitionMaskImage="transparent" translatesAutoresizingMaskIntoConstraints="NO" id="xKq-YW-VxO">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -280,29 +279,6 @@
                                     <segue destination="s1S-Vx-o13" kind="show" identifier="ChartViewToListResultsViewControllerSegue" id="8zj-ez-8gr"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the graph!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMt-Ov-71J">
-                                <rect key="frame" x="20" y="350" width="560" height="81"/>
-                                <color key="backgroundColor" red="0.3095885833" green="0.50332859299999999" blue="0.894772813" alpha="0.46839978448275871" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="MQn-rA-8vp"/>
-                                    <constraint firstAttribute="height" constant="130" id="diE-oM-dkR"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="37"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="MQn-rA-8vp"/>
-                                        <exclude reference="diE-oM-dkR"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <exclude reference="MQn-rA-8vp"/>
-                                        <include reference="diE-oM-dkR"/>
-                                    </mask>
-                                </variation>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -332,9 +308,9 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="wIY-Jh-Bmd"/>
+                                <exclude reference="gMt-Ov-71J"/>
                                 <exclude reference="xKq-YW-VxO"/>
                                 <exclude reference="eEx-Sf-vTw"/>
-                                <exclude reference="gMt-Ov-71J"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="QxN-XB-Ct2"/>
@@ -359,9 +335,9 @@
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="wIY-Jh-Bmd"/>
+                                <include reference="gMt-Ov-71J"/>
                                 <include reference="xKq-YW-VxO"/>
                                 <include reference="eEx-Sf-vTw"/>
-                                <include reference="gMt-Ov-71J"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="QxN-XB-Ct2"/>
@@ -398,7 +374,7 @@
         <!--List Results View Controller-->
         <scene sceneID="GSx-N1-bBW">
             <objects>
-                <tableViewController id="s1S-Vx-o13" customClass="ListResultsViewController" customModule="Best_Time" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="s1S-Vx-o13" customClass="ListResultsViewController" customModule="Best_Time_Ever" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="KpH-oN-Ri8">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -462,7 +438,7 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="143" y="20" width="237" height="49"/>
+                                                <rect key="frame" x="158" y="6" width="243" height="70"/>
                                             </variation>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wzb-sM-8ob">
@@ -471,7 +447,7 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="20" y="20" width="98" height="49"/>
+                                                <rect key="frame" x="34" y="3" width="80" height="73"/>
                                             </variation>
                                         </label>
                                     </subviews>

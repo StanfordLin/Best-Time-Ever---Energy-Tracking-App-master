@@ -14,6 +14,7 @@ class ListResultsViewController: UITableViewController {
     var feels: [Int] = []
     var savedTimeMoodArray: [TimeEvent] = []
     var savedTimeMood: TimeEvent?
+    var unpackedName: TimeEvent?
     
     
     override func viewDidLoad() {
@@ -30,20 +31,22 @@ class ListResultsViewController: UITableViewController {
         
         let archivedTimeMoodData = NSUserDefaults.standardUserDefaults().objectForKey("savedTimeMoodArray") as? NSData
         
-        if archivedTimeMoodData != nil {
-            savedTimeMoodArray = (NSKeyedUnarchiver.unarchiveObjectWithData(archivedTimeMoodData!) as? [TimeEvent])!
+        if let archivedTimeMoodData = archivedTimeMoodData {
+            savedTimeMoodArray = (NSKeyedUnarchiver.unarchiveObjectWithData(archivedTimeMoodData) as? [TimeEvent])!
             
-            //                if var savedTimeMoodArray = savedTimeMoodArray {
-            print("savedTimeMoodArray: \(savedTimeMoodArray)")
-        } else {
-            print("SODNFPOISJDFPOIJSDFOPSJDIOF NOHTINGGGGGG")
-        }
-        
+//        TimeEvent.load()
+            if unpackedName == unpackedName {
+                savedTimeMood = unpackedName
+            } else {
+                print("hahh gay, it's nil")
+            }
+            
+    
 //        print("Saved time array:    \(savedTimeMoodArray) savedTimeMoodArray.count \(savedTimeMoodArray.count), savedTimeFeels: \(savedTimeMoodArray.last!.feels), savedTime: \(savedTimeMoodArray.last!.time)")
     }
     
     
-    
+    }
     override func didReceiveMemoryWarning() {
         didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -55,7 +58,7 @@ class ListResultsViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-//        print("savedTimeArray: \(savedTimeMoodArray.last?.time)")
+        print("savedTimeArray: \(savedTimeMoodArray.last?.time)")
         return savedTimeMoodArray.count
     }
     
@@ -69,9 +72,10 @@ class ListResultsViewController: UITableViewController {
         
         
         let timeEvent = savedTimeMoodArray[indexPath.row]
+        timeEvent.save()
         
-        cell.storedFeelNumberLabel.text = ")"
-        cell.storedTimeLabel.text = ":00"
+        cell.storedFeelNumberLabel.text = "\(timeEvent.feels)"
+        cell.storedTimeLabel.text = "\(timeEvent.time):00"
         
 
         

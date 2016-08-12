@@ -1,20 +1,12 @@
 PODS:
   - JBChartView (3.0.12)
-  - Realm (1.0.1):
-    - Realm/Headers (= 1.0.1)
-  - Realm/Headers (1.0.1)
-  - RealmSwift (1.0.1):
-    - Realm (= 1.0.1)
 
 DEPENDENCIES:
   - JBChartView
-  - RealmSwift
 
 SPEC CHECKSUMS:
   JBChartView: 08877554448ccf99c12625ad0ebce70588ff8318
-  Realm: 2e15e39d35b08abb529e212ed5d8af107b5236c8
-  RealmSwift: d73ea2af08c3676dbdd5e4b669651a0f492162a4
 
-PODFILE CHECKSUM: f671d6909ff00f60dca244a6e6f6797b18936fdc
+PODFILE CHECKSUM: e90f3cc068934668eaf72be3015f8d959facde03
 
 COCOAPODS: 1.0.1

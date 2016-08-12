@@ -9,17 +9,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Best Time.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Realm.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>RealmSwift.xcscheme</key>
+		<key>Pods-Best Time Ever.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,22 +17,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>5B30062CEA8CEBD1424DD9A2D295C5DC</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>68A6DFB992BFA5889BC8FAAB240C8E26</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>C3E15BBF3E72843A0D0EB56DB50F6018</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F11A94F5EF9C3297921EB427191C043E</key>
+		<key>D1B0A8254ABEC0F81BA78ACEC7C88E68</key>
 		<dict>
 			<key>primary</key>
 			<true/>

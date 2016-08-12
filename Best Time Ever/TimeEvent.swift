@@ -11,6 +11,8 @@ import UIKit
 
 class TimeEvent : NSObject, NSCoding {
     
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+    
     var time: Int = 0
     var feels: Int = 0
     
@@ -23,9 +25,6 @@ class TimeEvent : NSObject, NSCoding {
         super.init()  // call NSObject's init method
     }
     
-//    func description() -> String  {
-//        return "Time: \(time) Mood: \(mood)"
-//    }
     
     
     required init(coder aDecoder: NSCoder) {
@@ -39,8 +38,11 @@ class TimeEvent : NSObject, NSCoding {
         aCoder.encodeObject(feels, forKey: "feels")
     }
     func save() {
-        let archivedTimeMoodData = NSKeyedArchiver.archivedDataWithRootObject(savedTimeMoodArray)
-        NSUserDefaults.standardUserDefaults().setObject(archivedTimeMoodData, forKey: "savedTimeMoodArray")
+        let encodedTimeMoodData = NSKeyedArchiver.archivedDataWithRootObject(savedTimeMoodArray)
+        userDefaults.setObject(encodedTimeMoodData, forKey: "savedTimeMoodArray")
+        userDefaults.synchronize()
+        
+//        NSUserDefaults.standardUserDefaults().setObject(archivedTimeMoodData, forKey: "savedTimeMoodArray")
 //        let savedTimeMoodArray = NSKeyedArchiver.archivedDataWithRootObject(self)
 //        let defaults = NSUserDefaults.standardUserDefaults()
 //        defaults.setObject(savedTimeMoodArray, forKey: "savedTimeMoodArray")
@@ -48,21 +50,32 @@ class TimeEvent : NSObject, NSCoding {
         
     }
     
-    func load() {
-            let archivedTimeMoodData = NSUserDefaults.standardUserDefaults().objectForKey("savedTimeMoodArray") as? NSData
-            
-            if let archivedTimeMoodData = archivedTimeMoodData {
-                savedTimeMoodArray = (NSKeyedUnarchiver.unarchiveObjectWithData(archivedTimeMoodData) as? [TimeEvent])!
-                
-//                if var savedTimeMoodArray = savedTimeMoodArray {
-                    print("savedTimeMoodArray: \(savedTimeMoodArray)")
-            } else {
-                print("SODNFPOISJDFPOIJSDFOPSJDIOF NOHTINGGGGGG")
-        }
+    func load() -> TimeEvent {
+        let moodTimeEncoded: [NSData] = userDefaults.objectForKey("savedTimeMoodArray") as! [NSData]
         
-            }
+        let unpackedName: TimeEvent = NSKeyedUnarchiver.unarchiveObjectWithData(moodTimeEncoded[0] as NSData) as! TimeEvent
+        
+        print("the unpackedName is: \(unpackedName)")
+        
+        return unpackedName
+        
     }
-    
+}
+
+//            let archivedTimeMoodData = NSUserDefaults.standardUserDefaults().objectForKey("savedTimeMoodArray") as? NSData
+//            
+//            if let archivedTimeMoodData = archivedTimeMoodData {
+//                savedTimeMoodArray = (NSKeyedUnarchiver.unarchiveObjectWithData(archivedTimeMoodData) as? [TimeEvent])!
+//                
+////                if var savedTimeMoodArray = savedTimeMoodArray {
+//                    print("savedTimeMoodArray: \(savedTimeMoodArray)")
+//            } else {
+//                print("SODNFPOISJDFPOIJSDFOPSJDIOF NOHTINGGGGGG")
+//        }
+//        
+//            }
+//    }
+
     
     
 //    func encodeWithCoder(aCoder: NSCoder) {

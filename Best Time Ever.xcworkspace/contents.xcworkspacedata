@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/stanford/Google Drive/Make School/Apps/Best Time Ever/Best-Time-Ever---Energy-Tracking-App-master/Best Time.xcodeproj">
+      location = "group:Best Time Ever.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
