@@ -11,7 +11,6 @@ import JBChartView
 
 class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineChartViewDelegate {
     
-//    var savedTimeMoodArray: [TimeEvent] = []
     
     @IBOutlet weak var resultsButton: UIButton!
     @IBOutlet weak var navigationBar: UINavigationBar!
@@ -27,10 +26,6 @@ class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineCh
     
     let userDefaults = NSUserDefaults.standardUserDefaults()
     
-    //    --------------------------------------------------------------
-    //var lastYearChartData = [75, 88, 79, 95, 72, 55, 90]
-    //    --------------------------------------------------------------
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,9 +36,10 @@ class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineCh
         resultsButton.layer.cornerRadius = 7
         print("User defaults is:\(userDefaults.valueForKey("mood") as! [Int])")
         
+//        Retrieve Chart Data
         chartData = userDefaults.valueForKey("mood") as! [Int]
         userDefaults.synchronize()
-        print("Current mood is \(chartData)")
+
         
         
         
@@ -56,8 +52,7 @@ class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineCh
         lineChart.dataSource = self
         lineChart.minimumValue = 0
         lineChart.maximumValue = 5
-        //        lineChart.contentView.layoutIfNeeded()
-        
+
         lineChart.reloadData()
         lineChart.setState(.Collapsed, animated: false)
     }
@@ -177,11 +172,6 @@ class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineCh
             let key = chartLegend[Int(horizontalIndex)]
             informationLabel.text = "🕒 \(key) \n ⚡: \(data)"
         }
-        //        else if (lineIndex == 1) {
-        //            let data = lastYearChartData[Int(horizontalIndex)]
-        //            let key = chartLegend[Int(horizontalIndex)]
-        //            informationLabel.text = "Weather last year on \(key): \(data)"
-        //        }
     }
     
     func lineChartView(lineChartView: JBLineChartView!, fillColorForLineAtLineIndex lineIndex: UInt) -> UIColor! {
@@ -192,26 +182,26 @@ class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineCh
         return UIColor.clearColor()
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-//                if segue.identifier == "ChartViewToListResultsViewControllerSegue"{
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 //        
-//                    if (chartData == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) {
+////                if segue.identifier == "ChartViewToListResultsViewControllerSegue"{
+////        
+////                    if (chartData == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) {
+////        
+////                        let alert = UIAlertController(title: "Error", message: "Ohhh noo... No values were saved", preferredStyle: UIAlertControllerStyle.Alert)
+////                        alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+////                        self.presentViewController(alert, animated: true, completion: nil)
+////        
+////        
+////                    } else {
+////        
+//////                        let destVC = segue.destinationViewController as? ListResultsViewController
+//////                        destVC?.savedTimeMoodArray = self.savedTimeMoodArray
+////                        print("wooooo")
+////                    }
+////                }
 //        
-//                        let alert = UIAlertController(title: "Error", message: "Ohhh noo... No values were saved", preferredStyle: UIAlertControllerStyle.Alert)
-//                        alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
-//                        self.presentViewController(alert, animated: true, completion: nil)
-//        
-//        
-//                    } else {
-//        
-////                        let destVC = segue.destinationViewController as? ListResultsViewController
-////                        destVC?.savedTimeMoodArray = self.savedTimeMoodArray
-//                        print("wooooo")
-//                    }
-//                }
-        
-    }
+//    }
     
     @IBAction func unwindToChartView(segue: UIStoryboardSegue) {
     }

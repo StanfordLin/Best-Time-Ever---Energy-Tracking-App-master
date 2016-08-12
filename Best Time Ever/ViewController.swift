@@ -45,9 +45,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         chartViewController!.userDefaults.setObject(chartViewController!.chartData, forKey: "mood")
         
-        savedTimeMoodArray = []
+        userDefaults.removeObjectForKey("savedTimeMoodArray")
         
-        chartViewController!.userDefaults.synchronize()
+        userDefaults.synchronize()
     }
     
     //Retrieves the data
@@ -119,12 +119,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             TimeEvent.load()
             
             savedTimeMoodArray.append(savedTimeMood!)
-            
-            //                TimeEvent.encodeWithCoder(savedTimeMoodArray)
-            //
-            //                let savedTimeMoodArrayArchive = savedTimeMoodArray as? [NSData]
-            //
-            //                savedTimeMoodArray = NSKeyedArchiver.archivedDataWithRootObject(self)
+
             
             let archivedTimeMoodData = NSKeyedArchiver.archivedDataWithRootObject(savedTimeMoodArray)
             NSUserDefaults.standardUserDefaults().setObject(archivedTimeMoodData, forKey: "savedTimeMoodArray")
@@ -134,10 +129,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             
             
             print("savedTimeArray in ViewController.swift: \(savedTimeMoodArray.last!.time) savedMoodArray in ViewController.swift: \(savedTimeMoodArray.last!.feels) ")
-            
-            //            let defaults = NSUserDefaults.standardUserDefaults()
-            //            let array = defaults.arrayForKey("timeEvent")
-            
             
             userDefaults.synchronize()
             
@@ -185,17 +176,17 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     
     //pass data to the chartViewController
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        //        if segue.identifier == "ViewToChartViewControllerSegue"{
-        //
-        //            let destVC = segue.destinationViewController as? ChartViewController
-        //            destVC?.savedTimeMoodArray = self.savedTimeMoodArray
-        //
-        //            print("savedTimeArray in ViewController segue: \(self.savedTimeMoodArray.first)")
-        //            
-        //            
-        //        }
-    }
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        //        if segue.identifier == "ViewToChartViewControllerSegue"{
+//        //
+//        //            let destVC = segue.destinationViewController as? ChartViewController
+//        //            destVC?.savedTimeMoodArray = self.savedTimeMoodArray
+//        //
+//        //            print("savedTimeArray in ViewController segue: \(self.savedTimeMoodArray.first)")
+//        //            
+//        //            
+//        //        }
+//    }
     
     @IBAction func unwindToViewController(segue: UIStoryboardSegue) {
     }
