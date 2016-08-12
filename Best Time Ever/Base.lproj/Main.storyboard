@@ -485,6 +485,6 @@
     </scenes>
     <resources>
         <image name="transparent" width="2100" height="1500"/>
-        <image name="wallpaper" width="375" height="667"/>
+        <image name="wallpaper" width="1125" height="2001"/>
     </resources>
 </document>
