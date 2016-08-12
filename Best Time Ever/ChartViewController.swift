@@ -202,13 +202,14 @@ class ChartViewController: UIViewController, JBLineChartViewDataSource, JBLineCh
                         alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
                         self.presentViewController(alert, animated: true, completion: nil)
         
-        
-                    } else {
-        
-                        let destVC = segue.destinationViewController as? ListResultsViewController
-                        destVC?.savedTimeMoodArray = self.savedTimeMoodArray
-                        print("wooooo")
                     }
+                    
+//                    } else {
+//        
+//                        let destVC = segue.destinationViewController as! ListResultsViewController
+//                        destVC.savedTimeMoodArray = self.savedTimeMoodArray
+//                        print("wooooo")
+//                    }
                 }
         
     }

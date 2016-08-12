@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E6BE1D941D3801980088742B"
-               BuildableName = "Best Time Ever.app"
-               BlueprintName = "Best Time Ever"
-               ReferencedContainer = "container:Best Time Ever.xcodeproj">
+               BuildableName = "Best Time.app"
+               BlueprintName = "Best Time"
+               ReferencedContainer = "container:Best Time.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E6BE1D941D3801980088742B"
-            BuildableName = "Best Time Ever.app"
-            BlueprintName = "Best Time Ever"
-            ReferencedContainer = "container:Best Time Ever.xcodeproj">
+            BuildableName = "Best Time.app"
+            BlueprintName = "Best Time"
+            ReferencedContainer = "container:Best Time.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E6BE1D941D3801980088742B"
-            BuildableName = "Best Time Ever.app"
-            BlueprintName = "Best Time Ever"
-            ReferencedContainer = "container:Best Time Ever.xcodeproj">
+            BuildableName = "Best Time.app"
+            BlueprintName = "Best Time"
+            ReferencedContainer = "container:Best Time.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E6BE1D941D3801980088742B"
-            BuildableName = "Best Time Ever.app"
-            BlueprintName = "Best Time Ever"
-            ReferencedContainer = "container:Best Time Ever.xcodeproj">
+            BuildableName = "Best Time.app"
+            BlueprintName = "Best Time"
+            ReferencedContainer = "container:Best Time.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

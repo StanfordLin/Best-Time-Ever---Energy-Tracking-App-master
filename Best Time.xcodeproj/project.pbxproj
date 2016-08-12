@@ -43,7 +43,7 @@
 		E67D154A1D54884000E96FAA /* ListResultsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListResultsTableViewCell.swift; sourceTree = "<group>"; };
 		E6A0A11A1D4AC51300916E8C /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		E6A5490D1D590271009F3A16 /* TimeEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeEvent.swift; sourceTree = "<group>"; };
-		E6BE1D951D3801980088742B /* Best Time Ever.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Best Time Ever.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6BE1D951D3801980088742B /* Best Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Best Time.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6BE1D981D3801990088742B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6BE1D9A1D3801990088742B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E6BE1D9D1D3801990088742B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -111,7 +111,7 @@
 		E6BE1D8C1D3801980088742B = {
 			isa = PBXGroup;
 			children = (
-				E6BE1D971D3801990088742B /* Best Time Ever */,
+				E6BE1D971D3801990088742B /* Best Time */,
 				E6BE1D961D3801980088742B /* Products */,
 				7BDE2159B0003B4930FDC3D0 /* Pods */,
 				823EC68AD341B7B2C7BAFBF7 /* Frameworks */,
@@ -121,12 +121,12 @@
 		E6BE1D961D3801980088742B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E6BE1D951D3801980088742B /* Best Time Ever.app */,
+				E6BE1D951D3801980088742B /* Best Time.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E6BE1D971D3801990088742B /* Best Time Ever */ = {
+		E6BE1D971D3801990088742B /* Best Time */ = {
 			isa = PBXGroup;
 			children = (
 				E67D15481D5487CF00E96FAA /* Controllers */,
@@ -140,15 +140,16 @@
 				E60764401D482F27008BEBFC /* UserDefaultsHelper.swift */,
 				E6A0A11A1D4AC51300916E8C /* DataManager.swift */,
 			);
+			name = "Best Time";
 			path = "Best Time Ever";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E6BE1D941D3801980088742B /* Best Time Ever */ = {
+		E6BE1D941D3801980088742B /* Best Time */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E6BE1DA71D3801990088742B /* Build configuration list for PBXNativeTarget "Best Time Ever" */;
+			buildConfigurationList = E6BE1DA71D3801990088742B /* Build configuration list for PBXNativeTarget "Best Time" */;
 			buildPhases = (
 				B961B3B1151D2804FA12F8A2 /* [CP] Check Pods Manifest.lock */,
 				E6BE1D911D3801980088742B /* Sources */,
@@ -162,9 +163,9 @@
 			);
 			dependencies = (
 			);
-			name = "Best Time Ever";
+			name = "Best Time";
 			productName = "Best Time Ever";
-			productReference = E6BE1D951D3801980088742B /* Best Time Ever.app */;
+			productReference = E6BE1D951D3801980088742B /* Best Time.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -183,7 +184,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E6BE1D901D3801980088742B /* Build configuration list for PBXProject "Best Time Ever" */;
+			buildConfigurationList = E6BE1D901D3801980088742B /* Build configuration list for PBXProject "Best Time" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -196,7 +197,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E6BE1D941D3801980088742B /* Best Time Ever */,
+				E6BE1D941D3801980088742B /* Best Time */,
 			);
 		};
 /* End PBXProject section */
@@ -396,7 +397,7 @@
 				INFOPLIST_FILE = "Best Time Ever/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.stanford.best-time";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Best Time";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -412,7 +413,7 @@
 				INFOPLIST_FILE = "Best Time Ever/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.stanford.best-time";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Best Time";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -420,7 +421,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E6BE1D901D3801980088742B /* Build configuration list for PBXProject "Best Time Ever" */ = {
+		E6BE1D901D3801980088742B /* Build configuration list for PBXProject "Best Time" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E6BE1DA51D3801990088742B /* Debug */,
@@ -429,7 +430,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E6BE1DA71D3801990088742B /* Build configuration list for PBXNativeTarget "Best Time Ever" */ = {
+		E6BE1DA71D3801990088742B /* Build configuration list for PBXNativeTarget "Best Time" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E6BE1DA81D3801990088742B /* Debug */,

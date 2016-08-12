@@ -30,8 +30,8 @@ class ListResultsViewController: UITableViewController {
         
         let archivedTimeMoodData = NSUserDefaults.standardUserDefaults().objectForKey("savedTimeMoodArray") as? NSData
         
-        if let archivedTimeMoodData = archivedTimeMoodData {
-            savedTimeMoodArray = (NSKeyedUnarchiver.unarchiveObjectWithData(archivedTimeMoodData) as? [TimeEvent])!
+        if archivedTimeMoodData != nil {
+            savedTimeMoodArray = (NSKeyedUnarchiver.unarchiveObjectWithData(archivedTimeMoodData!) as? [TimeEvent])!
             
             //                if var savedTimeMoodArray = savedTimeMoodArray {
             print("savedTimeMoodArray: \(savedTimeMoodArray)")
@@ -39,7 +39,7 @@ class ListResultsViewController: UITableViewController {
             print("SODNFPOISJDFPOIJSDFOPSJDIOF NOHTINGGGGGG")
         }
         
-        print("Saved time array:    \(savedTimeMoodArray) savedTimeMoodArray.count \(savedTimeMoodArray.count), savedTimeFeels: \(savedTimeMoodArray.last!.feels), savedTime: \(savedTimeMoodArray.last!.time)")
+//        print("Saved time array:    \(savedTimeMoodArray) savedTimeMoodArray.count \(savedTimeMoodArray.count), savedTimeFeels: \(savedTimeMoodArray.last!.feels), savedTime: \(savedTimeMoodArray.last!.time)")
     }
     
     
@@ -55,7 +55,7 @@ class ListResultsViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        print("savedTimeArray: \(savedTimeMoodArray.last?.time)")
+//        print("savedTimeArray: \(savedTimeMoodArray.last?.time)")
         return savedTimeMoodArray.count
     }
     
@@ -69,10 +69,9 @@ class ListResultsViewController: UITableViewController {
         
         
         let timeEvent = savedTimeMoodArray[indexPath.row]
-        timeEvent.save()
         
-        cell.storedFeelNumberLabel.text = "\(timeEvent.feels)"
-        cell.storedTimeLabel.text = "\(timeEvent.time):00"
+        cell.storedFeelNumberLabel.text = ")"
+        cell.storedTimeLabel.text = ":00"
         
 
         
