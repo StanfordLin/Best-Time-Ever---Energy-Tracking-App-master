@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -27,9 +28,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="62" y="60" width="277" height="36"/>
+                                </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ERp-DG-5lD">
-                                <rect key="frame" x="240" y="490" width="121" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ERp-DG-5lD">
+                                <rect key="frame" x="191" y="488" width="218" height="71"/>
                                 <color key="backgroundColor" red="0.3095885833" green="0.50332859299999999" blue="0.894772813" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Nbw-1U-H2g">
@@ -46,7 +50,7 @@
                                         <exclude reference="TYp-hh-Pgo"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="100" y="565" width="200" height="70"/>
                                     <mask key="constraints">
                                         <exclude reference="Nbw-1U-H2g"/>
@@ -57,13 +61,35 @@
                                     <segue destination="MZT-b9-YMw" kind="show" identifier="ViewToChartViewControllerSegue" id="8Os-sw-meA"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ri0-IE-YYm">
+                                <rect key="frame" x="0.0" y="359" width="600" height="9"/>
+                                <color key="backgroundColor" red="0.30980392159999998" green="0.50196078430000002" blue="0.89411764709999997" alpha="0.46839978450000003" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="19"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="413" width="360" height="23"/>
+                                </variation>
+                            </label>
+                            <pickerView contentMode="scaleToFill" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="4LY-Pw-vdg">
+                                <rect key="frame" x="20" y="126" width="560" height="216"/>
+                                <color key="backgroundColor" red="0.30588235294117649" green="0.41568627450980394" blue="0.69411764705882351" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="125" width="360" height="216"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="aof-8O-5vd"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="y2d-hm-WwI"/>
+                                </connections>
+                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wz-L3-G8D">
-                                <rect key="frame" x="240" y="397" width="121" height="60"/>
+                                <rect key="frame" x="182" y="391" width="237" height="77"/>
                                 <color key="backgroundColor" red="0.3095885833" green="0.50332859299999999" blue="0.894772813" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" identifier="saveButtonSegue"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="59" id="Q4I-fA-3Sm"/>
                                     <constraint firstAttribute="height" constant="60" id="dEa-ia-zrP"/>
+                                    <constraint firstAttribute="width" secondItem="7Wz-L3-G8D" secondAttribute="height" multiplier="37:12" id="uD8-oP-slv"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="22"/>
                                 <state key="normal" title="Save">
@@ -74,7 +100,7 @@
                                         <exclude reference="Q4I-fA-3Sm"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="100" y="460" width="200" height="70"/>
                                     <mask key="constraints">
                                         <exclude reference="dEa-ia-zrP"/>
@@ -84,27 +110,6 @@
                                     <action selector="saveData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2DG-KW-IPI"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ri0-IE-YYm">
-                                <rect key="frame" x="0.0" y="359" width="600" height="9"/>
-                                <color key="backgroundColor" red="0.30980392159999998" green="0.50196078430000002" blue="0.89411764709999997" alpha="0.46839978450000003" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="19"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="20" y="413" width="360" height="23"/>
-                                </variation>
-                            </label>
-                            <pickerView contentMode="scaleToFill" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="4LY-Pw-vdg">
-                                <rect key="frame" x="20" y="126" width="560" height="216"/>
-                                <color key="backgroundColor" red="0.30588235294117649" green="0.41568627450980394" blue="0.69411764705882351" alpha="0.5" colorSpace="calibratedRGB"/>
-                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="20" y="125" width="360" height="216"/>
-                                </variation>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="aof-8O-5vd"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="y2d-hm-WwI"/>
-                                </connections>
-                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="0.30980392159999998" green="0.50196078430000002" blue="0.89411764709999997" alpha="0.46839978450000003" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -412,7 +417,7 @@
                                     </variation>
                                 </navigationBar>
                             </subviews>
-                            <color key="backgroundColor" red="0.30980392156862746" green="0.50196078431372548" blue="0.89411764705882346" alpha="0.46839978450000003" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.36078431372549019" green="0.49019607843137253" blue="0.78823529411764703" alpha="1" colorSpace="calibratedRGB"/>
                             <variation key="default">
                                 <mask key="subviews">
                                     <exclude reference="nT8-q0-oIA"/>
@@ -464,7 +469,7 @@
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.3095885833" green="0.50332859299999999" blue="0.894772813" alpha="0.46839978450000003" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.36078431372549019" green="0.49019607843137253" blue="0.78823529411764703" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="storedFeelNumberLabel" destination="Wzb-sM-8ob" id="9jI-v0-yqV"/>
                                     <outlet property="storedTimeLabel" destination="DT1-su-lxN" id="n5g-qz-Xj8"/>
